@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="YYT_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HT_Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="20" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="groupid" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HT_Menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="20" />
+          <Property Name="isMenu" Type="int" />
+          <Property Name="Droit" Type="nvarchar" MaxLength="10" />
+          <Property Name="Url" Type="nvarchar" MaxLength="150" />
+          <Property Name="SortId" Type="int" />
+          <Property Name="Pid" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HT_UserGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="20" />
+          <Property Name="Droit" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Luck_Activity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Startdate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="Rules" Type="int" />
+          <Property Name="Img" Type="nvarchar" MaxLength="255" />
+          <Property Name="Url" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+          <Property Name="descr" Type="text" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Luck_ActivityJackpot">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="ActivityId" Type="int" />
+          <Property Name="PrizeId" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_type" Type="nvarchar" MaxLength="10" />
+          <Property Name="out_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updatetime" Type="datetime" />
+          <Property Name="UpdateAddtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Luck_ActivityPrize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="sortid" Type="int" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PrizeType" Type="int" />
+          <Property Name="PrizeLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="num" Type="int" />
+          <Property Name="winNum" Type="int" />
+          <Property Name="PrizeUrl" Type="nvarchar" MaxLength="255" />
+          <Property Name="PrizeImg" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+          <Property Name="descr" Type="text" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="Position" Type="int" />
+          <Property Name="PositionImg" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="QD_Channel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
+          <Property Name="remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="QD_ChannelLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelName" Type="nvarchar" MaxLength="50" />
+          <Property Name="interface" Type="nvarchar" MaxLength="100" />
+          <Property Name="status" Type="int" />
+          <Property Name="failType" Type="nvarchar" MaxLength="50" />
+          <Property Name="failMessage" Type="text" />
+          <Property Name="RawData" Type="text" />
+          <Property Name="ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="Addtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="QD_ChannelUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channel_id" Type="int" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="user_key" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="start_time" Type="varchar" MaxLength="50" />
+          <Property Name="end_time" Type="varchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="validate_ip" Type="int" />
+        </EntityType>
+        <EntityType Name="QD_ChanneWhilte">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channel_id" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Wx_Config">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="wxappid" Type="nvarchar" MaxLength="50" />
+          <Property Name="mch_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="wxkey" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Wx_Redpack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="WxConfigId" Type="int" />
+          <Property Name="mch_billno" Type="nvarchar" MaxLength="50" />
+          <Property Name="send_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="openid" Type="nvarchar" MaxLength="50" />
+          <Property Name="total_amount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="total_num" Type="int" />
+          <Property Name="amt_type" Type="nvarchar" MaxLength="30" />
+          <Property Name="wishing" Type="nvarchar" MaxLength="50" />
+          <Property Name="act_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="scene_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="risk_info" Type="nvarchar" MaxLength="255" />
+          <Property Name="consume_mch_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="Status" Type="int" />
+          <Property Name="send_listid" Type="nvarchar" MaxLength="255" />
+          <Property Name="Updatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Wx_RedpackLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="RedpackId" Type="int" />
+          <Property Name="ResultCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReturnMsg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WxCompany_Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="WxConfigId" Type="int" />
+          <Property Name="partner_trade_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="openid" Type="nvarchar" MaxLength="50" />
+          <Property Name="check_name" Type="nvarchar" MaxLength="20" />
+          <Property Name="re_user_name" Type="nvarchar" MaxLength="20" />
+          <Property Name="amount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="descr" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="payment_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="payment_time" Type="datetime" />
+          <Property Name="Updatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WxCompany_PaymentLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="PaymentId" Type="int" />
+          <Property Name="ResultCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReturnMsg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="YYT_DBModelStoreContainer">
+          <EntitySet Name="HT_Account" EntityType="Self.HT_Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HT_Menu" EntityType="Self.HT_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HT_UserGroup" EntityType="Self.HT_UserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Luck_Activity" EntityType="Self.Luck_Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Luck_ActivityJackpot" EntityType="Self.Luck_ActivityJackpot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Luck_ActivityPrize" EntityType="Self.Luck_ActivityPrize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QD_Channel" EntityType="Self.QD_Channel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QD_ChannelLog" EntityType="Self.QD_ChannelLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QD_ChannelUser" EntityType="Self.QD_ChannelUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QD_ChanneWhilte" EntityType="Self.QD_ChanneWhilte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wx_Config" EntityType="Self.Wx_Config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wx_Redpack" EntityType="Self.Wx_Redpack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wx_RedpackLog" EntityType="Self.Wx_RedpackLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WxCompany_Payment" EntityType="Self.WxCompany_Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WxCompany_PaymentLog" EntityType="Self.WxCompany_PaymentLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YYT_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HT_Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="groupid" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="HT_Menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isMenu" Type="Int32" />
+          <Property Name="Droit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SortId" Type="Int32" />
+          <Property Name="Pid" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="HT_UserGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Droit" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Luck_Activity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Startdate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="Rules" Type="Int32" />
+          <Property Name="Img" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="descr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Luck_ActivityJackpot">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="ActivityId" Type="Int32" />
+          <Property Name="PrizeId" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="out_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updatetime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateAddtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Luck_ActivityPrize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sortid" Type="Int32" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="PrizeType" Type="Int32" />
+          <Property Name="PrizeLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="num" Type="Int32" />
+          <Property Name="winNum" Type="Int32" />
+          <Property Name="PrizeUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PrizeImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="descr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="Position" Type="Int32" />
+          <Property Name="PositionImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QD_Channel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="QD_ChannelLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="interface" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="failType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="failMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RawData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="QD_ChannelUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channel_id" Type="Int32" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="start_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="end_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="validate_ip" Type="Int32" />
+        </EntityType>
+        <EntityType Name="QD_ChanneWhilte">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channel_id" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Wx_Config">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="wxappid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mch_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="wxkey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Wx_Redpack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="WxConfigId" Type="Int32" />
+          <Property Name="mch_billno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="send_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="openid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="total_amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="total_num" Type="Int32" />
+          <Property Name="amt_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="wishing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="act_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="scene_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="risk_info" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="consume_mch_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="send_listid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Updatetime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Wx_RedpackLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="RedpackId" Type="Int32" />
+          <Property Name="ResultCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReturnMsg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="WxCompany_Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="WxConfigId" Type="Int32" />
+          <Property Name="partner_trade_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="openid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="check_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="re_user_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="descr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="payment_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="payment_time" Type="DateTime" Precision="3" />
+          <Property Name="Updatetime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="WxCompany_PaymentLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="PaymentId" Type="Int32" />
+          <Property Name="ResultCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReturnMsg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="YYT_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HT_Account" EntityType="Self.HT_Account" />
+          <EntitySet Name="HT_Menu" EntityType="Self.HT_Menu" />
+          <EntitySet Name="HT_UserGroup" EntityType="Self.HT_UserGroup" />
+          <EntitySet Name="Luck_Activity" EntityType="Self.Luck_Activity" />
+          <EntitySet Name="Luck_ActivityJackpot" EntityType="Self.Luck_ActivityJackpot" />
+          <EntitySet Name="Luck_ActivityPrize" EntityType="Self.Luck_ActivityPrize" />
+          <EntitySet Name="QD_Channel" EntityType="Self.QD_Channel" />
+          <EntitySet Name="QD_ChannelLog" EntityType="Self.QD_ChannelLog" />
+          <EntitySet Name="QD_ChannelUser" EntityType="Self.QD_ChannelUser" />
+          <EntitySet Name="QD_ChanneWhilte" EntityType="Self.QD_ChanneWhilte" />
+          <EntitySet Name="Wx_Config" EntityType="Self.Wx_Config" />
+          <EntitySet Name="Wx_Redpack" EntityType="Self.Wx_Redpack" />
+          <EntitySet Name="Wx_RedpackLog" EntityType="Self.Wx_RedpackLog" />
+          <EntitySet Name="WxCompany_Payment" EntityType="Self.WxCompany_Payment" />
+          <EntitySet Name="WxCompany_PaymentLog" EntityType="Self.WxCompany_PaymentLog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YYT_DBModelStoreContainer" CdmEntityContainer="YYT_DBEntities">
+          <EntitySetMapping Name="HT_Account">
+            <EntityTypeMapping TypeName="YYT_DBModel.HT_Account">
+              <MappingFragment StoreEntitySet="HT_Account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="groupid" ColumnName="groupid" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HT_Menu">
+            <EntityTypeMapping TypeName="YYT_DBModel.HT_Menu">
+              <MappingFragment StoreEntitySet="HT_Menu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="isMenu" ColumnName="isMenu" />
+                <ScalarProperty Name="Droit" ColumnName="Droit" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="SortId" ColumnName="SortId" />
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HT_UserGroup">
+            <EntityTypeMapping TypeName="YYT_DBModel.HT_UserGroup">
+              <MappingFragment StoreEntitySet="HT_UserGroup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Droit" ColumnName="Droit" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Luck_Activity">
+            <EntityTypeMapping TypeName="YYT_DBModel.Luck_Activity">
+              <MappingFragment StoreEntitySet="Luck_Activity">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Startdate" ColumnName="Startdate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="Rules" ColumnName="Rules" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="descr" ColumnName="descr" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Luck_ActivityJackpot">
+            <EntityTypeMapping TypeName="YYT_DBModel.Luck_ActivityJackpot">
+              <MappingFragment StoreEntitySet="Luck_ActivityJackpot">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+                <ScalarProperty Name="PrizeId" ColumnName="PrizeId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="data_type" ColumnName="data_type" />
+                <ScalarProperty Name="out_id" ColumnName="out_id" />
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+                <ScalarProperty Name="UpdateAddtime" ColumnName="UpdateAddtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Luck_ActivityPrize">
+            <EntityTypeMapping TypeName="YYT_DBModel.Luck_ActivityPrize">
+              <MappingFragment StoreEntitySet="Luck_ActivityPrize">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sortid" ColumnName="sortid" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="PrizeType" ColumnName="PrizeType" />
+                <ScalarProperty Name="PrizeLevel" ColumnName="PrizeLevel" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="winNum" ColumnName="winNum" />
+                <ScalarProperty Name="PrizeUrl" ColumnName="PrizeUrl" />
+                <ScalarProperty Name="PrizeImg" ColumnName="PrizeImg" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="descr" ColumnName="descr" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="PositionImg" ColumnName="PositionImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QD_Channel">
+            <EntityTypeMapping TypeName="YYT_DBModel.QD_Channel">
+              <MappingFragment StoreEntitySet="QD_Channel">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QD_ChannelLog">
+            <EntityTypeMapping TypeName="YYT_DBModel.QD_ChannelLog">
+              <MappingFragment StoreEntitySet="QD_ChannelLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="channelName" ColumnName="channelName" />
+                <ScalarProperty Name="interface" ColumnName="interface" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="failType" ColumnName="failType" />
+                <ScalarProperty Name="failMessage" ColumnName="failMessage" />
+                <ScalarProperty Name="RawData" ColumnName="RawData" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QD_ChannelUser">
+            <EntityTypeMapping TypeName="YYT_DBModel.QD_ChannelUser">
+              <MappingFragment StoreEntitySet="QD_ChannelUser">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_key" ColumnName="user_key" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="validate_ip" ColumnName="validate_ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QD_ChanneWhilte">
+            <EntityTypeMapping TypeName="YYT_DBModel.QD_ChanneWhilte">
+              <MappingFragment StoreEntitySet="QD_ChanneWhilte">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wx_Config">
+            <EntityTypeMapping TypeName="YYT_DBModel.Wx_Config">
+              <MappingFragment StoreEntitySet="Wx_Config">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="wxappid" ColumnName="wxappid" />
+                <ScalarProperty Name="mch_id" ColumnName="mch_id" />
+                <ScalarProperty Name="wxkey" ColumnName="wxkey" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wx_Redpack">
+            <EntityTypeMapping TypeName="YYT_DBModel.Wx_Redpack">
+              <MappingFragment StoreEntitySet="Wx_Redpack">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="WxConfigId" ColumnName="WxConfigId" />
+                <ScalarProperty Name="mch_billno" ColumnName="mch_billno" />
+                <ScalarProperty Name="send_name" ColumnName="send_name" />
+                <ScalarProperty Name="openid" ColumnName="openid" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="total_num" ColumnName="total_num" />
+                <ScalarProperty Name="amt_type" ColumnName="amt_type" />
+                <ScalarProperty Name="wishing" ColumnName="wishing" />
+                <ScalarProperty Name="act_name" ColumnName="act_name" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="scene_id" ColumnName="scene_id" />
+                <ScalarProperty Name="risk_info" ColumnName="risk_info" />
+                <ScalarProperty Name="consume_mch_id" ColumnName="consume_mch_id" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="send_listid" ColumnName="send_listid" />
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wx_RedpackLog">
+            <EntityTypeMapping TypeName="YYT_DBModel.Wx_RedpackLog">
+              <MappingFragment StoreEntitySet="Wx_RedpackLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="RedpackId" ColumnName="RedpackId" />
+                <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+                <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WxCompany_Payment">
+            <EntityTypeMapping TypeName="YYT_DBModel.WxCompany_Payment">
+              <MappingFragment StoreEntitySet="WxCompany_Payment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="WxConfigId" ColumnName="WxConfigId" />
+                <ScalarProperty Name="partner_trade_no" ColumnName="partner_trade_no" />
+                <ScalarProperty Name="openid" ColumnName="openid" />
+                <ScalarProperty Name="check_name" ColumnName="check_name" />
+                <ScalarProperty Name="re_user_name" ColumnName="re_user_name" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="descr" ColumnName="descr" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="payment_no" ColumnName="payment_no" />
+                <ScalarProperty Name="payment_time" ColumnName="payment_time" />
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WxCompany_PaymentLog">
+            <EntityTypeMapping TypeName="YYT_DBModel.WxCompany_PaymentLog">
+              <MappingFragment StoreEntitySet="WxCompany_PaymentLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+                <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
