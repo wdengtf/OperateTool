@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire", "Questionna
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPackets", "RedPackets\RedPackets.csproj", "{DEF378D3-1977-42E4-A6E4-62131C25C56B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{D7F95F09-E460-476C-9B08-A6DE18555E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manage", "Manage\Manage.csproj", "{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{DEF378D3-1977-42E4-A6E4-62131C25C56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEF378D3-1977-42E4-A6E4-62131C25C56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEF378D3-1977-42E4-A6E4-62131C25C56B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
