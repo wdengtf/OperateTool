@@ -20,6 +20,7 @@
         <EntityTypeShape EntityType="YYT_DBModel.Wx_RedpackLog" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="YYT_DBModel.WxCompany_Payment" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="YYT_DBModel.WxCompany_PaymentLog" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YYT_DBModel.YYT_Member" Width="1.5" PointX="10.625" PointY="3.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

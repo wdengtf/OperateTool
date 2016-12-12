@@ -40,5 +40,6 @@ namespace YYT.Model
         public virtual DbSet<Wx_RedpackLog> Wx_RedpackLog { get; set; }
         public virtual DbSet<WxCompany_Payment> WxCompany_Payment { get; set; }
         public virtual DbSet<WxCompany_PaymentLog> WxCompany_PaymentLog { get; set; }
+        public virtual DbSet<YYT_Member> YYT_Member { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="YYT_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="YYT_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="HT_Account">
           <Key>
             <PropertyRef Name="id" />
@@ -222,6 +222,30 @@
           <Property Name="ReturnMsg" Type="nvarchar" MaxLength="50" />
           <Property Name="Createtime" Type="datetime" />
         </EntityType>
+        <EntityType Name="YYT_Member">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="out_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="channelUserId" Type="int" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_type" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="30" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="nickname" Type="nvarchar" MaxLength="20" />
+          <Property Name="country" Type="nvarchar" MaxLength="30" />
+          <Property Name="province" Type="nvarchar" MaxLength="30" />
+          <Property Name="city" Type="nvarchar" MaxLength="30" />
+          <Property Name="area" Type="nvarchar" MaxLength="30" />
+          <Property Name="addr" Type="nvarchar" MaxLength="100" />
+          <Property Name="headimgurl" Type="nvarchar" MaxLength="500" />
+          <Property Name="unionid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="Updatetime" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="YYT_DBModelStoreContainer">
           <EntitySet Name="HT_Account" EntityType="Self.HT_Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HT_Menu" EntityType="Self.HT_Menu" Schema="dbo" store:Type="Tables" />
@@ -238,9 +262,9 @@
           <EntitySet Name="Wx_RedpackLog" EntityType="Self.Wx_RedpackLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WxCompany_Payment" EntityType="Self.WxCompany_Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WxCompany_PaymentLog" EntityType="Self.WxCompany_PaymentLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YYT_Member" EntityType="Self.YYT_Member" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="YYT_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -477,7 +501,32 @@
           <EntitySet Name="Wx_RedpackLog" EntityType="Self.Wx_RedpackLog" />
           <EntitySet Name="WxCompany_Payment" EntityType="Self.WxCompany_Payment" />
           <EntitySet Name="WxCompany_PaymentLog" EntityType="Self.WxCompany_PaymentLog" />
+          <EntitySet Name="YYT_Member" EntityType="YYT_DBModel.YYT_Member" />
         </EntityContainer>
+        <EntityType Name="YYT_Member">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="out_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="channelUserId" Type="Int32" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="province" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="area" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="addr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="headimgurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="unionid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="Updatetime" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -713,6 +762,31 @@
                 <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
                 <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
                 <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YYT_Member">
+            <EntityTypeMapping TypeName="YYT_DBModel.YYT_Member">
+              <MappingFragment StoreEntitySet="YYT_Member">
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="unionid" ColumnName="unionid" />
+                <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+                <ScalarProperty Name="addr" ColumnName="addr" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="data_type" ColumnName="data_type" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
+                <ScalarProperty Name="out_id" ColumnName="out_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
