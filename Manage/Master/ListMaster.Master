@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ListMaster.master.cs" Inherits="Web.Manage.Master.ListMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <asp:ContentPlaceHolder ID="HeadTop" runat="server"></asp:ContentPlaceHolder>
+    <link href="/css/jquery-ui-1.10.3.custom/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/css/jquery.jqGrid-4.5.4/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+    <link href="/css/lib/base.css" rel="stylesheet" type="text/css" />
+   
+    <asp:ContentPlaceHolder ID="HeadOtherCss" runat="server"></asp:ContentPlaceHolder>
+    <script src="/js/lib/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.jqGrid-4.5.4/jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.jqGrid-4.5.4/grid.locale-cn.js" type="text/javascript"></script>
+    <script src="/js/jquery.ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+
+     <script src="/js/lib/Common.js" type="text/javascript"></script>
+     <script src="/js/WdatePicker/WdatePicker.js" type="text/javascript"></script>
+   <%-- <script src="/js/lib/vue.min.js" type="text/javascript"></script>--%>
+
+
+   
+    <asp:ContentPlaceHolder ID="HeadOtherJS" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+     <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+     <script src="/js/lib/basePage.js" type="text/javascript"></script>
+     <script src="/js/lib/Common.jqGrid.js" type="text/javascript"></script>
+     <asp:ContentPlaceHolder ID="FootOtherJS" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

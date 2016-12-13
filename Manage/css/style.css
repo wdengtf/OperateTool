@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { font-family:"微软雅黑"; font-size: 12px;  padding:0; margin:0;  }
+ul,ol,li,dl,dt,dd { margin:0; padding:0; list-style-type:none;}
+div,div,h3,form,input,iframe,span,a { margin:0; padding:0;}
+
+
+
+/* 树形菜单开始 */
+.toggle { width:100%; margin:0 auto; height:100%; padding-bottom:30px; position: relative; background: #eeeeee; overflow:auto; }
+.toggle dl dd { line-height:24px;}
+.toggle dl .fist{}
+.toggle dl dd a{ display:block; padding: 10px 5px 10px 20px; font-weight:bold; text-decoration:none;  color:#535353; font-size: 14px;}
+.toggle dl dd a:hover{ background:#dcdcdc;}
+.dd_actived{ background: #fff; border-left: 3px solid #ff6005;}

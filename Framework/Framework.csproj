@@ -58,7 +58,11 @@
     <Compile Include="Cookies\CookUtils.cs" />
     <Compile Include="EF\ParameterReplacer.cs" />
     <Compile Include="EF\PredicateExtensionses.cs" />
+    <Compile Include="Handle\FromToObj.cs" />
+    <Compile Include="Handle\ReflectionHelper.cs" />
     <Compile Include="Log\LogService.cs" />
+    <Compile Include="Model\CommandInfo.cs" />
+    <Compile Include="Model\JqGridPagingModel.cs" />
     <Compile Include="Model\JsonResult.cs" />
     <Compile Include="Model\MsgShowConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,6 +11,7 @@ namespace YYT.Model
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Luck_ActivityJackpot
     {
@@ -25,5 +26,11 @@ namespace YYT.Model
         public string out_id { get; set; }
         public Nullable<System.DateTime> Updatetime { get; set; }
         public Nullable<System.DateTime> UpdateAddtime { get; set; }
+
+        /// <summary>
+        /// 领取总数
+        /// </summary>
+        [NotMapped]
+        public int NotReceiveTotal { get; set; }
     }
 }

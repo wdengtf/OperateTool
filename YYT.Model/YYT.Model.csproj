@@ -88,6 +88,7 @@
     <Compile Include="Luck_ActivityPrize.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QD_Channel.cs">
       <DependentUpon>DbModel.tt</DependentUpon>

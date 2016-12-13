@@ -1,0 +1,173 @@
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	font: 12px "宋体", "Comic Sans MS", cursive;
+}
+
+/*--------------------------gridview----------------------*/
+.gridview {
+	background-color: #f2f2f2;
+	height:100%;
+	overflow-y:hidden
+}
+.gridview a{
+	text-decoration: none;
+	color: blue;
+
+}
+.gridview a:hover{
+	text-decoration: none;
+	color: red;
+
+}
+
+.gridview .header {
+	height: 26px;
+	background-color: #A8430D;
+	background-image: url(images/gridview-header-bg.gif);
+	background-repeat: repeat-x;
+	background-position: 0px 1px;
+	border-bottom: 1px solid #742a1e;
+}
+
+.gridview .header table {
+	border-top: none;
+	text-align: center;
+	font-weight: normal;
+	border: none;
+	margin-left: 2px;
+}
+.gridview .header table th {
+	border:1px solid #af3a3e;
+	color:#fcffa1;
+	font-weight:normal;
+}
+.gridview .bodier {
+	overflow: auto;
+	overflow-x:hidden;
+}
+.gridview .bodier table thead{
+	display: none;
+}
+
+.gridview .bodier table tfoot td{
+	border:1px;
+	font-size: 0;
+	height: 1px;
+	border-color: #EEEEEE;
+}
+.gridview table {
+	border-collapse: collapse;
+	border: 1px solid #e4e4e4;
+	table-layout: fixed;
+}
+.gridview .header table {
+	table-layout: auto;
+}
+
+.gridview .bodier table {
+	border-top: none;
+		background-color: #FFF;
+
+}
+.gridview .footer {
+	color: #C90;
+	background-color: #ccc;
+	background-color: #f2f2f2;
+	border: none;
+}
+.gridview .footer .total-row{
+	background-color: #e4e4e4;
+	
+}
+.gridview .footer .total-row table{
+	margin-left: 1px;
+}
+.gridview .footer .total-row table td{
+	padding: 3px;
+	border-top:1px solid;
+	border-color: #CECECE;
+	color: #333;
+}
+.gridview .footer .pagebar{
+	border-top: 1px solid #f8b551;
+	}
+.gridview .footer .pagebar ul {
+	padding-bottom: 1px;
+	margin: 2px 0;
+	text-align: center;
+}
+.gridview .footer .pagebar ul li {
+	cursor: default;
+	height: 21px;
+	line-height: 21px;
+	padding:0 8px;
+	display: inline-block;
+ *display: inline;
+	zoom: 1;
+	background-color: #e4e4e4;
+	margin-left: 5px;
+}
+.gridview .footer .pagebar .current {
+	background-color: #e5611e;
+	color: #fcffa1;
+}
+.gridview table td {
+	border: 1px solid #e4e4e4;
+}
+.gridview table th,
+.gridview .bodier table td {
+	line-height: 20px;
+	padding: 3px;
+}
+.gridview .bodier table tr.odd {
+	background-color: #F2F2F2;
+}
+.gridview .bodier table tr.actived td {
+	background-color:#7b5947;
+	border-color: #6f4c3a;
+	color: #fff;
+	background-image: url(images/gridview-tr-actived-bg.gif);
+}
+.gridview .bodier table tr.actived td a{
+	color: white;
+
+}
+.gridview .bodier table tr.actived td a:hover{
+	color: red;
+
+}
+.gridview .bodier table tr.hover {
+	background-color: #ffffcc;
+}
+.gridview .contextMenu {
+	position: absolute;
+	display: none;
+	z-index: 99;
+	list-style: none;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #67080f;
+	background-color: #F2F2F2;
+ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#000000');
+	background-image: url(images/form-element-bg.gif);
+	background-position: -10px -10px;
+}
+.gridview .contextMenu li,
+.gridview .contextMenu li a {
+	display: block;
+	line-height:21px;
+	height: 21px;
+	text-decoration: none;
+}
+.gridview .contextMenu li a {
+	padding: 0 15px;
+	color: #4d4d4d;
+}
+.gridview .contextMenu li a:hover {
+	color: #f8b551;
+	background-color: #67080f;
+	background-image: url(images/body-bg.gif);
+}

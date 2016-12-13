@@ -7,7 +7,7 @@ namespace Framework.Model
 {
     public class JsonResult
     {
-        private JsonResult()
+        public JsonResult()
         {
 
         }

@@ -11,6 +11,7 @@ namespace Framework.Model
     public class MsgShowConfig
     {
         public const string EmptyFunction = "该实例未实现";
+        public const string NoLogin = "未登陆";
         public const string ObjectIsEmpty = "对象为空";
         public const string ParmNotEmpty = "参数不能为空";
         public const string NoEmpty = "不能为空";

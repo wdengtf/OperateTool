@@ -19,7 +19,7 @@ namespace YYT.Model
         public Nullable<int> isMenu { get; set; }
         public string Droit { get; set; }
         public string Url { get; set; }
-        public Nullable<int> SortId { get; set; }
+        public int SortId { get; set; }
         public Nullable<int> Pid { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> createtime { get; set; }
