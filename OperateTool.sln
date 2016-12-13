@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment", "Payment\Payment.csproj", "{1869F22C-75C3-42B5-A8E8-3A33E8DC2FA9}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire", "Questionnaire\Questionnaire.csproj", "{744CB47A-39C5-48C8-90C7-822A2620AF3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPackets", "RedPackets\RedPackets.csproj", "{DEF378D3-1977-42E4-A6E4-62131C25C56B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{D7F95F09-E460-476C-9B08-A6DE18555E14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manage", "Manage\Manage.csproj", "{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}"
 EndProject
@@ -22,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YYT.DAL", "YYT.DAL\YYT.DAL.csproj", "{CE5E6204-AA18-45C8-B650-AB5F2E7E5E9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YYT.BLL", "YYT.BLL\YYT.BLL.csproj", "{BC20B60E-8882-403D-9751-7E5DB77F405A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{F5ACB59C-5F88-400B-AA26-C25E1F508968}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +45,6 @@ Global
 		{DEF378D3-1977-42E4-A6E4-62131C25C56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEF378D3-1977-42E4-A6E4-62131C25C56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEF378D3-1977-42E4-A6E4-62131C25C56B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7F95F09-E460-476C-9B08-A6DE18555E14}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EE5B6D8-5F27-48E2-9296-FC7BEEBEEC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,6 +61,10 @@ Global
 		{BC20B60E-8882-403D-9751-7E5DB77F405A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC20B60E-8882-403D-9751-7E5DB77F405A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC20B60E-8882-403D-9751-7E5DB77F405A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5ACB59C-5F88-400B-AA26-C25E1F508968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5ACB59C-5F88-400B-AA26-C25E1F508968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5ACB59C-5F88-400B-AA26-C25E1F508968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5ACB59C-5F88-400B-AA26-C25E1F508968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +73,6 @@ Global
 		{C594B226-DB79-48CB-87BD-BE13378A01A9} = {CFD00838-BE0C-4260-8CC9-118DAA177F60}
 		{CE5E6204-AA18-45C8-B650-AB5F2E7E5E9C} = {CFD00838-BE0C-4260-8CC9-118DAA177F60}
 		{BC20B60E-8882-403D-9751-7E5DB77F405A} = {CFD00838-BE0C-4260-8CC9-118DAA177F60}
+		{F5ACB59C-5F88-400B-AA26-C25E1F508968} = {CFD00838-BE0C-4260-8CC9-118DAA177F60}
 	EndGlobalSection
 EndGlobal
