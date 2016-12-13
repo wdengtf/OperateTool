@@ -66,21 +66,27 @@
     <Compile Include="HT_Account.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HT_AccountModel.cs" />
     <Compile Include="HT_Menu.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HT_MenuModel.cs" />
     <Compile Include="HT_UserGroup.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HT_UserGroupModel.cs" />
     <Compile Include="Luck_Activity.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Luck_ActivityJackpot.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Luck_ActivityJackpotModel.cs" />
+    <Compile Include="Luck_ActivityModel.cs" />
     <Compile Include="Luck_ActivityPrize.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Luck_ActivityPrizeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QD_Channel.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
@@ -88,30 +94,40 @@
     <Compile Include="QD_ChannelLog.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="QD_ChannelLogModel.cs" />
+    <Compile Include="QD_ChannelModel.cs" />
     <Compile Include="QD_ChannelUser.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="QD_ChannelUserModel.cs" />
     <Compile Include="QD_ChanneWhilte.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="QD_ChanneWhilteModel.cs" />
     <Compile Include="WxCompany_Payment.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WxCompany_PaymentLog.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="WxCompany_PaymentLogModel.cs" />
+    <Compile Include="WxCompany_PaymentModel.cs" />
     <Compile Include="Wx_Config.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Wx_ConfigModel.cs" />
     <Compile Include="Wx_Redpack.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Wx_RedpackLog.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Wx_RedpackLogModel.cs" />
+    <Compile Include="Wx_RedpackModel.cs" />
     <Compile Include="YYT_Member.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="YYT_MemberModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="DbModel.edmx">
