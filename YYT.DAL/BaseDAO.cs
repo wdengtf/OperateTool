@@ -16,7 +16,7 @@ namespace YYT.DAL
             this.context = new YYT_DBEntities();
         }
 
-        public int Add<T>(T entity) where T : class
+        public  int Add<T>(T entity) where T : class
         {
             context.Set<T>().Add(entity);
             return context.SaveChanges();

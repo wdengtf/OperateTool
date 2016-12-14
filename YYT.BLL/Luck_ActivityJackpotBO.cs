@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -11,6 +12,7 @@ namespace YYT.BLL
     public class Luck_ActivityJackpotBO
     {
         private readonly BaseDAO dal = new BaseDAO();
+        private readonly Luck_ActivityJackpotDAO dao = new Luck_ActivityJackpotDAO();
         public Luck_ActivityJackpotBO()
         { }
 
@@ -22,6 +24,11 @@ namespace YYT.BLL
         public int Add(Luck_ActivityJackpot model)
         {
             return dal.Add(model);
+        }
+
+        public CommandInfo AddSql(Luck_ActivityJackpot model)
+        {
+            return dao.AddSql(model);
         }
 
         /// <summary>

@@ -62,6 +62,7 @@
     <Compile Include="Handle\ReflectionHelper.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="Model\CommandInfo.cs" />
+    <Compile Include="Model\CommandParm.cs" />
     <Compile Include="Model\JqGridPagingModel.cs" />
     <Compile Include="Model\JsonResult.cs" />
     <Compile Include="Model\MsgShowConfig.cs" />

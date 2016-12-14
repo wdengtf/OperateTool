@@ -163,7 +163,7 @@ namespace Web.Manage.data.Activity.Lottery
                     
                     for (int i = actJackpotList.Count; i < luckActivityPrizeModel.num; i++)
                     {
-                        list.Add(ACT_JackpotBus.AddSql(actJackpotModel));
+                        list.Add(luckActivityJackpotBo.AddSql(actJackpotModel));
                     }
 
                     if (sqlBo.ExecuteSqlTran(list) > 0)
