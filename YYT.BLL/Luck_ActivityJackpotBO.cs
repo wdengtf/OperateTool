@@ -12,7 +12,7 @@ namespace YYT.BLL
     public class Luck_ActivityJackpotBO
     {
         private readonly BaseDAO dal = new BaseDAO();
-        private readonly Luck_ActivityJackpotDAO dao = new Luck_ActivityJackpotDAO();
+        private readonly Luck_ActivityJackpotDAO dalSql = new Luck_ActivityJackpotDAO();
         public Luck_ActivityJackpotBO()
         { }
 
@@ -26,9 +26,14 @@ namespace YYT.BLL
             return dal.Add(model);
         }
 
-        public CommandInfo AddSql(Luck_ActivityJackpot model)
+        public int AddSql(Luck_ActivityJackpot model)
         {
-            return dao.AddSql(model);
+            return dalSql.AddSql(model);
+        }
+
+        public CommandInfo AddSqlCommand(Luck_ActivityJackpot model)
+        {
+            return dalSql.AddSqlCommand(model);
         }
 
         /// <summary>

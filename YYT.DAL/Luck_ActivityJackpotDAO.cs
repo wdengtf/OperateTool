@@ -15,10 +15,10 @@ namespace YYT.DAL
         private SQLHelperBase SQLHelper = new SQLHelperBase();
         public Luck_ActivityJackpotDAO()
         { }
+
         /// <summary>
         /// 添加SQL
         /// </summary>
-
         private CommandParm AddCommandInfo(Luck_ActivityJackpot model)
         {
             StringBuilder strSql = new StringBuilder();
@@ -56,7 +56,7 @@ namespace YYT.DAL
         /// 增加一条数据
         /// </summary>
 
-        public Int32 Insert(Luck_ActivityJackpot model)
+        public int AddSql(Luck_ActivityJackpot model)
         {
             CommandParm Comm = AddCommandInfo(model);
             object obj = SQLHelper.GetDataSet(Comm.strSql, Comm.SqlPara);
@@ -73,7 +73,7 @@ namespace YYT.DAL
         /// 增加一条数据[用于事务处理]
         /// </summary>
 
-        public CommandInfo AddSql(Luck_ActivityJackpot model)
+        public CommandInfo AddSqlCommand(Luck_ActivityJackpot model)
         {
             CommandParm Comm = AddCommandInfo(model);
             if (Comm == null)
