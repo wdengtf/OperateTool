@@ -212,21 +212,17 @@ var commonFun = {
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return (r[2]); return "";
     },
-    //转日期
-    formatDate: function (val) {
-        var re = /-?\d+/;
-        var m = re.exec(val);
-        var d = new Date(parseInt(m[0]));
-        // 按【2012-02-13】的格式返回日期
-        return d.format("yyyy-MM-dd");
-    },
     //转时间
     formatTime: function (val) {
-        var re = /-?\d+/;
-        var m = re.exec(val);
-        var d = new Date(parseInt(m[0]));
-        // 按【2012-02-13 09:09:09】的格式返回日期
-        return d.format("yyyy-MM-dd hh:mm:ss");
+        if (!paraVerify.verifyStr(val))
+            return val;
+        if (val.indexOf('T') > 0)
+            val = val.replace("T", " ");
+
+        if (val.indexOf('.') > 0)
+            val = val.split(".")[0];
+
+        return val;
     },
     timeTransDate: function (val) {
         if (!paraVerify.verifyStr(val))

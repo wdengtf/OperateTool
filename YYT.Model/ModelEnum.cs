@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace YYT.Model
 {
-    public enum HT_MenuStatus
+
+    /// <summary>
+    /// 默认状态
+    /// </summary>
+    public enum StatusEnmu
     {
         /// <summary>
         /// 正常
         /// </summary>
-        Normal = 0,
+        Normal = 1,
         /// <summary>
         /// 锁定
         /// </summary>
-        Locking = 1,
+        Locking = 0,
     }
 
+    /// <summary>
+    /// 栏目菜单
+    /// </summary>
     public enum HT_MenuMenu
     {
         /// <summary>
@@ -37,7 +44,7 @@ namespace YYT.Model
     /// <summary>
     /// 抽奖奖品奖池状态
     /// </summary>
-    public enum Luck_ActivityJackpotStatus
+    public enum LuckActivityJackpotStatus
     {
         /// <summary>
         /// 未抽奖
@@ -47,5 +54,14 @@ namespace YYT.Model
         /// 已抽奖
         /// </summary>
         AlreadyDraw = 1
+    }
+
+    /// <summary>
+    /// 抽奖活动规则
+    /// </summary>
+    public enum Luck_ActivityRules
+    {
+        Everyday = 1,
+        Total = 2,
     }
 }

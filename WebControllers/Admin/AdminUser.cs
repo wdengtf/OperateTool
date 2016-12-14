@@ -87,7 +87,7 @@ namespace WebControllers.Admin
 
 
                 Expression<Func<HT_Menu, bool>> where = PredicateExtensionses.True<HT_Menu>();
-                where = where.AndAlso(p => p.status == (int)HT_MenuStatus.Normal);
+                where = where.AndAlso(p => p.status == (int)StatusEnmu.Normal);
                 List<string> listDroit = new List<string>(sDroit.Split(','));
                 where = where.AndAlso(p => listDroit.Contains(p.id.ToString()));
                 Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;

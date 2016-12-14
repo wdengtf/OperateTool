@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理系统</title>
+    <script type="text/javascript">
+        function add_menu(title, url) {
+            var mainFrame = document.getElementById("mainFrame");
+            window.mainFrame.addTab(title, url);
+        }
+    </script>
+</head>
+<frameset rows="53,*" border="0" frameborder="0" framespacing="0" marginwidth="0" marginheight="0">
+    <frame src="top.aspx" id="mainTop" name="mainTop" scrolling="no">
+        <frameset cols="160,*" frameborder="no" border="0" framespacing="0">
+            <frame src="left.aspx" id="leftFrame" name="leftFrame" width="100%" height="100%" scrolling="yes">
+            </frame>
+            <frame src="main.aspx" id="mainFrame" name="mainFrame" width="100%" height="100%" scrolling="yes">
+            </frame>
+        </frameset>
+    </frame>
+</frameset>
+<noframes>
+    <body>
+        很抱歉，浏览器不支援框架功能，请转用新的浏览器。
+    </body>
+</noframes>
+</html>

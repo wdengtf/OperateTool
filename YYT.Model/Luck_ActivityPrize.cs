@@ -11,7 +11,7 @@ namespace YYT.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
     public partial class Luck_ActivityPrize
     {
         public int Id { get; set; }
@@ -31,5 +31,11 @@ namespace YYT.Model
         public Nullable<System.DateTime> Createtime { get; set; }
         public Nullable<int> Position { get; set; }
         public string PositionImg { get; set; }
+
+        /// <summary>
+        /// 领取总数
+        /// </summary>
+        [NotMapped]
+        public int NotReceiveTotal { get; set; }
     }
 }

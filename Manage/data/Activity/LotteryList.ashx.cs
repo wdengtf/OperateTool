@@ -6,10 +6,10 @@ using Framework.Model;
 using System.Linq.Expressions;
 using Framework.EF;
 using Framework;
-using WebControllers.Handle;
 using Framework.Log;
 using YYT.BLL;
 using YYT.Model;
+using WebControllers.Handle;
 
 namespace Web.Manage.data.Activity
 {
@@ -19,6 +19,7 @@ namespace Web.Manage.data.Activity
     public class LotteryList : BaseHandle
     {
         private Luck_ActivityBO luckActivityBo = new Luck_ActivityBO();
+        private Luck_ActivityPrizeBO luckActivityPrizeBo = new Luck_ActivityPrizeBO();
         public override JsonResult HandleProcess()
         {
             JsonResult re = new JsonResult();
@@ -94,8 +95,17 @@ namespace Web.Manage.data.Activity
                 {
                     return JsonResult.FailResult(MsgShowConfig.ParmNotEmpty);
                 }
-
                 List<string> idList = new List<string>(idStr.Split(','));
+
+                //判断奖品记录是否存在
+                Expression<Func<Luck_ActivityPrize, bool>> jacketWhere = PredicateExtensionses.True<Luck_ActivityPrize>();
+                jacketWhere = jacketWhere.AndAlso(p => idList.Contains(p.sortid.ToString()));
+                List<Luck_ActivityPrize> luckActivityJackpotList = luckActivityPrizeBo.FindAll<int>(jacketWhere);
+                if (luckActivityJackpotList != null && luckActivityJackpotList.Count > 0)
+                {
+                    return JsonResult.FailResult("请先删除奖品记录");
+                }
+
                 Expression<Func<Luck_Activity, bool>> where = PredicateExtensionses.True<Luck_Activity>();
                 where = where.AndAlso(p => idList.Contains(p.Id.ToString()));
                 if (luckActivityBo.DeleteByWhere(where) > 0)

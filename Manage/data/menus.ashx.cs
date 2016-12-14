@@ -45,10 +45,11 @@ namespace Web.Manage.data
             try
             {
                 Expression<Func<HT_Menu, bool>> where = PredicateExtensionses.True<HT_Menu>();
-                where = where.AndAlso(p => p.Pid == 0 && p.isMenu == (int)HT_MenuMenu.MainMenu && p.status == (int)HT_MenuStatus.Normal);
+                where = where.AndAlso(p => p.Pid == 0 && p.isMenu == (int)HT_MenuMenu.MainMenu && p.status == (int)StatusEnmu.Normal);
                 List<string> listDroit = new List<string>(manageUserModel.UserDroit.Split(','));
                 where = where.AndAlso(p => listDroit.Contains(p.isMenu.Value.ToString()));
                 Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+                defaultSort = "asc";
                 List<HT_Menu> list = menuBO.FindAll<int>(where, orderBy, defaultSort);
 
                 re = JsonResult.SuccessResult(list);
@@ -71,10 +72,11 @@ namespace Web.Manage.data
             {
                 int pid = Utility.FNumeric("pid");
                 Expression<Func<HT_Menu, bool>> where = PredicateExtensionses.True<HT_Menu>();
-                where = where.AndAlso(p => p.Pid == pid && p.isMenu == (int)HT_MenuMenu.ListMenu && p.status == (int)HT_MenuStatus.Normal);
+                where = where.AndAlso(p => p.Pid == pid && p.isMenu == (int)HT_MenuMenu.ListMenu && p.status == (int)StatusEnmu.Normal);
                 List<string> listDroit = new List<string>(manageUserModel.UserDroit.Split(','));
                 where = where.AndAlso(p => listDroit.Contains(p.isMenu.Value.ToString()));
                 Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+                defaultSort = "asc";
                 List<HT_Menu> list = menuBO.FindAll<int>(where, orderBy, defaultSort);
 
                 re = JsonResult.SuccessResult(list);

@@ -17,6 +17,7 @@ namespace Web.Manage.data.User
     public class account : BaseHandle
     {
         private HT_AccountBO accountBO = new HT_AccountBO();
+
         public override JsonResult HandleProcess()
         {
             JsonResult re = new JsonResult();

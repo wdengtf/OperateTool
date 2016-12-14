@@ -64,14 +64,14 @@ namespace Web.Manage.data.Activity.Lottery
                 clspage.PageSize = pageSize;
                 clspage.Table = "  Luck_ActivityPrize ";
                 clspage.Order = " id ";
-                clspage.columns = " *,NotReceiveTotal=(select COUNT(id) from Luck_ActivityJackpot where PrizeId= Luck_ActivityPrize.id and Status=" + (int)Luck_ActivityJackpotStatus.NotDraw + ")";
+                clspage.columns = " *,NotReceiveTotal=(select COUNT(id) from Luck_ActivityJackpot where PrizeId= Luck_ActivityPrize.id and Status=" + (int)LuckActivityJackpotStatus.NotDraw + ")";
                 clspage.where = strWhere;
 
                 DataTable dt = clspage.getDataByPage(pageIndex, out totalRecord);
-                List<Luck_ActivityJackpot> lotteryPrizeList = new FromToObj().ConvertToModel<Luck_ActivityJackpot>(dt);
+                List<Luck_ActivityPrize> lotteryPrizeList = new FromToObj().ConvertToModel<Luck_ActivityPrize>(dt);
                 int totalPage = GetTotalPage(totalRecord, pageSize);
 
-                JqGridPagingModel<Luck_ActivityJackpot> jqGridPagingModel = new JqGridPagingModel<Luck_ActivityJackpot>(pageIndex, totalPage, totalRecord, lotteryPrizeList);
+                JqGridPagingModel<Luck_ActivityPrize> jqGridPagingModel = new JqGridPagingModel<Luck_ActivityPrize>(pageIndex, totalPage, totalRecord, lotteryPrizeList);
                 re = JsonResult.SuccessResult(jqGridPagingModel);
             }
             catch (Exception ex)
@@ -153,7 +153,7 @@ namespace Web.Manage.data.Activity.Lottery
                     actJackpotModel.channelUserId = manageUserModel.UserId;
                     actJackpotModel.ActivityId = luckActivityPrizeModel.Id;
                     actJackpotModel.PrizeId = id;
-                    actJackpotModel.Status = (int)Luck_ActivityJackpotStatus.NotDraw;
+                    actJackpotModel.Status = (int)LuckActivityJackpotStatus.NotDraw;
                     actJackpotModel.data_type = "";
                     actJackpotModel.out_id = "";
                     actJackpotModel.Ip = "";

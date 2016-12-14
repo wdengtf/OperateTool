@@ -1,29 +1,19 @@
 ﻿var format = {
-    frequency: function (cellvalue, options, rowdata) {
+    rules: function (cellvalue, options, rowdata) {
         if (cellvalue == 1)
-            return '每天';
+            return '每天一次';
         else if (cellvalue == 2)
-            return '总共';
+            return '总共一次';
         else
             return '--';
     },
-    state: function (cellvalue, options, rowdata) {
-        var value = "--";
-        switch (cellvalue) {
-            case 0:
-                value = '锁定';
-                break;
-            case 1:
-                value = '正常';
-                break;
-        }
-        return value;
-    },
-    img: function (cellvalue, options, rowdata) {
-        if (paraVerify.verifyStr(cellvalue))
-            return '<img src="' + commonFun.returnImgUrl(cellvalue) + '" style="width:50px;height:50px;" />';
+    prizeType: function (cellvalue, options, rowdata) {
+        if (cellvalue == 1)
+            return '实物';
+        else if (cellvalue == 2)
+            return '卡券';
         else
-            return '<img src="../../images/logined_default.png" style="width:50px;height:50px;" />';
+            return '--';
     },
 }
 var commonOper = {
@@ -35,16 +25,15 @@ var commonOper = {
         title: "抽奖活动",
         addEditDialogHeight: 600,
         addEditDialogWidth: 750,
-        colNames: ['id', '活动名称', '开始日期', '结束日期', '活动频率', '活动次数', '状态', '创建日期', '操作'],
+        colNames: ['id', '活动名称', '开始日期', '结束日期', '活动规则', '状态', '创建日期', '操作'],
         colModel: [
          { name: 'Id', index: 'Id', width: 40, align: "center", sortable: false },
-         { name: 'Activity_name', index: 'Activity_name', width: 80, align: "center", sortable: false },
-         { name: 'Startdate', index: 'Startdate', width: 80, align: "center", sortable: false },
-         { name: 'Enddate', index: 'Enddate', width: 80, align: "center", sortable: false },
-         { name: 'Frequency', index: 'Frequency', width: 60, align: "center", sortable: false, formatter: format.frequency },
-         { name: 'MaxNum', index: 'MaxNum', width: 40, align: "center", sortable: false },
-         { name: 'Status', index: 'Status', width: 40, align: "center", sortable: false, formatter: format.state },
-         { name: 'Createtime', index: 'Createtime', width: 100, align: "center", sortable: false },
+         { name: 'Name', index: 'Name', width: 80, align: "center", sortable: false },
+         { name: 'Startdate', index: 'Startdate', width: 80, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
+         { name: 'Enddate', index: 'Enddate', width: 80, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
+         { name: 'Rules', index: 'Rules', width: 60, align: "center", sortable: false, formatter: format.rules },
+         { name: 'Status', index: 'Status', width: 40, align: "center", sortable: false, formatter: commonJqGrid.defaultState },
+         { name: 'Createtime', index: 'Createtime', width: 100, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
          { name: 'Operate', index: 'Operate', width: 100, align: "center", sortable: false },
         ],
         getSearchParameter: function () {
@@ -59,19 +48,19 @@ var commonOper = {
         subGrid: true,
         subUrl: "/data/Activity/Lottery/LotteryPrize.ashx",
         subTitle: "抽奖奖品",
-        subColNames: ['id', '奖品名称', '奖品图片', '奖品等级', '奖品价格', '奖品数量', '剩余奖品数量', '奖品位置', '状态', '优惠券id', '创建日期', '操作'],
+        subColNames: ['id', '奖品名称', '奖品图片', '奖品等级', '奖品价格', '奖品数量', '剩余奖品数量', '奖品位置', '状态', '奖品类型', '创建日期', '操作'],
         subColModel: [
          { name: 'Id', index: 'Id', width: 40, align: "center", sortable: false },
-         { name: 'Name', index: 'Name', width: 80, align: "center", sortable: false },
-         { name: 'Win_img', index: 'Win_img', width: 70, align: "center", sortable: false, formatter: format.img },
-         { name: 'Level', index: 'Level', width: 60, align: "center", sortable: false },
-         { name: 'Price', index: 'Price', width: 60, align: "center", sortable: false },
-         { name: 'Num', index: 'Num', width: 40, align: "center", sortable: false },
+         { name: 'name', index: 'name', width: 80, align: "center", sortable: false },
+         { name: 'PrizeImg', index: 'PrizeImg', width: 70, align: "center", sortable: false, formatter: commonJqGrid.defaultImg },
+         { name: 'PrizeLevel', index: 'PrizeLevel', width: 60, align: "center", sortable: false },
+         { name: 'price', index: 'price', width: 60, align: "center", sortable: false },
+         { name: 'num', index: 'num', width: 40, align: "center", sortable: false },
          { name: 'NotReceiveTotal', index: 'NotReceiveTotal', width: 40, align: "center", sortable: false },
-         { name: 'Win_index', index: 'Win_index', width: 40, align: "center", sortable: false },
-         { name: 'Status', index: 'Status', width: 40, align: "center", sortable: false, formatter: format.state },
-         { name: 'CouponsSortId', index: 'CouponsSortId', width: 40, align: "center", sortable: false },
-         { name: 'Createtime', index: 'Createtime', width: 100, align: "center", sortable: false },
+         { name: 'Position', index: 'Position', width: 40, align: "center", sortable: false },
+         { name: 'Status', index: 'Status', width: 40, align: "center", sortable: false, formatter: commonJqGrid.defaultState },
+         { name: 'PrizeType', index: 'PrizeType', width: 40, align: "center", sortable: false, formatter: format.prizeType },
+         { name: 'Createtime', index: 'Createtime', width: 100, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
          { name: 'Operate', index: 'Operate', width: 120, align: "center", sortable: false },
         ],
     },

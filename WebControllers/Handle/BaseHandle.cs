@@ -11,6 +11,10 @@ using Framework.Model;
 using Framework.Validate;
 using WebControllers.Model;
 using WebControllers.Admin;
+using System.Linq.Expressions;
+using Framework.EF;
+using YYT.BLL;
+using YYT.Model;
 
 namespace WebControllers.Handle
 {
@@ -152,6 +156,69 @@ namespace WebControllers.Handle
             _flag = true;
             return _flag;
         }
+
+        /// <summary>
+        /// 列表
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="expre"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        //protected virtual JsonResult GetList<T>(Expression<Func<T, bool>> expre, HandleCall<T> k) where T : class
+        //{
+        //    JsonResult re = new JsonResult();
+        //    try
+        //    {
+        //        int pageIndex = Utility.FNumeric("page");
+        //        int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
+        //        int totalRecord = 0;
+
+        //        List<T> list = k.GetPage(expre, pageIndex, pageSize, sortField, defaultSort, out totalRecord);
+
+        //        int totalPage = GetTotalPage(totalRecord, pageSize);
+        //        JqGridPagingModel<T> jqGridPagingModel = new JqGridPagingModel<T>(pageIndex, totalPage, totalRecord, list);
+        //        re = JsonResult.SuccessResult(jqGridPagingModel);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        re = JsonResult.FailResult(MsgShowConfig.Exception);
+        //        LogService.logDebug(ex);
+        //    }
+        //    return re;
+        //}
+
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="idStr"></param>
+        /// <returns></returns>
+        //protected virtual JsonResult DelData<T>(BaseBO<T> t) where T : class
+        //{
+        //    JsonResult re = new JsonResult();
+        //    try
+        //    {
+        //        string idStr = Utility.RF("id");
+        //        if (String.IsNullOrEmpty(idStr))
+        //        {
+        //            return JsonResult.FailResult(MsgShowConfig.ParmNotEmpty);
+        //        }
+
+        //        List<string> list = new List<string>(idStr.Split(','));
+        //        Expression<Func<T, bool>> where = PredicateExtensionses.True<T>();
+        //        where = where.AndAlso(p => list.Contains(p.id.ToString()));
+        //        if (t.DeleteByWhere(where) > 0)
+        //        {
+        //            re = JsonResult.SuccessResult(MsgShowConfig.Success);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        re = JsonResult.FailResult(MsgShowConfig.Exception);
+        //        LogService.logDebug(ex);
+        //    }
+        //    return re;
+        //}
 
         public bool IsReusable
         {

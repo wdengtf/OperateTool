@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseBO.cs" />
     <Compile Include="Common\SqlBO.cs" />
     <Compile Include="HT_AccountBO.cs" />
     <Compile Include="HT_MenuBO.cs" />

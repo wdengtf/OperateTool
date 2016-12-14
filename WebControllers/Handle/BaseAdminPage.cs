@@ -14,6 +14,7 @@ namespace WebControllers.Handle
         protected string strMsg = "";
         protected ManageUserModel manageUserModel = null;
         protected AdminUser adminUser = new AdminUser();
+        protected string defaultSort = "desc";//默认排序
 
         /// <summary>
         /// 后台页面公共程序

@@ -315,5 +315,14 @@ namespace Framework
         {
             return AppDomain.CurrentDomain.BaseDirectory;
         }
+
+        /// <summary>
+        /// 执行js脚本
+        /// </summary>
+        /// <param name="strScript"></param>
+        public static void ScriptMessage(string strScript)
+        {
+            System.Web.HttpContext.Current.Response.Write("<script>" + strScript + "</script>");
+        }
     }
 }

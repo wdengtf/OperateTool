@@ -38,7 +38,7 @@
         if (optionsObject.rowNum) _this.options.rowNum = optionsObject.rowNum;
         if (optionsObject.multiselect == false) _this.options.multiselect = false;
         if (optionsObject.urlParm) _this.options.urlParm = optionsObject.urlParm;
-        if (optionsObject.addEditDialogHeight) _this.options.addEditDialogHeightadd = optionsObject.addEditDialogHeight;
+        if (optionsObject.addEditDialogHeight) _this.options.addEditDialogHeight = optionsObject.addEditDialogHeight;
         if (optionsObject.addEditDialogWidth) _this.options.addEditDialogWidth = optionsObject.addEditDialogWidth;
         if (optionsObject.gridContainerId) _this.options.gridContainerId = optionsObject.gridContainerId;
         if (paraVerify.verifyJson(optionsObject.gridRowOper)) _this.options.gridRowOper = optionsObject.gridRowOper;
@@ -264,5 +264,33 @@
     //搜索
     searchGridData: function () {
         $("#" + this.options.gridContainerId).jqGrid('setGridParam', { url: this.options.url + "?action=getList" + this.options.getSearchParameter(), page: 1 }).trigger("reloadGrid");
+    },
+    //默认状态
+    defaultState: function (cellvalue, options, rowdata) {
+        var value = "--";
+        switch (cellvalue) {
+            case 0:
+                value = '锁定';
+                break;
+            case 1:
+                value = '正常';
+                break;
+        }
+        return value;
+    },
+    //默认图片
+    defaultImg: function (cellvalue, options, rowdata) {
+        if (paraVerify.verifyStr(cellvalue))
+            return '<img src="' + commonFun.returnImgUrl(cellvalue) + '" style="width:60px;height:60px;" />';
+        else
+            return '<img src="/images/logined_default.png" style="width:60px;height:60px;" />';
+    },
+    //时间转日期
+    timeTransDate: function (cellvalue, options, rowdata) {
+        return commonFun.timeTransDate(cellvalue);
+    },
+    //时间格式化
+    formatTime: function (cellvalue, options, rowdata) {
+        return commonFun.formatTime(cellvalue);
     },
 }
