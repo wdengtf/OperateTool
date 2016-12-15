@@ -54,7 +54,7 @@ namespace Web.Manage.User
         {
             Expression<Func<HT_Menu, bool>> where = PredicateExtensionses.True<HT_Menu>();
             where = where.AndAlso(p => p.isMenu >= (int)HT_MenuMenu.MainMenu);
-            Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+            Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
             defaultSort = "asc";
             List<HT_Menu> menuList = menuBO.FindAll<int>(where, orderBy, defaultSort);
 

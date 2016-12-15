@@ -26,5 +26,6 @@ namespace YYT.Model
         public string Introduction { get; set; }
         public string descr { get; set; }
         public Nullable<System.DateTime> Createtime { get; set; }
+        public Nullable<int> maxNum { get; set; }
     }
 }

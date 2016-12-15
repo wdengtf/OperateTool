@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace Framework
 {
@@ -195,22 +196,26 @@ namespace Framework
             return reg.IsMatch(str);
         }
 
+        #region 随机数
+        private static char[] constant =
+      {
+        '0','1','2','3','4','5','6','7','8','9',
+        'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+      };
+        private static char[] constantUpperCase = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+        private static char[] constantNum ={'0','1','2','3','4','5','6','7','8','9'};
         /// <summary>生成指定长度的字符串</summary>
         /// <param name="len">指定长度</param> 
         /// <returns></returns>
-        public static string GetRandomStr(int len)
+        public static string GetRandomStr(int len, int cycleTimes = 1)
         {
-            string pwdchars = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-            string tmpstr = "";
-            int iRandNum;
-            Random rnd = new Random();
+            System.Text.StringBuilder newRandom = new System.Text.StringBuilder(36);
+            Random rd = new Random(int.Parse(DateTime.Now.ToString("HHmmssfff")) + cycleTimes);
             for (int i = 0; i < len; i++)
             {
-                iRandNum = rnd.Next(pwdchars.Length);
-                tmpstr += pwdchars[iRandNum];
+                newRandom.Append(constant[rd.Next(36)]);
             }
-            return tmpstr;
+            return newRandom.ToString();
         }
 
         /// <summary>
@@ -218,35 +223,33 @@ namespace Framework
         /// </summary>
         /// <param name="len"></param>
         /// <returns></returns>
-        public static string GetRandomNum(int len)
+        public static string GetRandomNum(int len, int cycleTimes = 1)
         {
-            string pwdchars = "0123456789";
-
-            string tmpstr = "";
-            int iRandNum;
-            Random rnd = new Random();
+            System.Text.StringBuilder newRandom = new System.Text.StringBuilder(10);
+            Random rd = new Random(int.Parse(DateTime.Now.ToString("HHmmssfff")) + cycleTimes);
             for (int i = 0; i < len; i++)
             {
-                iRandNum = rnd.Next(pwdchars.Length);
-                tmpstr += pwdchars[iRandNum];
+                newRandom.Append(constantNum[rd.Next(10)]);
             }
-            return tmpstr;
+            return newRandom.ToString();
         }
 
         /// <summary>
-        /// 生成随机数
+        /// 获取指定长度的大写字母
         /// </summary>
-        /// <param name="startNum">最小数字</param>
-        /// <param name="endNum">最大数字</param>
+        /// <param name="Length"></param>
         /// <returns></returns>
-        public static int GetRandomNum(int startNum, int endNum)
+        public static string GetUpperCaseRandom(int length, int cycleTimes = 1)
         {
-            Random ran = new Random();
-            int RandKey = ran.Next(startNum, endNum);
-
-            return RandKey;
+            System.Text.StringBuilder newRandom = new System.Text.StringBuilder(26);
+            Random rd = new Random(int.Parse(DateTime.Now.ToString("HHmmssfff")) + cycleTimes);
+            for (int i = 0; i < length; i++)
+            {
+                newRandom.Append(constantUpperCase[rd.Next(26)]);
+            }
+            return newRandom.ToString();
         }
-
+        #endregion
 
         /// <summary>
         /// 将对象转换为json
@@ -289,6 +292,77 @@ namespace Framework
         }
 
         /// <summary>
+        /// //取得当前domain路径
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCurPath()
+        {
+            return AppDomain.CurrentDomain.BaseDirectory;
+        }
+
+        /// <summary>
+        /// 执行js脚本
+        /// </summary>
+        /// <param name="strScript"></param>
+        public static void ScriptMessage(string strScript)
+        {
+            System.Web.HttpContext.Current.Response.Write("<script>" + strScript + "</script>");
+        }
+
+        #region 通过Request获取信息
+        /// <summary>
+        /// 获取IP
+        /// </summary>
+        /// <returns></returns>
+        public static string GetRealIp()
+        {
+            string ip = "";
+            try
+            {
+                if (System.Web.HttpContext.Current == null)
+                    return ip;
+
+                if (System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == null || System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == string.Empty)
+                {
+                    ip = System.Web.HttpContext.Current.Request.UserHostAddress;
+                }
+                else
+                {
+                    ip = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+                }
+            }
+            catch (Exception e)
+            {
+                LogService.logDebug(e);
+            }
+
+            return ip;
+        }
+
+        /// <summary>
+        /// 功能：获取浏览器名称
+        /// 作者：wdeng
+        /// 日期：2015-08-27
+        /// </summary>
+        /// <returns></returns>
+        public static string GetBrowserName()
+        {
+            string name = "";
+            try
+            {
+                HttpBrowserCapabilities bc = System.Web.HttpContext.Current.Request.Browser;
+                name = bc.Browser;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return name;
+        }
+
+        /// <summary>
         /// 功能：获取浏览器用户代理
         /// </summary>
         /// <returns></returns>
@@ -306,23 +380,6 @@ namespace Framework
 
             return name;
         }
-
-        /// <summary>
-        /// //取得当前domain路径
-        /// </summary>
-        /// <returns></returns>
-        public static string GetCurPath()
-        {
-            return AppDomain.CurrentDomain.BaseDirectory;
-        }
-
-        /// <summary>
-        /// 执行js脚本
-        /// </summary>
-        /// <param name="strScript"></param>
-        public static void ScriptMessage(string strScript)
-        {
-            System.Web.HttpContext.Current.Response.Write("<script>" + strScript + "</script>");
-        }
+        #endregion
     }
 }

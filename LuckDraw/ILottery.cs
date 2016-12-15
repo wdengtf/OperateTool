@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YYT.Model;
 
 namespace LuckDraw
 {
@@ -23,15 +24,32 @@ namespace LuckDraw
         /// 会员绑定抽奖记录
         /// </summary>
         /// <returns></returns>
-        int MemberBindLottery(MemberBaseModel member, int activity_id, string win_name, string win_phone);
+        Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id);
 
         /// <summary>
         /// 显示中奖奖品
         /// </summary>
         /// <returns></returns>
-        List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, int activity_id);
+        List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList);
 
+        /// <summary>
+        /// 验证抽奖活动
+        /// </summary>
+        /// <param name="activity_id"></param>
+        /// <returns></returns>
+        Luck_Activity VerifyLottery(int activity_id);
+
+        /// <summary>
+        /// 返回提示消息
+        /// </summary>
+        /// <returns></returns>
         string GetMessage();
+
+        /// <summary>
+        /// 执行结果
+        /// </summary>
+        /// <returns></returns>
+        bool GetResultState();
 
         /// <summary>
         /// 事件

@@ -1,9 +1,9 @@
 ﻿var format = {
     rules: function (cellvalue, options, rowdata) {
         if (cellvalue == 1)
-            return '每天一次';
+            return '每天';
         else if (cellvalue == 2)
-            return '总共一次';
+            return '总共';
         else
             return '--';
     },
@@ -25,13 +25,14 @@ var commonOper = {
         title: "抽奖活动",
         addEditDialogHeight: 600,
         addEditDialogWidth: 750,
-        colNames: ['id', '活动名称', '开始日期', '结束日期', '活动规则', '状态', '创建日期', '操作'],
+        colNames: ['id', '活动名称', '开始日期', '结束日期', '活动规则', '活动次数', '状态', '创建日期', '操作'],
         colModel: [
          { name: 'Id', index: 'Id', width: 40, align: "center", sortable: false },
          { name: 'Name', index: 'Name', width: 80, align: "center", sortable: false },
          { name: 'Startdate', index: 'Startdate', width: 80, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
          { name: 'Enddate', index: 'Enddate', width: 80, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
          { name: 'Rules', index: 'Rules', width: 60, align: "center", sortable: false, formatter: format.rules },
+         { name: 'maxNum', index: 'maxNum', width: 60, align: "center", sortable: false },
          { name: 'Status', index: 'Status', width: 40, align: "center", sortable: false, formatter: commonJqGrid.defaultState },
          { name: 'Createtime', index: 'Createtime', width: 100, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
          { name: 'Operate', index: 'Operate', width: 100, align: "center", sortable: false },

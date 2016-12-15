@@ -48,7 +48,7 @@ namespace Web.Manage.data
                 where = where.AndAlso(p => p.Pid == 0 && p.isMenu == (int)HT_MenuMenu.MainMenu && p.status == (int)StatusEnmu.Normal);
                 List<string> listDroit = new List<string>(manageUserModel.UserDroit.Split(','));
                 where = where.AndAlso(p => listDroit.Contains(p.isMenu.Value.ToString()));
-                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
                 defaultSort = "asc";
                 List<HT_Menu> list = menuBO.FindAll<int>(where, orderBy, defaultSort);
 
@@ -75,7 +75,7 @@ namespace Web.Manage.data
                 where = where.AndAlso(p => p.Pid == pid && p.isMenu == (int)HT_MenuMenu.ListMenu && p.status == (int)StatusEnmu.Normal);
                 List<string> listDroit = new List<string>(manageUserModel.UserDroit.Split(','));
                 where = where.AndAlso(p => listDroit.Contains(p.isMenu.Value.ToString()));
-                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
                 defaultSort = "asc";
                 List<HT_Menu> list = menuBO.FindAll<int>(where, orderBy, defaultSort);
 

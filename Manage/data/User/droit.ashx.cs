@@ -55,7 +55,7 @@ namespace Web.Manage.data.User
                 {
                     expre = expre.And(p => p.Pid == menuid);
                 }
-                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
                 defaultSort = "asc";
                 List<HT_Menu> list = menuBO.FindAllByPage<int>(expre, orderBy, defaultSort, pageIndex, pageSize, out totalRecord);
 

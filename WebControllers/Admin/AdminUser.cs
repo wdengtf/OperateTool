@@ -90,7 +90,7 @@ namespace WebControllers.Admin
                 where = where.AndAlso(p => p.status == (int)StatusEnmu.Normal);
                 List<string> listDroit = new List<string>(sDroit.Split(','));
                 where = where.AndAlso(p => listDroit.Contains(p.id.ToString()));
-                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId;
+                Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
                 List<HT_Menu> list = menuBO.FindAll<int>(where, orderBy, "desc");
                 if (list == null || list.Count < 1)
                     return manageDroitList;

@@ -14,3 +14,67 @@
 出错类：Framework.Log.LogService property: [(null)] - 
 错误描述：网站关闭,或重启时时间：2016/12/15 7:03:51
  
+
+ 
+记录时间：2016-12-15 11:25:58,769 
+线程ID:[83] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/15 11:25:58
+ 
+
+ 
+记录时间：2016-12-15 11:25:59,231 
+线程ID:[368] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/15 11:25:59
+ 
+
+ 
+记录时间：2016-12-15 11:25:59,232 
+线程ID:[375] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/15 11:25:59
+ 
+
+ 
+记录时间：2016-12-15 11:26:18,297 
+线程ID:[376] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator修改数据，成功！
+ 
+
+ 
+记录时间：2016-12-15 11:34:02,939 
+线程ID:[82] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/15 11:34:02
+ 
+
+ 
+记录时间：2016-12-15 11:34:03,617 
+线程ID:[404] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/15 11:34:03
+ 
+
+ 
+记录时间：2016-12-15 11:40:19,317 
+线程ID:[396] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/15 11:40:19
+ 
+
+ 
+记录时间：2016-12-15 11:40:19,733 
+线程ID:[404] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/15 11:40:19
+ 

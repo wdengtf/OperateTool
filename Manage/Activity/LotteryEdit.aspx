@@ -25,12 +25,13 @@
             <td height="25" align="right" bgcolor="#f7f7f7" class="w">活动规则：</td>
             <td align="left" bgcolor="#ffffff">
                 <asp:RadioButtonList ID="rblRules" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1" Selected="True">每天一次</asp:ListItem>
-                    <asp:ListItem Value="2">总共一次</asp:ListItem>
+                    <asp:ListItem Value="1" Selected="True">每天</asp:ListItem>
+                    <asp:ListItem Value="2">总共</asp:ListItem>
                 </asp:RadioButtonList>
             </td>
-            <td height="25" align="right" bgcolor="#f7f7f7" class="w"></td>
+            <td height="25" align="right" bgcolor="#f7f7f7" class="w">活动次数：</td>
             <td align="left" bgcolor="#ffffff">
+                <asp:TextBox ID="txt_maxNum" runat="server" Text="1" CssClass="txt_able"></asp:TextBox>
             </td>
         </tr>
         <tr>

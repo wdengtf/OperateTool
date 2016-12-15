@@ -32,9 +32,6 @@ namespace YYT.Model
         public Nullable<int> Position { get; set; }
         public string PositionImg { get; set; }
 
-        /// <summary>
-        /// 领取总数
-        /// </summary>
         [NotMapped]
         public int NotReceiveTotal { get; set; }
     }

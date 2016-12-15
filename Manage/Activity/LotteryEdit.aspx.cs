@@ -46,6 +46,7 @@ namespace Web.Manage.Activity
                 txt_enddate.Text = model.Enddate.ToString();
                 rbl_status.SelectedValue = model.Status.ToString();
                 rblRules.SelectedValue = model.Rules.ToString();
+                txt_maxNum.Text = model.maxNum.ToString();
             }
             catch (Exception ex)
             {
@@ -68,6 +69,7 @@ namespace Web.Manage.Activity
                 model.Introduction = "";
                 model.descr = "";
                 model.channelUserId = manageUserModel.UserId;
+                model.maxNum = int.Parse(txt_maxNum.Text.Trim());
                 model.Id = id;
                 if (String.IsNullOrEmpty(model.Name))
                 {

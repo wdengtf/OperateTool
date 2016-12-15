@@ -55,6 +55,7 @@
           <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
           <Property Name="descr" Type="text" />
           <Property Name="Createtime" Type="datetime" />
+          <Property Name="maxNum" Type="int" />
         </EntityType>
         <EntityType Name="Luck_ActivityJackpot">
           <Key>
@@ -318,6 +319,7 @@
           <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="descr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Createtime" Type="DateTime" Precision="3" />
+          <Property Name="maxNum" Type="Int32" />
         </EntityType>
         <EntityType Name="Luck_ActivityJackpot">
           <Key>
@@ -573,6 +575,7 @@
           <EntitySetMapping Name="Luck_Activity">
             <EntityTypeMapping TypeName="YYT_DBModel.Luck_Activity">
               <MappingFragment StoreEntitySet="Luck_Activity">
+                <ScalarProperty Name="maxNum" ColumnName="maxNum" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="channelUserId" ColumnName="channelUserId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

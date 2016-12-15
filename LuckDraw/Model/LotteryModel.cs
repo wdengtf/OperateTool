@@ -59,7 +59,7 @@ namespace LuckDraw.Model
         /// <summary>
         /// 奖品类型
         /// </summary>
-        public string PrizeType { get; set; }
+        public int PrizeType { get; set; }
 
         /// <summary>
         /// 奖品图片
@@ -70,8 +70,8 @@ namespace LuckDraw.Model
         /// </summary>
         public string Introduction { get; set; }
         /// <summary>
-        /// 创建日期
+        /// 领取日期
         /// </summary>
-        public DateTime Createtime { get; set; }
+        public DateTime Receivetime { get; set; }
     }
 }
