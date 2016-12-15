@@ -124,6 +124,7 @@
     <Content Include="dist\static\img\text-1.f41764c.png" />
     <Content Include="dist\static\img\title-1.8513fb0.png" />
     <Content Include="dist\static\img\title-2.fcbacb6.png" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="Config\appSettings.config" />
     <Content Include="Config\connectionStrings.config" />

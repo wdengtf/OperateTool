@@ -182,3 +182,19 @@
 出错类：Framework.Log.LogService property: [(null)] - 
 错误描述：administrator修改数据，成功！
  
+
+ 
+记录时间：2016-12-15 22:39:49,180 
+线程ID:[35] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/15 22:39:49
+ 
+
+ 
+记录时间：2016-12-15 22:39:49,744 
+线程ID:[32] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/15 22:39:49
+ 
