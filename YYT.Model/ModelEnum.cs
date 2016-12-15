@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace YYT.Model
 {
+    /// <summary>
+    /// 排序枚举
+    /// </summary>
+    public enum OrderByEnum
+    {
+        ASC, DESC
+    }
 
     /// <summary>
     /// 默认状态
@@ -61,7 +68,7 @@ namespace YYT.Model
     /// </summary>
     public enum Luck_ActivityRules
     {
-        Everyday = 1,
+        EveryDay = 1,
         Total = 2,
     }
 }
