@@ -7,6 +7,8 @@ using Framework.Log;
 using Framework.Model;
 using YYT.BLL;
 using YYT.Model;
+using System.Linq.Expressions;
+using Framework.EF;
 
 namespace Web.Authorized
 {
@@ -35,30 +37,34 @@ namespace Web.Authorized
                     memberBaseModel.mobile = "";
                     new WebControllers.Member.YYT_Member().SaveMemberCookies(memberBaseModel);
 
-                    YYT_Member member = new YYT_Member();
-                    member.data_type = "WX";
-                    member.out_id = wxMemberModel.openid;
-                    member.nickname = wxMemberModel.nickname;
-                    member.Sex = int.Parse(wxMemberModel.sex);
-                    member.country = wxMemberModel.country;
-                    member.province = wxMemberModel.province;
-                    member.city = wxMemberModel.city;
-                    member.headimgurl = wxMemberModel.headimgurl;
-                    member.unionid = wxMemberModel.unionid;
-
-                    member.area = "";
-                    member.addr = "";
-                    member.channelUserId = 1;
-                    member.userName = "";
-                    member.Mobile = "";
-                    member.email = "";
-                    if (memberBo.Add(member) > 0)
-                        Response.Redirect("index.aspx");
-                    else
+                    Expression<Func<YYT_Member, bool>> where = PredicateExtensionses.True<YYT_Member>();
+                    where = where.AndAlso(p => p.out_id.Contains(wxMemberModel.openid));
+                    YYT_Member dbMemberModel = memberBo.GetSingle<int>(where);
+                    if (dbMemberModel == null)
                     {
-                        Response.Redirect("404.html");
-                        return;
+                        YYT_Member member = new YYT_Member();
+                        member.data_type = "WX";
+                        member.out_id = wxMemberModel.openid;
+                        member.nickname = wxMemberModel.nickname;
+                        member.Sex = int.Parse(wxMemberModel.sex);
+                        member.country = wxMemberModel.country;
+                        member.province = wxMemberModel.province;
+                        member.city = wxMemberModel.city;
+                        member.headimgurl = wxMemberModel.headimgurl;
+                        member.unionid = wxMemberModel.unionid;
+
+                        member.area = "";
+                        member.addr = "";
+                        member.channelUserId = 1;
+                        member.userName = "";
+                        member.Mobile = "";
+                        member.email = "";
+                        member.Createtime = DateTime.Now;
+                        member.Updatetime = DateTime.Now;
+                        member.Status = (int)StatusEnmu.Normal;
+                        memberBo.Add(member);
                     }
+                    Response.Redirect("index.aspx");
                 }
             }
         }

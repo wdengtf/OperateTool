@@ -42,6 +42,14 @@ namespace LuckDraw.Model
         /// </summary>
         public int Id { get; set; }
         /// <summary>
+        /// 奖品id
+        /// </summary>
+        public int PrizeId { get; set; }
+        /// <summary>
+        /// 活动id
+        /// </summary>
+        public int ActivityId { get; set; }
+        /// <summary>
         /// 奖品名称
         /// </summary>
         public string PrizeName { get; set; }

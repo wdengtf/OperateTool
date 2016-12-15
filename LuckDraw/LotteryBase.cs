@@ -143,6 +143,8 @@ namespace LuckDraw
                     winRecordModel.mobile = "";
                     winRecordModel.nickname = "";
                     winRecordModel.Id = jackpotModel.id;
+                    winRecordModel.PrizeId = jackpotModel.PrizeId.Value;
+                    winRecordModel.ActivityId = jackpotModel.ActivityId.Value;
                     winRecordModel.Receivetime = jackpotModel.Updatetime.Value;
 
                     Luck_ActivityPrize luckActivityPrizeModel = luckActivityPrizeList.Where(n => n.Id == jackpotModel.id).FirstOrDefault();

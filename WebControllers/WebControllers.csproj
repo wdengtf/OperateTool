@@ -53,6 +53,7 @@
     <Compile Include="Handle\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Member\BaseHandle.cs" />
     <Compile Include="Member\BaseMemberPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

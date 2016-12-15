@@ -33,5 +33,6 @@ namespace YYT.Model
         public string unionid { get; set; }
         public Nullable<System.DateTime> Createtime { get; set; }
         public Nullable<System.DateTime> Updatetime { get; set; }
+        public string realName { get; set; }
     }
 }

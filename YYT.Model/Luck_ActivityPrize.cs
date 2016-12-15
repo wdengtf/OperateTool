@@ -12,6 +12,7 @@ namespace YYT.Model
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
+    
     public partial class Luck_ActivityPrize
     {
         public int Id { get; set; }

@@ -151,8 +151,8 @@ namespace Web.Manage.data.Activity.Lottery
                     List<CommandInfo> list = new List<CommandInfo>();
                     Luck_ActivityJackpot actJackpotModel = new Luck_ActivityJackpot();
                     actJackpotModel.channelUserId = manageUserModel.UserId;
-                    actJackpotModel.ActivityId = luckActivityPrizeModel.Id;
-                    actJackpotModel.PrizeId = id;
+                    actJackpotModel.ActivityId = luckActivityPrizeModel.sortid;
+                    actJackpotModel.PrizeId = luckActivityPrizeModel.Id;
                     actJackpotModel.Status = (int)LuckActivityJackpotStatus.NotDraw;
                     actJackpotModel.data_type = "";
                     actJackpotModel.out_id = "";

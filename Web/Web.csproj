@@ -77,10 +77,71 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dist\static\img\banner-1.3317afd.png" />
+    <Content Include="dist\static\img\banner-2.1115cfe.png" />
+    <Content Include="dist\static\img\banner-3.3fa915c.png" />
+    <Content Include="dist\static\img\banner-4.f20687d.png" />
+    <Content Include="dist\static\img\bgi.d3a4fd4.jpg" />
+    <Content Include="dist\static\img\bot-1.d02405e.png" />
+    <Content Include="dist\static\img\bot-2.dbdb77e.png" />
+    <Content Include="dist\static\img\btn1.2f33480.png" />
+    <Content Include="dist\static\img\btn2.ec7020f.png" />
+    <Content Include="dist\static\img\btn3.9841815.png" />
+    <Content Include="dist\static\img\ckh.74d6e78.jpg" />
+    <Content Include="dist\static\img\egganis.ab04b69.png" />
+    <Content Include="dist\static\img\fontt01.c773399.png" />
+    <Content Include="dist\static\img\grow-1-1.d262dba.png" />
+    <Content Include="dist\static\img\grow-2-1.7dae6ba.png" />
+    <Content Include="dist\static\img\grow-2-2.25803b6.png" />
+    <Content Include="dist\static\img\grow-2-3.aba5707.png" />
+    <Content Include="dist\static\img\gzhewm.d0b43b9.png" />
+    <Content Include="dist\static\img\inpts1.adbefa0.png" />
+    <Content Include="dist\static\img\inpts2.c78e452.png" />
+    <Content Include="dist\static\img\inpts3.4544103.png" />
+    <Content Include="dist\static\img\jjj-1.20617a4.png" />
+    <Content Include="dist\static\img\jjj-2.f8d36b4.png" />
+    <Content Include="dist\static\img\jjj-3.5fcac21.png" />
+    <Content Include="dist\static\img\maskss.f7ac1c7.png" />
+    <Content Include="dist\static\img\massk01.ecbdbc0.png" />
+    <Content Include="dist\static\img\opacity-stars.fca2ecb.png" />
+    <Content Include="dist\static\img\outlines.53cd9e7.png" />
+    <Content Include="dist\static\img\p1.6a9a51b.png" />
+    <Content Include="dist\static\img\p2.05f6304.png" />
+    <Content Include="dist\static\img\p3.58ed330.png" />
+    <Content Include="dist\static\img\page-1-bgc.cbd18ef.jpg" />
+    <Content Include="dist\static\img\page-1-size.2ab4691.png" />
+    <Content Include="dist\static\img\page-2-bgc.0444a91.jpg" />
+    <Content Include="dist\static\img\page-limg-bot.e8fc856.png" />
+    <Content Include="dist\static\img\page-limg-bot2.4d4cd4c.png" />
+    <Content Include="dist\static\img\page2-ckjjj-text-1.d7c7524.png" />
+    <Content Include="dist\static\img\page2-ckjjj-text-2.4c648b2.png" />
+    <Content Include="dist\static\img\page2-ckjjj-text-3.8a718c8.png" />
+    <Content Include="dist\static\img\page2-limg01.7c962ff.png" />
+    <Content Include="dist\static\img\page2-limg02.58bbb33.png" />
+    <Content Include="dist\static\img\page2-limg03.a8f5a2a.png" />
+    <Content Include="dist\static\img\subf.1592825.png" />
+    <Content Include="dist\static\img\text-1.b968e43.png" />
+    <Content Include="dist\static\img\text-1.f41764c.png" />
+    <Content Include="dist\static\img\title-1.8513fb0.png" />
+    <Content Include="dist\static\img\title-2.fcbacb6.png" />
     <Content Include="packages.config" />
     <Content Include="Config\appSettings.config" />
     <Content Include="Config\connectionStrings.config" />
     <Content Include="Master\MasterPageBase.Master" />
+    <Content Include="static\.DS_Store" />
+    <Content Include="static\css\app.5c70006fb3ccf2404c3b7b07ec7d40f0.css.map" />
+    <Content Include="static\css\app.899b6cdebe90d564db55b166aebe2630.css.map" />
+    <Content Include="static\js\app.8a7d81558c277fec26a3.js.map" />
+    <Content Include="static\js\app.d9bb2158b064be434170.js.map" />
+    <Content Include="static\js\index.js" />
+    <Content Include="static\js\jquery-1.9.0.min.js" />
+    <Content Include="static\js\manifest.ce3e748c5c65f0bca263.js.map" />
+    <Content Include="static\js\manifest.ce4ad675d7f3afc4e801.js.map" />
+    <Content Include="static\js\vendor.39050354d6fa5708363d.js.map" />
+    <Content Include="static\js\vendor.db9768dcc0f6066ce4db.js.map" />
+    <Fakes Include="Fakes\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.fakes" />
+    <Content Include="Data\Lottery.ashx" />
+    <Content Include="Data\Member.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -92,6 +153,65 @@
     <Content Include="Authorized\wxAuth.aspx" />
     <Content Include="index.aspx" />
     <Content Include="log4net.xml" />
+    <Content Include="static\css\app.5c70006fb3ccf2404c3b7b07ec7d40f0.css" />
+    <Content Include="static\css\app.899b6cdebe90d564db55b166aebe2630.css" />
+    <Content Include="static\img\banner-1.3317afd.png" />
+    <Content Include="static\img\banner-2.1115cfe.png" />
+    <Content Include="static\img\banner-3.3fa915c.png" />
+    <Content Include="static\img\banner-4.f20687d.png" />
+    <Content Include="static\img\bgi.d3a4fd4.jpg" />
+    <Content Include="static\img\bot-1.d02405e.png" />
+    <Content Include="static\img\bot-2.dbdb77e.png" />
+    <Content Include="static\img\btn1.2f33480.png" />
+    <Content Include="static\img\btn2.ec7020f.png" />
+    <Content Include="static\img\btn3.9841815.png" />
+    <Content Include="static\img\ckh.74d6e78.jpg" />
+    <Content Include="static\img\egganis.ab04b69.png" />
+    <Content Include="static\img\fontt01.c773399.png" />
+    <Content Include="static\img\grow-1-1.d262dba.png" />
+    <Content Include="static\img\grow-2-1.7dae6ba.png" />
+    <Content Include="static\img\grow-2-2.25803b6.png" />
+    <Content Include="static\img\grow-2-3.aba5707.png" />
+    <Content Include="static\img\gzhewm.d0b43b9.png" />
+    <Content Include="static\img\inpts1.adbefa0.png" />
+    <Content Include="static\img\inpts2.c78e452.png" />
+    <Content Include="static\img\inpts3.4544103.png" />
+    <Content Include="static\img\jjj-1.20617a4.png" />
+    <Content Include="static\img\jjj-2.f8d36b4.png" />
+    <Content Include="static\img\jjj-3.5fcac21.png" />
+    <Content Include="static\img\maskss.f7ac1c7.png" />
+    <Content Include="static\img\massk01.ecbdbc0.png" />
+    <Content Include="static\img\opacity-stars.fca2ecb.png" />
+    <Content Include="static\img\outlines.53cd9e7.png" />
+    <Content Include="static\img\p1.6a9a51b.png" />
+    <Content Include="static\img\p2.05f6304.png" />
+    <Content Include="static\img\p3.58ed330.png" />
+    <Content Include="static\img\page-1-bgc.cbd18ef.jpg" />
+    <Content Include="static\img\page-1-size.2ab4691.png" />
+    <Content Include="static\img\page-2-bgc.0444a91.jpg" />
+    <Content Include="static\img\page-limg-bot.e8fc856.png" />
+    <Content Include="static\img\page-limg-bot2.4d4cd4c.png" />
+    <Content Include="static\img\page-limg02.2aeb731.png" />
+    <Content Include="static\img\page2-ckjjj-text-1.d7c7524.png" />
+    <Content Include="static\img\page2-ckjjj-text-2.4c648b2.png" />
+    <Content Include="static\img\page2-ckjjj-text-3.8a718c8.png" />
+    <Content Include="static\img\page2-limg01.7c962ff.png" />
+    <Content Include="static\img\page2-limg02.58bbb33.png" />
+    <Content Include="static\img\page2-limg03.a8f5a2a.png" />
+    <Content Include="static\img\page_top_txt1.5623314.png" />
+    <Content Include="static\img\page_top_txt2-bg.0219dad.png" />
+    <Content Include="static\img\page_top_txt2.7d92de4.png" />
+    <Content Include="static\img\subf.1592825.png" />
+    <Content Include="static\img\text-1.b968e43.png" />
+    <Content Include="static\img\text-1.f41764c.png" />
+    <Content Include="static\img\title-1.8513fb0.png" />
+    <Content Include="static\img\title-2.fcbacb6.png" />
+    <Content Include="static\js\app.8a7d81558c277fec26a3.js" />
+    <Content Include="static\js\app.d9bb2158b064be434170.js" />
+    <Content Include="static\js\manifest.ce3e748c5c65f0bca263.js" />
+    <Content Include="static\js\manifest.ce4ad675d7f3afc4e801.js" />
+    <Content Include="static\js\vendor.39050354d6fa5708363d.js" />
+    <Content Include="static\js\vendor.db9768dcc0f6066ce4db.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +221,12 @@
     </Compile>
     <Compile Include="Authorized\wxAuth.aspx.designer.cs">
       <DependentUpon>wxAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Lottery.ashx.cs">
+      <DependentUpon>Lottery.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Member.ashx.cs">
+      <DependentUpon>Member.ashx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -126,6 +252,10 @@
     <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{f5acb59c-5f88-400b-aa26-c25e1f508968}</Project>
       <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LuckDraw\LuckDraw.csproj">
+      <Project>{3f093cce-9988-4d06-af4c-072875fd53d7}</Project>
+      <Name>LuckDraw</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebControllers\WebControllers.csproj">
       <Project>{1c734833-a708-486e-b53c-a2dd045fea23}</Project>

@@ -20,5 +20,8 @@ namespace YYT.Model
         public string mch_id { get; set; }
         public string wxkey { get; set; }
         public Nullable<System.DateTime> Createtime { get; set; }
+        public string access_token { get; set; }
+        public Nullable<System.DateTime> Updatetime { get; set; }
+        public string appSecret { get; set; }
     }
 }
