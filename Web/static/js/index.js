@@ -1,9 +1,7 @@
 ﻿$(function () {
-    //function aaa() {
-    //    console.log("aaa");
-    //}
-    //ajax.getLotteryActivity(aaa);
-    //ajax.memberBindLottery(aaa);
+    $("#subft").bind('click', function () {
+        ajax.submitForm();
+    })
 });
 
 var ajax = {
@@ -33,14 +31,14 @@ var ajax = {
     },
     //提交表单
     submitForm: function () {
-        var name = $(".fts .ftsinp1").val();
-        var mobile = $(".fts .ftsinp2").val();
-        var addr = $(".fts .ftsinp3").val();
+        var name = $("#ftsinp1").val();
+        var mobile = $("#ftsinp2").val();
+        var addr = $("#ftsinp3").val();
 
         if (paraVerify.verifyStr(name) && paraVerify.verifyStr(mobile) && paraVerify.verifyStr(addr)) {
             $.post("/Data/Member.ashx", { action: 'updateMember', name: name, mobile: mobile, addr: addr, rand: Math.random() }, function (data) {
                 if (data.Result == 1) {
-                    alert("信息提交成功");
+                    //alert("信息提交成功");
                 }
                 else {
                     alert(data.Message);

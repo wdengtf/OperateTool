@@ -14,7 +14,7 @@ namespace YYT.Model
     
     public partial class Wx_Config
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public Nullable<int> channelUserId { get; set; }
         public string wxappid { get; set; }
         public string mch_id { get; set; }

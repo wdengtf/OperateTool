@@ -99,7 +99,7 @@ namespace Web.Manage.data.Activity.Lottery
                 }
 
                 Expression<Func<Luck_ActivityPrize, bool>> where = PredicateExtensionses.True<Luck_ActivityPrize>();
-                where = where.AndAlso(p => idList.Contains(p.Id.ToString()));
+                where = where.AndAlso(p => idList.Contains(p.id.ToString()));
                 re = DelDataById(luckActivityPrizeBo, where);
             }
             catch (Exception ex)
@@ -139,7 +139,7 @@ namespace Web.Manage.data.Activity.Lottery
                     Luck_ActivityJackpot actJackpotModel = new Luck_ActivityJackpot();
                     actJackpotModel.channelUserId = manageUserModel.UserId;
                     actJackpotModel.ActivityId = luckActivityPrizeModel.sortid;
-                    actJackpotModel.PrizeId = luckActivityPrizeModel.Id;
+                    actJackpotModel.PrizeId = luckActivityPrizeModel.id;
                     actJackpotModel.Status = (int)LuckActivityJackpotStatus.NotDraw;
                     actJackpotModel.data_type = "";
                     actJackpotModel.out_id = "";

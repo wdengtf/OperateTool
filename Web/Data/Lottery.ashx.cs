@@ -107,7 +107,7 @@ namespace Web.Data
                         //未抽奖
                         luckActivityPrizeModel = lotteryCall.MemberBindLottery(memberBaseModel, actitityId);
                         if (lotteryCall.GetResultState())
-                            re = JsonResult.SuccessResult(luckActivityPrizeModel.Id - 2);
+                            re = JsonResult.SuccessResult(luckActivityPrizeModel.id - 2);
                         else
                             re = JsonResult.FailResult(lotteryCall.GetMessage());
                     }
@@ -125,7 +125,7 @@ namespace Web.Data
             }
             catch (Exception ex)
             {
-                re = JsonResult.FailResult(MsgShowConfig.Exception);
+                re = JsonResult.FailResult(ex.ToString());
                 LogService.logDebug(ex);
             }
             return re;

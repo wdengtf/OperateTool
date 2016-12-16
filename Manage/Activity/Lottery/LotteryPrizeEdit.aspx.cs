@@ -72,7 +72,7 @@ namespace Web.Manage.Activity.Lottery
             model.Position = int.Parse(txtPosition.Text.Trim());
             model.PositionImg = Utility.FilterString(txtPostionImg.Text.Trim());
             model.Createtime = DateTime.Parse(txt_createtime.Text.Trim());
-            model.Id = id;
+            model.id = id;
 
             string strMsg = "";
             if (string.IsNullOrEmpty(model.name))
@@ -89,7 +89,7 @@ namespace Web.Manage.Activity.Lottery
                 return;
             }
 
-            if (model.Id > 0)
+            if (model.id > 0)
             {
                 luckActivityPrizeBO.Update(model);
                 Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','修改成功!','" + subgrid_table_id + "');");

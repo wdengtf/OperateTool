@@ -66,8 +66,8 @@ namespace Manage.data.Activity
 
                 clspage.PageSize = pageSize;
                 clspage.Table = "  Luck_ActivityJackpot a inner join Luck_ActivityPrize b on a.PrizeId=b.id inner join Luck_Activity c on c.id=a.ActivityId left join YYT_Member d on d.out_id=a.out_id";
-                clspage.Order = " a.Id desc";
-                clspage.columns = " a.Id,b.name as prizeName,c.name as activityName,a.out_id,a.data_type,a.Status,a.createtime,a.updatetime,a.PrizeId,a.ActivityId,d.Mobile,d.addr";
+                clspage.Order = " a.id desc";
+                clspage.columns = " a.id,b.name as prizeName,c.name as activityName,a.out_id,a.data_type,a.Status,a.createtime,a.updatetime,a.PrizeId,a.ActivityId,d.Mobile,d.addr";
                 clspage.where = strWhere.ToString();
 
                 re = GetListBySql(clspage);
@@ -96,7 +96,7 @@ namespace Manage.data.Activity
 
                 Expression<Func<Luck_ActivityPrize, bool>> expre = PredicateExtensionses.True<Luck_ActivityPrize>();
                 expre = expre.AndAlso(p => p.sortid == activity_id);
-                Expression<Func<Luck_ActivityPrize, int>> orderBy = p => p.Id;
+                Expression<Func<Luck_ActivityPrize, int>> orderBy = p => p.id;
                 re = GetListByObject<Luck_ActivityPrize>(expre, luckActivityPrizeBo, orderBy);
             }
             catch (Exception ex)

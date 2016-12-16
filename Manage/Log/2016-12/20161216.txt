@@ -415,3 +415,467 @@
 出错类：Framework.Log.LogService property: [(null)] - 
 错误描述：网站关闭,或重启时时间：2016/12/16 19:21:04
  
+
+ 
+记录时间：2016-12-16 20:19:35,884 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 20:19:35
+ 
+
+ 
+记录时间：2016-12-16 20:19:36,716 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:19:36
+ 
+
+ 
+记录时间：2016-12-16 20:22:32,613 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator修改数据超级管理员，成功！
+ 
+
+ 
+记录时间：2016-12-16 20:22:34,043 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:22:34
+ 
+
+ 
+记录时间：2016-12-16 20:33:39,227 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 20:33:39
+ 
+
+ 
+记录时间：2016-12-16 20:33:40,187 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:33:40
+ 
+
+ 
+记录时间：2016-12-16 20:40:14,255 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 20:40:14
+ 
+
+ 
+记录时间：2016-12-16 20:40:14,912 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:40:14
+ 
+
+ 
+记录时间：2016-12-16 20:45:31,543 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 20:45:31
+ 
+
+ 
+记录时间：2016-12-16 20:45:32,146 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:45:32
+ 
+
+ 
+记录时间：2016-12-16 20:45:32,146 
+线程ID:[9] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:45:32
+ 
+
+ 
+记录时间：2016-12-16 20:45:32,146 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:45:32
+ 
+
+ 
+记录时间：2016-12-16 20:45:32,146 
+线程ID:[10] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:45:32
+ 
+
+ 
+记录时间：2016-12-16 20:45:58,220 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator修改数据超级管理员，成功！
+ 
+
+ 
+记录时间：2016-12-16 20:46:14,540 
+线程ID:[8] 
+日志级别：  FATAL 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：
+--------------------------------------------------------------------------------------------------
+2016.12.16 20:46:14
+.客户信息：
+	Ip:::1
+	浏览器:Firefox
+	浏览器版本:48
+	操作系统:WinNT
+.错误信息：
+	来源页面：http://localhost:62028/top.aspx
+	页面：http://localhost:62028/user/user_pass.aspx
+	错误信息：文件“/user/user_pass.aspx”不存在。
+	错误源：System.Web
+	异常方法：Void CheckVirtualFileExists(System.Web.VirtualPath)
+	堆栈信息：   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------------------
+ 
+
+ 
+记录时间：2016-12-16 20:51:06,631 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 20:51:06
+ 
+
+ 
+记录时间：2016-12-16 20:51:07,148 
+线程ID:[15] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 20:51:07
+ 
+
+ 
+记录时间：2016-12-16 21:12:37,220 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 21:12:37
+ 
+
+ 
+记录时间：2016-12-16 21:12:37,754 
+线程ID:[40] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 21:12:37
+ 
+
+ 
+记录时间：2016-12-16 21:12:37,754 
+线程ID:[39] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 21:12:37
+ 
+
+ 
+记录时间：2016-12-16 21:12:37,754 
+线程ID:[42] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 21:12:37
+ 
+
+ 
+记录时间：2016-12-16 21:32:37,015 
+线程ID:[67] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 21:32:36
+ 
+
+ 
+记录时间：2016-12-16 21:32:37,646 
+线程ID:[63] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 21:32:37
+ 
+
+ 
+记录时间：2016-12-16 21:32:37,646 
+线程ID:[66] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 21:32:37
+ 
+
+ 
+记录时间：2016-12-16 21:32:37,646 
+线程ID:[65] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 21:32:37
+ 
+
+ 
+记录时间：2016-12-16 21:32:37,734 
+线程ID:[66] 
+日志级别：  FATAL 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：
+--------------------------------------------------------------------------------------------------
+2016.12.16 21:32:37
+.客户信息：
+	Ip:::1
+	浏览器:Firefox
+	浏览器版本:48
+	操作系统:WinNT
+.错误信息：
+	来源页面：http://localhost:62028/MainFrm.html
+	页面：http://localhost:62028/top.aspx
+	错误信息：未将对象引用设置到对象的实例。
+	错误源：Manage
+	异常方法：Void Page_Load(System.Object, System.EventArgs)
+	堆栈信息：   在 Web.Manage.top.Page_Load(Object sender, EventArgs e) 位置 e:\Knowledge\Operate\OperateTool\Manage\top.aspx.cs:行号 19
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------------------
+ 
+
+ 
+记录时间：2016-12-16 22:52:55,077 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 22:52:55
+ 
+
+ 
+记录时间：2016-12-16 22:52:55,646 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 22:52:55
+ 
+
+ 
+记录时间：2016-12-16 22:54:04,910 
+线程ID:[5] 
+日志级别：  FATAL 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：
+--------------------------------------------------------------------------------------------------
+2016.12.16 22:54:04
+.客户信息：
+	Ip:::1
+	浏览器:Firefox
+	浏览器版本:48
+	操作系统:WinNT
+.错误信息：
+	来源页面：http://localhost:62028/main.aspx
+	页面：http://localhost:62028/Activity/LotteryJackpotList.aspx?temid=21
+	错误信息：e:\Knowledge\Operate\OperateTool\Manage\Activity\LotteryJackpotList.aspx(17): error CS1061: “YYT.Model.Luck_Activity”不包含“Id”的定义，并且找不到可接受类型为“YYT.Model.Luck_Activity”的第一个参数的扩展方法“Id”(是否缺少 using 指令或程序集引用?)
+	错误源：System.Web
+	异常方法：System.Web.Compilation.BuildResult CompileWebFile(System.Web.VirtualPath)
+	堆栈信息：   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------------------
+ 
+
+ 
+记录时间：2016-12-16 22:54:49,368 
+线程ID:[5] 
+日志级别：  FATAL 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：
+--------------------------------------------------------------------------------------------------
+2016.12.16 22:54:49
+.客户信息：
+	Ip:::1
+	浏览器:Firefox
+	浏览器版本:48
+	操作系统:WinNT
+.错误信息：
+	来源页面：http://localhost:62028/main.aspx
+	页面：http://localhost:62028/Activity/LotteryJackpotList.aspx?temid=21
+	错误信息：e:\Knowledge\Operate\OperateTool\Manage\Activity\LotteryJackpotList.aspx(17): error CS1061: “YYT.Model.Luck_Activity”不包含“Id”的定义，并且找不到可接受类型为“YYT.Model.Luck_Activity”的第一个参数的扩展方法“Id”(是否缺少 using 指令或程序集引用?)
+	错误源：System.Web
+	异常方法：System.Web.Compilation.BuildResult CompileWebFile(System.Web.VirtualPath)
+	堆栈信息：   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------------------
+ 
+
+ 
+记录时间：2016-12-16 22:54:55,241 
+线程ID:[17] 
+日志级别：  FATAL 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：
+--------------------------------------------------------------------------------------------------
+2016.12.16 22:54:55
+.客户信息：
+	Ip:::1
+	浏览器:Firefox
+	浏览器版本:48
+	操作系统:WinNT
+.错误信息：
+	页面：http://localhost:62028/Activity/LotteryJackpotList.aspx?temid=21
+	错误信息：e:\Knowledge\Operate\OperateTool\Manage\Activity\LotteryJackpotList.aspx(17): error CS1061: “YYT.Model.Luck_Activity”不包含“Id”的定义，并且找不到可接受类型为“YYT.Model.Luck_Activity”的第一个参数的扩展方法“Id”(是否缺少 using 指令或程序集引用?)
+	错误源：System.Web
+	异常方法：System.Web.Compilation.BuildResult CompileWebFile(System.Web.VirtualPath)
+	堆栈信息：   在 System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------------------
+ 
+
+ 
+记录时间：2016-12-16 22:56:15,679 
+线程ID:[26] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 22:56:15
+ 
+
+ 
+记录时间：2016-12-16 22:56:16,190 
+线程ID:[29] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 22:56:16
+ 
+
+ 
+记录时间：2016-12-16 22:56:16,191 
+线程ID:[27] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 22:56:16
+ 
+
+ 
+记录时间：2016-12-16 22:56:16,191 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 22:56:16
+ 
+
+ 
+记录时间：2016-12-16 22:56:19,364 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 22:56:19
+ 
+
+ 
+记录时间：2016-12-16 22:57:25,089 
+线程ID:[27] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：admin修改数据administrator，成功！
+ 
+
+ 
+记录时间：2016-12-16 22:57:45,981 
+线程ID:[28] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：admin修改数据admin，成功！
+ 
+
+ 
+记录时间：2016-12-16 22:58:01,611 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：admin修改数据超级管理员，成功！
+ 
+
+ 
+记录时间：2016-12-16 23:12:01,998 
+线程ID:[5] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 23:12:01
+ 
+
+ 
+记录时间：2016-12-16 23:12:03,020 
+线程ID:[16] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 23:12:03
+ 
+
+ 
+记录时间：2016-12-16 23:12:04,245 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 23:12:04
+ 
+
+ 
+记录时间：2016-12-16 23:12:04,246 
+线程ID:[20] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 23:12:04
+ 
+
+ 
+记录时间：2016-12-16 23:12:04,246 
+线程ID:[10] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 23:12:04
+ 

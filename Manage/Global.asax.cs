@@ -63,8 +63,6 @@ namespace Web.Manage
             Server.ClearError();
             //跳转至出错页面 
             LogService.logFatal(strErr.ToString());
-
-            //Response.Redirect("http://m.wangcl.com/", false);
             return;
         }
 

@@ -14,7 +14,7 @@ namespace YYT.Model
     
     public partial class Luck_Activity
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public Nullable<int> channelUserId { get; set; }
         public string Name { get; set; }
         public Nullable<System.DateTime> Startdate { get; set; }

@@ -14,7 +14,7 @@
             <option value="0">请选择活动</option>
             <%foreach (Luck_Activity lotteryModel in actLotteryList)
                 { %>
-            <option value="<%=lotteryModel.Id %>"><%=lotteryModel.Name %></option>
+            <option value="<%=lotteryModel.id %>"><%=lotteryModel.Name %></option>
             <% } %>
         </select>
         奖品名称：<select id="selPrizeName" class="select_able" name="selPrizeName">
@@ -46,7 +46,7 @@
                 //    del: true,
                 //},
                 colNames: ['Id', '活动名称', '奖品名称', '状态', '创建日期', '中奖outId', '手机', '地址', '中奖时间', '操作'],
-                colModel: [{ name: 'Id', index: 'Id', width: 55, align: "center", sortable: false },
+                colModel: [{ name: 'id', index: 'id', width: 55, align: "center", sortable: false },
                 { name: 'activityName', index: 'activityName', width: 80, align: "center", sortable: false },
                 { name: 'prizeName', index: 'prizeName', width: 50, align: "center", sortable: false },
                 { name: 'Status', index: 'Status', width: 50, align: "center", sortable: false, formatter: commonJqGrid.defaultState },
@@ -79,7 +79,7 @@
                     if (data.Result == 1) {
                         for (var i = 0; i < data.Data.rows.length; i++) {
                             var dr = data.Data.rows[i];
-                            prizeName.push('<option value="' + dr.Id + '">' + dr.name + '</option>');
+                            prizeName.push('<option value="' + dr.id + '">' + dr.name + '</option>');
                         }
                         $("#selPrizeName").html(prizeName.join(''));
                     }

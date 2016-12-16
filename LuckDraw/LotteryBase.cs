@@ -89,7 +89,7 @@ namespace LuckDraw
                 lotteryNumber = model.maxNum.Value - lotteryNumberLists.Count;
                 #endregion
 
-                lotteryModel.ActivityId = model.Id;
+                lotteryModel.ActivityId = model.id;
                 lotteryModel.ActivityName = model.Name;
                 lotteryModel.LotteryNumber = lotteryNumber;
                 lotteryModel.LuckActivityPrize = lists;
@@ -133,7 +133,7 @@ namespace LuckDraw
                 //获取奖品列表
                 Expression<Func<Luck_ActivityPrize, bool>> wherePrize = PredicateExtensionses.True<Luck_ActivityPrize>();
                 List<int> prizeIdList = luckActivityJackpotList.Select(p => p.PrizeId.Value).ToList();
-                wherePrize = wherePrize.AndAlso(p => prizeIdList.Contains(p.Id));
+                wherePrize = wherePrize.AndAlso(p => prizeIdList.Contains(p.id));
                 List<Luck_ActivityPrize> luckActivityPrizeList = luckActivityPrizeBO.FindAll<int>(wherePrize);
                 foreach (Luck_ActivityJackpot jackpotModel in luckActivityJackpotList)
                 {
@@ -147,7 +147,7 @@ namespace LuckDraw
                     winRecordModel.ActivityId = jackpotModel.ActivityId.Value;
                     winRecordModel.Receivetime = jackpotModel.Updatetime.Value;
 
-                    Luck_ActivityPrize luckActivityPrizeModel = luckActivityPrizeList.Where(n => n.Id == jackpotModel.id).FirstOrDefault();
+                    Luck_ActivityPrize luckActivityPrizeModel = luckActivityPrizeList.Where(n => n.id == jackpotModel.id).FirstOrDefault();
                     if (luckActivityPrizeModel != null)
                     {
                         winRecordModel.PrizeName = luckActivityPrizeModel.name;
@@ -272,7 +272,7 @@ namespace LuckDraw
                 BaseEvent(EventEnum.OnBegin);
 
                 model = luckActivityBO.Find(activity_id);
-                if (model == null || model.Id < 1)
+                if (model == null || model.id < 1)
                 {
                     Description = BaseMessage = "加载抽奖活动失败";
                     BaseEvent(EventEnum.OnTipMsg);

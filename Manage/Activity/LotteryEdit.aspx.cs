@@ -70,7 +70,7 @@ namespace Web.Manage.Activity
                 model.descr = "";
                 model.channelUserId = manageUserModel.UserId;
                 model.maxNum = int.Parse(txt_maxNum.Text.Trim());
-                model.Id = id;
+                model.id = id;
                 if (String.IsNullOrEmpty(model.Name))
                 {
                     Utility.ScriptMessage("parent.dialog.ShowTempMessage('请填写活动名称!');");

@@ -14,7 +14,7 @@ namespace YYT.Model
     
     public partial class YYT_Member
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string out_id { get; set; }
         public Nullable<int> channelUserId { get; set; }
         public string userName { get; set; }

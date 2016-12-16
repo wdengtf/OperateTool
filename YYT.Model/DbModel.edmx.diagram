@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="191fa44af07d4d3aa74f3848fd2c9927" Name="Diagram1">
-        <EntityTypeShape EntityType="YYT_DBModel.HT_Account" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.HT_Menu" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.HT_UserGroup" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.Luck_Activity" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.Luck_ActivityJackpot" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.Luck_ActivityPrize" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.QD_Channel" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.QD_ChannelLog" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.QD_ChannelUser" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.QD_ChanneWhilte" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.Wx_Config" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.Wx_Redpack" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.Wx_RedpackLog" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.WxCompany_Payment" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.WxCompany_PaymentLog" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="YYT_DBModel.YYT_Member" Width="1.5" PointX="10.625" PointY="3.625" />
+      <Diagram DiagramId="3961dffa031e4f83a8eb971ce97b8018" Name="Diagram1" >
+        <EntityTypeShape EntityType="DbModel.HT_Account" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbModel.HT_Menu" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbModel.HT_UserGroup" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbModel.Luck_Activity" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DbModel.Luck_ActivityJackpot" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DbModel.Luck_ActivityPrize" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DbModel.QD_Channel" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbModel.QD_ChannelLog" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DbModel.QD_ChannelUser" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DbModel.QD_ChanneWhilte" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbModel.Wx_Config" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DbModel.Wx_Redpack" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DbModel.Wx_RedpackLog" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DbModel.WxCompany_Payment" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbModel.WxCompany_PaymentLog" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbModel.YYT_Member" Width="1.5" PointX="10.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

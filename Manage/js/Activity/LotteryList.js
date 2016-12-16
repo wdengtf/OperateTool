@@ -27,7 +27,7 @@ var commonOper = {
         addEditDialogWidth: 750,
         colNames: ['id', '活动名称', '开始日期', '结束日期', '活动规则', '活动次数', '状态', '创建日期', '操作'],
         colModel: [
-         { name: 'Id', index: 'Id', width: 40, align: "center", sortable: false },
+         { name: 'id', index: 'id', width: 40, align: "center", sortable: false },
          { name: 'Name', index: 'Name', width: 80, align: "center", sortable: false },
          { name: 'Startdate', index: 'Startdate', width: 80, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
          { name: 'Enddate', index: 'Enddate', width: 80, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
@@ -51,7 +51,7 @@ var commonOper = {
         subTitle: "抽奖奖品",
         subColNames: ['id', '奖品名称', '奖品图片', '奖品等级', '奖品价格', '奖品数量', '剩余奖品数量', '奖品位置', '状态', '奖品类型', '创建日期', '操作'],
         subColModel: [
-         { name: 'Id', index: 'Id', width: 40, align: "center", sortable: false },
+         { name: 'id', index: 'id', width: 40, align: "center", sortable: false },
          { name: 'name', index: 'name', width: 80, align: "center", sortable: false },
          { name: 'PrizeImg', index: 'PrizeImg', width: 70, align: "center", sortable: false, formatter: commonJqGrid.defaultImg },
          { name: 'PrizeLevel', index: 'PrizeLevel', width: 60, align: "center", sortable: false },
@@ -82,12 +82,12 @@ var commonOper = {
                 total: "Data.totalPage",        //json中代表页码总数的数据
                 records: "Data.totalRecord",    //json中代表数据行总数的数据
                 repeatitems: false,             //如果repeatitems为false，json 中数据可以乱序，并且允许数据空缺
-                id: "Id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
+                id: "id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
             },
             multiselect: true,
             pager: '#pagernav',
             mtype: "post",
-            sortname: 'Id',
+            sortname: 'id',
             viewrecords: true,
             autowidth: true,
             subGrid: this.options.subGrid,
@@ -110,10 +110,10 @@ var commonOper = {
                         total: "Data.totalPage",        //json中代表页码总数的数据
                         records: "Data.totalRecord",    //json中代表数据行总数的数据
                         repeatitems: false,             //如果repeatitems为false，json 中数据可以乱序，并且允许数据空缺
-                        id: "Id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
+                        id: "id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
                     },
                     pager: pager_id,
-                    sortname: 'Id',
+                    sortname: 'id',
                     autowidth: true,
                     gridComplete: function () {
                         //此事件发生在表格所有数据装入和进程完成后

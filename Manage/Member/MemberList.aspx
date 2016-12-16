@@ -32,7 +32,7 @@
                 addEditDialogWidth: 600,
                 rowNum: 10,
                 colNames: ['id', '图像', '手机号', '平台类型', '平台id', '昵称', 'Email', '地址', '创建日期', '最后更新日期'],
-                colModel: [{ name: 'Id', index: 'Id', width: 40, align: "center", sortable: false },
+                colModel: [{ name: 'id', index: 'id', width: 40, align: "center", sortable: false },
                  { name: 'headimgurl', index: 'headimgurl', width: 60, align: "center", sortable: false, formatter: imgFormatter },
                  { name: 'Mobile', index: 'Mobile', width: 80, align: "center", sortable: false },
                  { name: 'data_type', index: 'data_type', width: 55, align: "center", sortable: false },

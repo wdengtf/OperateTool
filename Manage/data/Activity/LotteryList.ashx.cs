@@ -63,7 +63,7 @@ namespace Web.Manage.data.Activity
                     DateTime endDate = DateTime.Parse(endTime).AddDays(1);
                     expre = expre.AndAlso(p => p.Startdate < endDate);
                 }
-                Expression<Func<Luck_Activity, int>> orderBy = p => p.Id;
+                Expression<Func<Luck_Activity, int>> orderBy = p => p.id;
                 re = GetListByObject<Luck_Activity>(expre, luckActivityBo, orderBy);
             }
             catch (Exception ex)
@@ -100,7 +100,7 @@ namespace Web.Manage.data.Activity
                 }
 
                 Expression<Func<Luck_Activity, bool>> where = PredicateExtensionses.True<Luck_Activity>();
-                where = where.AndAlso(p => idList.Contains(p.Id.ToString()));
+                where = where.AndAlso(p => idList.Contains(p.id.ToString()));
                 if (luckActivityBo.DeleteByWhere(where) > 0)
                 {
                     re = JsonResult.SuccessResult(MsgShowConfig.Success);
