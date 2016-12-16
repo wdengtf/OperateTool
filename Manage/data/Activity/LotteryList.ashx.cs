@@ -67,11 +67,7 @@ namespace Web.Manage.data.Activity
                     expre = expre.AndAlso(p => p.Startdate < endDate);
                 }
 
-                List<Luck_Activity> list = luckActivityBo.FindAllByPage<int>(expre, null, defaultSort, pageIndex, pageSize, out totalRecord);
-
-                int totalPage = GetTotalPage(totalRecord, pageSize);
-                JqGridPagingModel<Luck_Activity> jqGridPagingModel = new JqGridPagingModel<Luck_Activity>(pageIndex, totalPage, totalRecord, list);
-                re = JsonResult.SuccessResult(jqGridPagingModel);
+                re = GetListByObject<Luck_Activity>(expre, luckActivityBo, null);
             }
             catch (Exception ex)
             {

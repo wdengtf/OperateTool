@@ -41,16 +41,8 @@ namespace Web.Manage.data.User
             JsonResult re = new JsonResult();
             try
             {
-                int pageIndex = Utility.FNumeric("page");
-                int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
-                int totalRecord = 0;
-
                 Expression<Func<HT_UserGroup, bool>> expre = PredicateExtensionses.True<HT_UserGroup>();
-                List<HT_UserGroup> list = userGroupBO.FindAllByPage<int>(expre, null, defaultSort, pageIndex, pageSize, out totalRecord);
-
-                int totalPage = GetTotalPage(totalRecord, pageSize);
-                JqGridPagingModel<HT_UserGroup> jqGridPagingModel = new JqGridPagingModel<HT_UserGroup>(pageIndex, totalPage, totalRecord, list);
-                re = JsonResult.SuccessResult(jqGridPagingModel);
+                re = GetListByObject<HT_UserGroup>(expre, userGroupBO, null);
             }
             catch (Exception ex)
             {

@@ -40,9 +40,6 @@ namespace Web.Manage.data.Member
             JsonResult re = new JsonResult();
             try
             {
-                int pageIndex = Utility.FNumeric("page");
-                int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
-                int totalRecord = 0;
                 string mobile = Utility.RF("mobile");
                 string outId = Utility.RF("outid");
                 string beginTime = Utility.RF("beginTime");
@@ -68,10 +65,7 @@ namespace Web.Manage.data.Member
                     expre = expre.AndAlso(p => p.Createtime < endDate);
                 }
 
-                List<YYT_Member> list = memberBO.FindAllByPage<int>(expre, null, defaultSort, pageIndex, pageSize, out totalRecord);
-                int totalPage = GetTotalPage(totalRecord, pageSize);
-                JqGridPagingModel<YYT_Member> jqGridPagingModel = new JqGridPagingModel<YYT_Member>(pageIndex, totalPage, totalRecord, list);
-                re = JsonResult.SuccessResult(jqGridPagingModel);
+                re = GetListByObject<YYT_Member>(expre, memberBO, null);
             }
             catch (Exception ex)
             {

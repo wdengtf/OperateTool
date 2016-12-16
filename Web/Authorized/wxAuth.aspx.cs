@@ -26,7 +26,7 @@ namespace Web.Authorized
                     WxMemberModel wxMemberModel = new WxWebAuth().WxAuthGetUserInfo(strCode);
                     if (wxMemberModel == null)
                     {
-                        Response.Redirect("404.html");
+                        Response.Redirect("/404.html");
                         return;
                     }
 
@@ -64,7 +64,7 @@ namespace Web.Authorized
                         member.Status = (int)StatusEnmu.Normal;
                         memberBo.Add(member);
                     }
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("/index.aspx");
                 }
             }
         }

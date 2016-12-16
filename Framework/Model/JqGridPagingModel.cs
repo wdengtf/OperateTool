@@ -11,7 +11,7 @@ namespace Framework.Model
         public JqGridPagingModel()
         { }
 
-        public JqGridPagingModel(int pageIndex, int totalPage, int totalRecord, List<T> rows)
+        public JqGridPagingModel(int pageIndex, int totalPage, int totalRecord, T rows)
         {
             this.pageIndex = pageIndex;
             this.totalPage = totalPage;
@@ -37,6 +37,6 @@ namespace Framework.Model
         /// <summary>
         /// 具体对象
         /// </summary>
-        public List<T> rows { get; set; }
+        public T rows { get; set; }
     }
 }

@@ -1,5 +1,9 @@
 ﻿$(function () {
-
+    //function aaa() {
+    //    console.log("aaa");
+    //}
+    //ajax.getLotteryActivity(aaa);
+    //ajax.memberBindLottery(aaa);
 });
 
 var ajax = {
@@ -16,11 +20,11 @@ var ajax = {
         }, 'json');
     },
     //绑定抽奖信息 点击生蛋调此方法
-    memberBindLottery: function (callback) {
-        $.post("/Data/Lottery.ashx", { action: 'memberBindLottery', rand: Math.random() }, function (data) {
+    memberBindLottery: function () {
+        $.post("http://newacampaign.csais.me/Data/Lottery.ashx", { action: 'memberBindLottery', rand: Math.random() }, function (data) {
             if (data.Result == 1) {
                 //绑定抽奖信息成功回调 1：NEWA美容仪，2：NEWA传用LIFT凝胶 3：NEWA传用LIFT凝胶 4：200优惠券
-                callback();
+                return data.Data;
             }
             else {
                 alert(data.Message);

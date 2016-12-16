@@ -57,11 +57,8 @@ namespace Web.Manage.data.User
                 }
                 Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
                 defaultSort = "asc";
-                List<HT_Menu> list = menuBO.FindAllByPage<int>(expre, orderBy, defaultSort, pageIndex, pageSize, out totalRecord);
 
-                int totalPage = GetTotalPage(totalRecord, pageSize);
-                JqGridPagingModel<HT_Menu> jqGridPagingModel = new JqGridPagingModel<HT_Menu>(pageIndex, totalPage, totalRecord, list);
-                re = JsonResult.SuccessResult(jqGridPagingModel);
+                re = GetListByObject<HT_Menu>(expre, menuBO, orderBy);
             }
             catch (Exception ex)
             {

@@ -9,6 +9,9 @@ using Framework.Model;
 
 namespace WebControllers.Member
 {
+    /// <summary>
+    /// 前台授权页面
+    /// </summary>
     public class BaseMemberPage : System.Web.UI.Page, IRequiresSessionState
     {
         protected YYT_Member member = new YYT_Member();

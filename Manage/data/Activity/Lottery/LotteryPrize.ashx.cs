@@ -23,7 +23,6 @@ namespace Web.Manage.data.Activity.Lottery
     {
         private Luck_ActivityPrizeBO luckActivityPrizeBo = new Luck_ActivityPrizeBO();
         private Luck_ActivityJackpotBO luckActivityJackpotBo = new Luck_ActivityJackpotBO();
-        private CommonPage clspage = new CommonPage();
         private SqlBO sqlBo = new SqlBO();
 
         public override JsonResult HandleProcess()
@@ -53,26 +52,17 @@ namespace Web.Manage.data.Activity.Lottery
             JsonResult re = new JsonResult();
             try
             {
-                int pageIndex = Utility.FNumeric("page");
-                int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
-                int totalRecord = 0;
                 string strWhere = "";
                 int sortId = Utility.FNumeric("id");
                 if (sortId > 0)
                     strWhere += String.Format(" sortid = {0}", sortId);
 
-                clspage.PageSize = pageSize;
                 clspage.Table = "  Luck_ActivityPrize ";
-                clspage.Order = " id ";
+                clspage.Order = " id desc";
                 clspage.columns = " *,NotReceiveTotal=(select COUNT(id) from Luck_ActivityJackpot where PrizeId= Luck_ActivityPrize.id and Status=" + (int)LuckActivityJackpotStatus.NotDraw + ")";
                 clspage.where = strWhere;
 
-                DataTable dt = clspage.getDataByPage(pageIndex, out totalRecord);
-                List<Luck_ActivityPrize> lotteryPrizeList = new FromToObj().ConvertToModel<Luck_ActivityPrize>(dt);
-                int totalPage = GetTotalPage(totalRecord, pageSize);
-
-                JqGridPagingModel<Luck_ActivityPrize> jqGridPagingModel = new JqGridPagingModel<Luck_ActivityPrize>(pageIndex, totalPage, totalRecord, lotteryPrizeList);
-                re = JsonResult.SuccessResult(jqGridPagingModel);
+                re = GetListBySql(clspage);
             }
             catch (Exception ex)
             {
@@ -110,10 +100,7 @@ namespace Web.Manage.data.Activity.Lottery
 
                 Expression<Func<Luck_ActivityPrize, bool>> where = PredicateExtensionses.True<Luck_ActivityPrize>();
                 where = where.AndAlso(p => idList.Contains(p.Id.ToString()));
-                if (luckActivityPrizeBo.DeleteByWhere(where) > 0)
-                {
-                    re = JsonResult.SuccessResult(MsgShowConfig.Success);
-                }
+                re = DelDataById(luckActivityPrizeBo, where);
             }
             catch (Exception ex)
             {
@@ -160,7 +147,7 @@ namespace Web.Manage.data.Activity.Lottery
                     actJackpotModel.Createtime = DateTime.Now;
                     actJackpotModel.Updatetime = DateTime.Parse("1900-01-01");
                     actJackpotModel.UpdateAddtime = DateTime.Parse("1900-01-01");
-                    
+
                     for (int i = actJackpotList.Count; i < luckActivityPrizeModel.num; i++)
                     {
                         list.Add(luckActivityJackpotBo.AddSqlCommand(actJackpotModel));

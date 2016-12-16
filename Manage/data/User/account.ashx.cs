@@ -41,9 +41,6 @@ namespace Web.Manage.data.User
             JsonResult re = new JsonResult();
             try
             {
-                int pageIndex = Utility.FNumeric("page");
-                int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
-                int totalRecord = 0;
                 string userName = Utility.RF("userName");
 
                 Expression<Func<HT_Account, bool>> expre = PredicateExtensionses.True<HT_Account>();
@@ -52,10 +49,7 @@ namespace Web.Manage.data.User
                     expre = expre.AndAlso(p => p.username.Contains(userName));
                 }
 
-                List<HT_Account> list = accountBO.FindAllByPage<int>(expre, null, defaultSort, pageIndex, pageSize, out totalRecord);
-                int totalPage = GetTotalPage(totalRecord, pageSize);
-                JqGridPagingModel<HT_Account> jqGridPagingModel = new JqGridPagingModel<HT_Account>(pageIndex, totalPage, totalRecord, list);
-                re = JsonResult.SuccessResult(jqGridPagingModel);
+                re = GetListByObject<HT_Account>(expre, accountBO, null);
             }
             catch (Exception ex)
             {

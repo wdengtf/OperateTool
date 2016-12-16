@@ -17,7 +17,7 @@ namespace WebControllers.Handle
         protected string defaultSort = "desc";//默认排序
 
         /// <summary>
-        /// 后台页面公共程序
+        /// 后台页面公共程序 有授权
         /// </summary>
         public BaseAdminPage() { }
 

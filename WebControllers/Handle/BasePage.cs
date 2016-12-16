@@ -9,7 +9,7 @@ namespace WebControllers.Handle
         protected string strMsg = "";
         protected CookieHandle cookieHandle = new CookieHandle();
         /// <summary>
-        /// 后台页面公共程序
+        /// 后台页面公共程序 没有授权
         /// </summary>
         public BasePage() { }
 

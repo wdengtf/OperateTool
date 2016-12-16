@@ -23,7 +23,7 @@
                 </td>
                 <td class="top_right">
                     <a href="javascript:;"><%=manageUserModel.UserName %> 你好！</a>
-                    <a href="javascript:;"><span class="color_ff6005">密码修改</span></a>
+                    <a target="mainFrame" href="user/user_pass.aspx"><span class="color_ff6005">修改密码</span></a>
                     <a target="mainFrame" href="exit.aspx"><span class="color_ff6005">退出登录</span></a>
                 </td>
             </tr>

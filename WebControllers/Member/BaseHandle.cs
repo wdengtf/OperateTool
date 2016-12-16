@@ -13,6 +13,9 @@ namespace WebControllers.Member
 {
     public abstract class BaseHandle : IHttpHandler, IRequiresSessionState
     {
+        /// <summary>
+        /// 前台Ashx页面
+        /// </summary>
         protected string message = String.Empty;
         protected string action = String.Empty;
         protected string sortField = "Id";//默认排序字段
@@ -44,7 +47,12 @@ namespace WebControllers.Member
                 re = JsonResult.FailResult(MsgShowConfig.EmptyFunction);
                 LogService.logDebug(ex);
             }
-            context.Response.Write(Utility.ToJson(re));
+
+            string callback = Utility.RF("callback");
+            if (!String.IsNullOrWhiteSpace(callback))
+                context.Response.Write(callback + "(" + Utility.ToJson(re) + ")");
+            else
+                context.Response.Write(Utility.ToJson(re));
         }
 
         public abstract JsonResult HandleProcess();
