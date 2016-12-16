@@ -44,9 +44,6 @@ namespace Web.Manage.data.Activity
             JsonResult re = new JsonResult();
             try
             {
-                int pageIndex = Utility.FNumeric("page");
-                int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
-                int totalRecord = 0;
                 string sortName = Utility.RF("sortName");
                 string beginTime = Utility.RF("beginTime");
                 string endTime = Utility.RF("endTime");
@@ -66,8 +63,8 @@ namespace Web.Manage.data.Activity
                     DateTime endDate = DateTime.Parse(endTime).AddDays(1);
                     expre = expre.AndAlso(p => p.Startdate < endDate);
                 }
-
-                re = GetListByObject<Luck_Activity>(expre, luckActivityBo, null);
+                Expression<Func<Luck_Activity, int>> orderBy = p => p.Id;
+                re = GetListByObject<Luck_Activity>(expre, luckActivityBo, orderBy);
             }
             catch (Exception ex)
             {

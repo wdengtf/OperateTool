@@ -49,7 +49,8 @@ namespace Web.Manage.data.User
                     expre = expre.AndAlso(p => p.username.Contains(userName));
                 }
 
-                re = GetListByObject<HT_Account>(expre, accountBO, null);
+                Expression<Func<HT_Account, int>> orderBy = p => p.id;
+                re = GetListByObject<HT_Account>(expre, accountBO, orderBy);
             }
             catch (Exception ex)
             {

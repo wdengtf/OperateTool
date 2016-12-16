@@ -42,7 +42,8 @@ namespace Web.Manage.data.User
             try
             {
                 Expression<Func<HT_UserGroup, bool>> expre = PredicateExtensionses.True<HT_UserGroup>();
-                re = GetListByObject<HT_UserGroup>(expre, userGroupBO, null);
+                Expression<Func<HT_UserGroup, int>> orderBy = p => p.id;
+                re = GetListByObject<HT_UserGroup>(expre, userGroupBO, orderBy);
             }
             catch (Exception ex)
             {

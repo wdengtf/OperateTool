@@ -40,9 +40,6 @@ namespace Web.Manage.data.User
             JsonResult re = new JsonResult();
             try
             {
-                int pageIndex = Utility.FNumeric("page");
-                int pageSize = Utility.FNumeric("rows") == 0 ? 10 : Utility.FNumeric("rows");
-                int totalRecord = 0;
                 string title = Utility.RF("title");
                 int menuid = Utility.FNumeric("menuid");
 
@@ -57,7 +54,6 @@ namespace Web.Manage.data.User
                 }
                 Expression<Func<HT_Menu, int>> orderBy = p => p.SortId.Value;
                 defaultSort = "asc";
-
                 re = GetListByObject<HT_Menu>(expre, menuBO, orderBy);
             }
             catch (Exception ex)

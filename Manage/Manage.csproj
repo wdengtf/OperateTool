@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Activity\LotteryEdit.aspx" />
+    <Content Include="Activity\LotteryJackpotList.aspx" />
     <Content Include="Activity\LotteryList.aspx" />
     <Content Include="Activity\Lottery\LotteryJackpotDel.aspx" />
     <Content Include="Activity\Lottery\LotteryPrizeEdit.aspx" />
@@ -213,6 +214,13 @@
     <Compile Include="Activity\LotteryEdit.aspx.designer.cs">
       <DependentUpon>LotteryEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Activity\LotteryJackpotList.aspx.cs">
+      <DependentUpon>LotteryJackpotList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity\LotteryJackpotList.aspx.designer.cs">
+      <DependentUpon>LotteryJackpotList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Activity\LotteryList.aspx.cs">
       <DependentUpon>LotteryList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -233,6 +241,9 @@
     </Compile>
     <Compile Include="Activity\Lottery\LotteryPrizeEdit.aspx.designer.cs">
       <DependentUpon>LotteryPrizeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="data\Activity\LotteryJackpotList.ashx.cs">
+      <DependentUpon>LotteryJackpotList.ashx</DependentUpon>
     </Compile>
     <Compile Include="data\Activity\LotteryList.ashx.cs">
       <DependentUpon>LotteryList.ashx</DependentUpon>
@@ -388,6 +399,7 @@
     <Content Include="data\User\account.ashx" />
     <Content Include="data\User\droit.ashx" />
     <Content Include="data\User\group.ashx" />
+    <Content Include="data\Activity\LotteryJackpotList.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -164,6 +164,9 @@ namespace WebControllers.Handle
             JsonResult re = new JsonResult();
             try
             {
+                if (orderBy == null)
+                    return JsonResult.FailResult("排序" + MsgShowConfig.ParmNotEmpty);
+
                 if (expre == null)
                     expre = PredicateExtensionses.True<T>();
 

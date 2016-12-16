@@ -65,7 +65,8 @@ namespace Web.Manage.data.Member
                     expre = expre.AndAlso(p => p.Createtime < endDate);
                 }
 
-                re = GetListByObject<YYT_Member>(expre, memberBO, null);
+                Expression<Func<YYT_Member, int>> orderBy = p => p.Id;
+                re = GetListByObject<YYT_Member>(expre, memberBO, orderBy);
             }
             catch (Exception ex)
             {
