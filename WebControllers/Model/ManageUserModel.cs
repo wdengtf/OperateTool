@@ -22,5 +22,15 @@ namespace WebControllers.Model
         /// 后台用户所有权限ID
         /// </summary>
         public string UserDroit { get; set; }
+
+        /// <summary>
+        /// 组id
+        /// </summary>
+        public int GroupId { get; set; }
+
+        /// <summary>
+        /// 登陆组id
+        /// </summary>
+        public int LoginGroupId { get; set; }
     }
 }

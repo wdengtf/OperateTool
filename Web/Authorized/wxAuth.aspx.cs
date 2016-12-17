@@ -55,7 +55,7 @@ namespace Web.Authorized
 
                         member.area = "";
                         member.addr = "";
-                        member.channelUserId = 1;
+                        member.channelUserId = 2;
                         member.userName = "";
                         member.Mobile = "";
                         member.email = "";

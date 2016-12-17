@@ -49,6 +49,9 @@ namespace Web.Manage.data.Activity
                 string endTime = Utility.RF("endTime");
 
                 Expression<Func<Luck_Activity, bool>> expre = PredicateExtensionses.True<Luck_Activity>();
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    expre = expre.AndAlso(p => p.channelUserId == manageUserModel.UserId);
+
                 if (!String.IsNullOrEmpty(sortName))
                 {
                     expre = expre.AndAlso(p => p.Name.Contains(sortName));

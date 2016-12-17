@@ -17,6 +17,7 @@ using YYT.BLL;
 using YYT.Model;
 using System.Data;
 using YYT.BLL.Common;
+using Framework.Cookies;
 
 namespace WebControllers.Handle
 {
@@ -33,6 +34,8 @@ namespace WebControllers.Handle
         protected ManageUserModel manageUserModel = null;
         protected AdminUser adminUser = new AdminUser();
         protected CommonPage clspage = new CommonPage();
+        protected CookieHandle cookieHandle = new CookieHandle();
+        protected int jumpDroitGroupId = 0;
 
         protected HttpContext httpContext = null;
         public virtual void ProcessRequest(HttpContext context)
@@ -74,6 +77,7 @@ namespace WebControllers.Handle
                 data = Utility.RF("data");
                 sign = Utility.RF("sign");
                 action = Utility.RF("action");
+                jumpDroitGroupId = ConfigBL.JumpDroitGroupId();
             }
             catch (Exception ex)
             {

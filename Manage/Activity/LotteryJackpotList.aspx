@@ -38,6 +38,7 @@
         $(function () {
             commonJqGrid.init({
                 url: "/data/Activity/LotteryJackpotList.ashx",
+                urlParm: "&status=" + $("#selStatus").val(),
                 addEditUrl: "",
                 title: "奖池记录",
                 addEditDialogHeight: 600,

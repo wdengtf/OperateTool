@@ -56,6 +56,9 @@ namespace Manage.data.Activity
 
                 StringBuilder strWhere = new StringBuilder(255);
                 strWhere.Append(" 1=1 ");
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    strWhere.Append(String.Format(" and a.channelUserId = {0}", manageUserModel.UserId));
+
                 if (!String.IsNullOrWhiteSpace(out_id))
                     strWhere.Append(String.Format(" and a.out_id ={0}", out_id));
                 if (award_id > 0)

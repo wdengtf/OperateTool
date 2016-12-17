@@ -52,10 +52,13 @@ namespace Web.Manage.data.Activity.Lottery
             JsonResult re = new JsonResult();
             try
             {
-                string strWhere = "";
+                string strWhere = " 1=1 ";
                 int sortId = Utility.FNumeric("id");
+
                 if (sortId > 0)
-                    strWhere += String.Format(" sortid = {0}", sortId);
+                    strWhere += String.Format(" and sortid = {0}", sortId);
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    strWhere += String.Format(" and channelUserId = {0}", manageUserModel.UserId);
 
                 clspage.Table = "  Luck_ActivityPrize ";
                 clspage.Order = " id desc";

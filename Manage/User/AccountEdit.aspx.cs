@@ -27,7 +27,7 @@ namespace Web.Manage.User
             if (!this.IsPostBack)
             {
                 if (id > 0) readInfo(id);
-                else txtCreatetime.Text = DateTime.Now.ToString();
+                else txtCreatetime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                 bindGroup();
             }
@@ -43,7 +43,7 @@ namespace Web.Manage.User
                 rblStatus.SelectedValue = model.status.ToString();
                 ddlGroup.SelectedValue = model.groupid.ToString();
                 txtTitle.ReadOnly = true;
-                txtCreatetime.Text = model.createtime.ToString();
+                txtCreatetime.Text = model.createtime.Value.ToString("yyyy-MM-dd HH:mm:ss");
                 CHK.Value = model.pwd;
             }
             catch (Exception ex)
@@ -54,7 +54,11 @@ namespace Web.Manage.User
 
         private void bindGroup()
         {
-            List<HT_UserGroup> admin_GroupList = userGroupBO.FindAll<int>(null);
+            Expression<Func<HT_UserGroup, bool>> expre = PredicateExtensionses.True<HT_UserGroup>();
+            if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                expre = expre.AndAlso(p => p.id == manageUserModel.UserId);
+
+            List<HT_UserGroup> admin_GroupList = userGroupBO.FindAll<int>(expre);
             ddlGroup.DataTextField = "Title";
             ddlGroup.DataValueField = "Id";
             ListItem item = new ListItem("请选择", "", true);

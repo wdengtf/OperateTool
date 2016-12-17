@@ -54,7 +54,6 @@ namespace Web.Data
                     LogService.logFatal("未找到该会员信息" + Utility.ToJson(memberBaseModel));
                     return JsonResult.FailResult("请重新刷新授权");
                 }
-
                 List<int> actitityIdList = new List<int>() { 3 };
                 List<WinRecordModel> winRecordList = lotteryCall.GetLotteryPrize(memberBaseModel, actitityIdList);
                 if (!lotteryCall.GetResultState())
@@ -62,6 +61,9 @@ namespace Web.Data
 
                 if (winRecordList == null || winRecordList.Count < 1)
                     return JsonResult.FailResult("未查到您的中奖信息");
+
+                if (!String.IsNullOrWhiteSpace(memberModel.Mobile))
+                    return JsonResult.FailResult("您已经领奖，每个人只有一次领奖机会噢，谢谢！");
 
                 //更新会员信息
                 memberModel.Mobile = mobile;

@@ -36,6 +36,8 @@ namespace WebControllers.Admin
                     manageUserModel.UserId = cookieHandle.GetManagerUserId();
                     manageUserModel.UserName = cookieHandle.GetManagerUserName();
                     manageUserModel.UserDroit = cookieHandle.GetManagerDroit();
+                    manageUserModel.GroupId = cookieHandle.GetManagerGroupId();
+                    manageUserModel.LoginGroupId = cookieHandle.GetManagerLoginGroupId();
                 }
             }
             catch (Exception ex)

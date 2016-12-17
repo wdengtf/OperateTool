@@ -21,7 +21,7 @@ var ajax = {
     memberBindLottery: function () {
         $.post("http://newacampaign.csais.me/Data/Lottery.ashx", { action: 'memberBindLottery', rand: Math.random() }, function (data) {
             if (data.Result == 1) {
-                //绑定抽奖信息成功回调 1：NEWA美容仪，2：NEWA传用LIFT凝胶 3：NEWA传用LIFT凝胶 4：200优惠券
+                //绑定抽奖信息成功回调 1：NEWA美容仪，2：NEWA传用LIFT凝胶 3：NEWA专属圣诞礼盒 4：200优惠券
                 return data.Data;
             }
             else {
@@ -46,7 +46,7 @@ var ajax = {
             }, 'json');
         }
         else {
-            alert("请填写完整");
+            //alert("请填写完整");
         }
     }
 }

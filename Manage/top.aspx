@@ -22,7 +22,10 @@
                     </template>
                 </td>
                 <td class="top_right">
-                    <a href="javascript:;"><%=manageUserModel.UserName %> 你好！</a>
+                    <a href="javascript:;" data-userid="<%=manageUserModel.UserId %>"><%=manageUserModel.UserName %> 你好！</a>
+                    <select v-model="selected" v-if="accountList!=null && accountList!=[]" id="userList" name="userList" v-on:change="changeUserDroit();">
+                        <option v-for="account in accountList"  v-bind:value="account.id">{{account.username}}</option>
+                    </select>
                     <%--<a target="mainFrame" href="user/user_pass.aspx"><span class="color_ff6005">修改密码</span></a>--%>
                     <a target="mainFrame" href="exit.aspx"><span class="color_ff6005">退出登录</span></a>
                 </td>

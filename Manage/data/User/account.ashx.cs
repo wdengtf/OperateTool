@@ -44,6 +44,9 @@ namespace Web.Manage.data.User
                 string userName = Utility.RF("userName");
 
                 Expression<Func<HT_Account, bool>> expre = PredicateExtensionses.True<HT_Account>();
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    expre = expre.AndAlso(p => p.groupid == manageUserModel.UserId);
+
                 if (!String.IsNullOrEmpty(userName))
                 {
                     expre = expre.AndAlso(p => p.username.Contains(userName));

@@ -60,7 +60,7 @@ namespace Web.Manage
                     ClientScript.RegisterStartupScript(Page.GetType(), "message", "dialog.ShowTempMessage('该用户未分配权限，请联系管理员');", true);
                     return;
                 }
-                cookieHandle.SetManagerUser(adminUserList.id, adminUserList.username, adminGroupModel.Droit);
+                cookieHandle.SetManagerUser(adminUserList.id, adminUserList.username, adminGroupModel.Droit, adminGroupModel.id, adminGroupModel.id);
                 this.Response.Redirect("MainFrm.html");
             }
         }

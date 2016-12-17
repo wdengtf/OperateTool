@@ -19,6 +19,16 @@ namespace WebControllers
         }
 
 
+        /// <summary>
+        /// 跳过权限组id
+        /// </summary>
+        /// <returns></returns>
+        public static int JumpDroitGroupId()
+        {
+            return int.Parse(GetConfig("JumpDroitGroupId"));
+        }
+
+
         private static string GetConfig(string strName)
         {
             string str = "";
