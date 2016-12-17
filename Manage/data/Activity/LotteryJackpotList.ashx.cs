@@ -20,6 +20,7 @@ namespace Manage.data.Activity
     public class LotteryJackpotList : BaseHandle
     {
         private Luck_ActivityPrizeBO luckActivityPrizeBo = new Luck_ActivityPrizeBO();
+
         public override JsonResult HandleProcess()
         {
             JsonResult re = new JsonResult();

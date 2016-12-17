@@ -91,5 +91,11 @@ namespace WebControllers.Member
             _flag = true;
             return _flag;
         }
+
+        public bool LoginOut()
+        {
+            CookieHandle cookieHandle = new CookieHandle();
+            return cookieHandle.RemoveCookies();
+        }
     }
 }

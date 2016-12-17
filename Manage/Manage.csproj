@@ -73,6 +73,7 @@
     <Content Include="Activity\LotteryJackpotList.aspx" />
     <Content Include="Activity\LotteryList.aspx" />
     <Content Include="Activity\Lottery\LotteryJackpotDel.aspx" />
+    <Content Include="Activity\Lottery\LotteryExport.aspx" />
     <Content Include="Activity\Lottery\LotteryPrizeEdit.aspx" />
     <Content Include="css\easyui.css" />
     <Content Include="css\jquery-ui-1.10.3.custom\images\add.png" />
@@ -234,6 +235,13 @@
     </Compile>
     <Compile Include="Activity\Lottery\LotteryJackpotDel.aspx.designer.cs">
       <DependentUpon>LotteryJackpotDel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Lottery\LotteryExport.aspx.cs">
+      <DependentUpon>LotteryExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity\Lottery\LotteryExport.aspx.designer.cs">
+      <DependentUpon>LotteryExport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Activity\Lottery\LotteryPrizeEdit.aspx.cs">
       <DependentUpon>LotteryPrizeEdit.aspx</DependentUpon>

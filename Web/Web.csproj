@@ -126,6 +126,7 @@
     <Content Include="dist\static\img\title-2.fcbacb6.png" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="Config\appSettings.config" />
     <Content Include="Config\connectionStrings.config" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\MasterPageBase.Master.cs">
       <DependentUpon>MasterPageBase.Master</DependentUpon>

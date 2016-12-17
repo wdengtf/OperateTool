@@ -1,7 +1,7 @@
 ﻿var commonJqGrid = {
     //参数初始化
     options: {
-        url: "",
+        url: "",//列表Url
         urlParm: '',
         addEditUrl: "",
         title: "权限",

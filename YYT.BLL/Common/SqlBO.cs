@@ -24,6 +24,31 @@ namespace YYT.BLL.Common
         }
 
         /// <summary>
+        /// 生成SQL语句
+        /// </summary>
+        /// <param name="selectColumn"></param>
+        /// <param name="tableName"></param>
+        /// <param name="strWhere"></param>
+        /// <param name="strOrder"></param>
+        /// <returns></returns>
+        public string GetSqlStr(string strColumn, string tableName, string strWhere, string strOrder)
+        {
+            if (String.IsNullOrWhiteSpace(strColumn) || String.IsNullOrWhiteSpace(tableName))
+                return "";
+
+            StringBuilder strSql = new StringBuilder(255);
+            strSql.Append(String.Format(" select {0} from {1}", strColumn, tableName));
+
+            if (!String.IsNullOrWhiteSpace(strWhere))
+                strSql.Append(String.Format(" where {0}", strWhere));
+
+            if (!String.IsNullOrWhiteSpace(strOrder))
+                strSql.Append(String.Format(" order by {0}", strOrder));
+
+            return strSql.ToString();
+        }
+
+        /// <summary>
         /// 执行
         /// </summary>
         /// <param name="sql"></param>

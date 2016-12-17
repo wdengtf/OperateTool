@@ -13,7 +13,7 @@
         活动名称：<select id="selActivityName" class="select_able" name="selActivityName">
             <option value="0">请选择活动</option>
             <%foreach (Luck_Activity lotteryModel in actLotteryList)
-                { %>
+              { %>
             <option value="<%=lotteryModel.id %>"><%=lotteryModel.Name %></option>
             <% } %>
         </select>
@@ -27,6 +27,7 @@
             <option value="0">未分配</option>
         </select>
         <button id="submitButton" class="btn">查询</button>
+        <button id="addExprot" class="btn hidden">导出</button>
     </div>
     <div class="title">查询结果</div>
     <table id="navgrid"></table>
@@ -41,15 +42,16 @@
                 title: "奖池记录",
                 addEditDialogHeight: 600,
                 addEditDialogWidth: 600,
-                //gridRowOper: {
-                //    edit: true,
-                //    del: true,
-                //},
+                gridRowOper: {
+                    edit: true,
+                    del: true,
+                    exports: true,
+                },
                 colNames: ['Id', '活动名称', '奖品名称', '状态', '创建日期', '中奖outId', '手机', '地址', '中奖时间', '操作'],
                 colModel: [{ name: 'id', index: 'id', width: 55, align: "center", sortable: false },
                 { name: 'activityName', index: 'activityName', width: 80, align: "center", sortable: false },
-                { name: 'prizeName', index: 'prizeName', width: 50, align: "center", sortable: false },
-                { name: 'Status', index: 'Status', width: 50, align: "center", sortable: false, formatter: commonJqGrid.defaultState },
+                { name: 'prizeName', index: 'prizeName', width: 80, align: "center", sortable: false },
+                { name: 'Status', index: 'Status', width: 50, align: "center", sortable: false, formatter: pageOper.state },
                 { name: 'createtime', index: 'createtime', width: 120, align: "center", sortable: false, formatter: commonJqGrid.formatTime },
                 { name: 'out_id', index: 'out_id', width: 120, align: "center", sortable: false },
                 { name: 'Mobile', index: 'Mobile', width: 80, align: "center", sortable: false },
@@ -65,10 +67,35 @@
                     return '&activity_id=' + activity_id + '&award_id=' + award_id + '&out_id=' + out_id + '&status=' + selStatus + '';
                 }
             });
-
-
             //改变事件
             $("#selActivityName").bind('change', function () {
+                pageOper.activityChange();
+            });
+
+            //导出
+            $("#addExprot").bind('click', function () {
+                pageOper.exportData();
+            });
+        });
+
+
+        //操作写在这里面
+        var pageOper = {
+            //状态操作
+            state: function (cellvalue, options, rowdata) {
+                var value = "--";
+                switch (cellvalue) {
+                    case 0:
+                        value = '未分配';
+                        break;
+                    case 1:
+                        value = '已分配';
+                        break;
+                }
+                return value;
+            },
+            //改变事件
+            activityChange: function () {
                 var activity_id = $("#selActivityName").val();
                 if (activity_id == 0)
                     return false;
@@ -87,7 +114,17 @@
                         dialog.ShowTempMessage(data.Message);
                     }
                 }, 'json');
-            });
-        });
+            },
+            //导出数据
+            exportData: function () {
+                var activity_id = $("#selActivityName").val();
+                var award_id = $("#selPrizeName").val();
+                var selStatus = $("#selStatus").val();
+                var out_id = $("#txtout_id").val();
+
+                var parm = '&activity_id=' + activity_id + '&award_id=' + award_id + '&out_id=' + out_id + '&status=' + selStatus + '';
+                window.open("Lottery/LotteryExport.aspx?action=jackpotExport");
+            },
+        }
     </script>
 </asp:Content>
