@@ -10,6 +10,7 @@ using YYT.Api;
 using YYT.Api.Model;
 using LuckDraw.Model;
 using Framework;
+using YYT.BLL;
 
 namespace Web.Data
 {
@@ -102,6 +103,16 @@ namespace Web.Data
             JsonResult re = new JsonResult();
             try
             {
+                //添加浏览记录
+                QD_ChannelLog channelLog = new QD_ChannelLog();
+                channelLog.channelName = memberBaseModel.nickname;
+                channelLog.@interface = memberBaseModel.out_id;
+                channelLog.status = 1;
+                channelLog.Createtime = DateTime.Now;
+                channelLog.Addtime = DateTime.Now;
+                channelLog.ip = Utility.GetRealIp();
+                new QD_ChannelLogBO().Add(channelLog);
+
                 List<int> actitityIdList = new List<int>() { actitityId };
                 ReqLotteryPrizeModel req = new ReqLotteryPrizeModel()
                 {

@@ -24,7 +24,8 @@ namespace Web.Authorized
         {
             if (!Page.IsPostBack)
             {
-                SaveWxConfig();
+                if (SaveWxConfig())
+                    Response.Write("授权成功");
             }
         }
 

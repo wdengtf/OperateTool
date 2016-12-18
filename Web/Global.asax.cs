@@ -1,4 +1,5 @@
-﻿using Auth.Wx;
+﻿using Auth.Model;
+using Auth.Wx;
 using Framework.Log;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,9 @@ using System.Text;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebControllers;
 using YYT.BLL;
+using YYT.Model;
 
 namespace Web
 {
@@ -20,12 +23,46 @@ namespace Web
         {
             LogService.LogInfo("第一个人访问时间：" + DateTime.Now.ToString());
 
-            //业务逻辑
+            //业务逻辑 1小时执行一次
+            System.Timers.Timer time = new System.Timers.Timer(1 * 60 * 60 * 1000);
+            time.AutoReset = true;
+            time.Enabled = true;
+            time.Elapsed += new System.Timers.ElapsedEventHandler(SaveWxConfig);
+        }
+
+        /// <summary>
+        /// 微信授权
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SaveWxConfig(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            try
+            {
+                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.GetServerTokenAndTicken();
+                if (serverTokenAndTicketModel == null)
+                {
+                    LogService.LogError("获取公众号AccessToken和JsapiTicket失败");
+                }
+                Wx_Config wxConfigModel = wxConfigBo.Find(ConfigBL.AccountUserId());
+                if (wxConfigModel == null)
+                {
+                    LogService.LogError("微信账号不存在");
+                }
+                wxConfigModel.access_token = serverTokenAndTicketModel.access_token;
+                wxConfigModel.jsapi_ticket = serverTokenAndTicketModel.ticket;
+                wxConfigModel.Updatetime = DateTime.Now;
+                wxConfigBo.Update(wxConfigModel);
+            }
+            catch (Exception ex)
+            {
+                LogService.LogDebug(ex);
+            }
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

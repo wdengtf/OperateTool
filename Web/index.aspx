@@ -17,5 +17,4 @@
     <script type=text/javascript src=/static/js/app.cd3f55643265def1c30d.js></script>
     <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="static/js/index.js"></script>
-    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </asp:Content>
