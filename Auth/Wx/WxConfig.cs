@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,5 +16,66 @@ namespace Auth.Wx
         {
            
         }
+
+        /// <summary>
+        /// 随机字符串
+        /// </summary>
+        /// <returns></returns>
+        public static string GetNoncestr()
+        {
+            Random random = new Random();
+            return GetMD5(random.Next(1000).ToString(), "GBK");
+        }
+
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        /// <returns></returns>
+        public static string GetTimestamp()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(ts.TotalSeconds).ToString();
+        }
+
+        /// <summary>
+        /// 微信配置生成签名
+        /// </summary>
+        /// <returns></returns>
+        public static string GetConfigSign(string jsapi_ticket, string timestamp, string nonceStr, string url)
+        {
+            //生成签名
+            String param = "jsapi_ticket=" + jsapi_ticket + "&noncestr=" + nonceStr + "&timestamp=" + timestamp + "&url=" + url;
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(param, "SHA1");
+        }
+
+        #region 私有方法
+
+        /** 获取大写的MD5签名结果 */
+        private static string GetMD5(string encypStr, string charset)
+        {
+            string retStr;
+            MD5CryptoServiceProvider m5 = new MD5CryptoServiceProvider();
+
+            //创建md5对象
+            byte[] inputBye;
+            byte[] outputBye;
+
+            //使用GB2312编码方式把字符串转化为字节数组．
+            try
+            {
+                inputBye = Encoding.GetEncoding(charset).GetBytes(encypStr);
+            }
+            catch
+            {
+                inputBye = Encoding.GetEncoding("GB2312").GetBytes(encypStr);
+            }
+            outputBye = m5.ComputeHash(inputBye);
+
+            retStr = System.BitConverter.ToString(outputBye);
+            retStr = retStr.Replace("-", "").ToUpper();
+            return retStr;
+        }
+
+        #endregion
     }
 }

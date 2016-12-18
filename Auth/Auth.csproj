@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\AccessTokenModel.cs" />
+    <Compile Include="Model\WxCommonModel.cs" />
     <Compile Include="Model\WxMemberModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wx\WxConfig.cs" />

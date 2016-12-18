@@ -1,0 +1,753 @@
+
+ 
+记录时间：2016-12-18 19:07:00,186 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 19:07:00
+ 
+
+ 
+记录时间：2016-12-18 19:07:01,128 
+线程ID:[6] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.ArgumentException: “”不是支持的编码名。有关定义自定义编码的信息，请参阅关于 Encoding.RegisterProvider 方法的文档。
+参数名: name
+   在 System.Globalization.EncodingTable.internalGetCodePageFromName(String name)
+   在 System.Globalization.EncodingTable.GetCodePageFromName(String name)
+   在 System.Text.Encoding.GetEncoding(String name)
+   在 Framework.Utils.WebUtils.DoGet(String url, IDictionary`2 parameters) 位置 e:\Knowledge\Operate\OperateTool\Framework\Utils\WebUtils.cs:行号 131
+   在 Auth.Wx.WxServerAuth.GetServerTokenAndTicken() 位置 e:\Knowledge\Operate\OperateTool\Auth\Wx\WxServerAuth.cs:行号 71
+ 
+
+ 
+记录时间：2016-12-18 19:07:01,176 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：获取公众号AccessToken和JsapiTicket失败
+ 
+
+ 
+记录时间：2016-12-18 19:10:53,410 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/18 19:10:53
+ 
+
+ 
+记录时间：2016-12-18 19:11:45,315 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 19:11:45
+ 
+
+ 
+记录时间：2016-12-18 19:11:45,980 
+线程ID:[12] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.ArgumentException: “”不是支持的编码名。有关定义自定义编码的信息，请参阅关于 Encoding.RegisterProvider 方法的文档。
+参数名: name
+   在 System.Globalization.EncodingTable.internalGetCodePageFromName(String name)
+   在 System.Globalization.EncodingTable.GetCodePageFromName(String name)
+   在 System.Text.Encoding.GetEncoding(String name)
+   在 Framework.Utils.WebUtils.DoGet(String url, IDictionary`2 parameters) 位置 e:\Knowledge\Operate\OperateTool\Framework\Utils\WebUtils.cs:行号 131
+   在 Auth.Wx.WxServerAuth.GetServerTokenAndTicken() 位置 e:\Knowledge\Operate\OperateTool\Auth\Wx\WxServerAuth.cs:行号 71
+ 
+
+ 
+记录时间：2016-12-18 19:11:45,987 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：获取公众号AccessToken和JsapiTicket失败
+ 
+
+ 
+记录时间：2016-12-18 19:13:09,534 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/18 19:13:09
+ 
+
+ 
+记录时间：2016-12-18 19:48:18,160 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 19:48:18
+ 
+
+ 
+记录时间：2016-12-18 19:52:06,294 
+线程ID:[14] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/18 19:52:06
+ 
+
+ 
+记录时间：2016-12-18 19:52:14,330 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 19:52:14
+ 
+
+ 
+记录时间：2016-12-18 19:54:51,402 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 19:54:51
+ 
+
+ 
+记录时间：2016-12-18 20:01:03,563 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:01:03
+ 
+
+ 
+记录时间：2016-12-18 20:06:53,814 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:06:53
+ 
+
+ 
+记录时间：2016-12-18 20:07:12,683 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：获取公众号AccessToken和JsapiTicket失败
+ 
+
+ 
+记录时间：2016-12-18 20:08:11,294 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:08:11
+ 
+
+ 
+记录时间：2016-12-18 20:08:16,588 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：获取公众号AccessToken和JsapiTicket失败
+ 
+
+ 
+记录时间：2016-12-18 20:09:40,062 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:09:39
+ 
+
+ 
+记录时间：2016-12-18 20:09:46,215 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：微信账号不存在
+ 
+
+ 
+记录时间：2016-12-18 20:10:56,584 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：微信账号不存在
+ 
+
+ 
+记录时间：2016-12-18 20:13:15,162 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:13:15
+ 
+
+ 
+记录时间：2016-12-18 20:16:10,362 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:16:10
+ 
+
+ 
+记录时间：2016-12-18 20:18:07,631 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 20:18:07
+ 
+
+ 
+记录时间：2016-12-18 21:29:29,785 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 21:29:29
+ 
+
+ 
+记录时间：2016-12-18 21:30:03,584 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 21:30:03
+ 
+
+ 
+记录时间：2016-12-18 22:00:47,903 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:00:47
+ 
+
+ 
+记录时间：2016-12-18 22:01:06,230 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:01:06
+ 
+
+ 
+记录时间：2016-12-18 22:02:48,490 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:02:48
+ 
+
+ 
+记录时间：2016-12-18 22:03:43,376 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:03:43
+ 
+
+ 
+记录时间：2016-12-18 22:04:43,656 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:04:43
+ 
+
+ 
+记录时间：2016-12-18 22:05:17,562 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:05:17
+ 
+
+ 
+记录时间：2016-12-18 22:05:25,343 
+线程ID:[6] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Web.Data.Lottery.MemberBindLottery() 位置 e:\Knowledge\Operate\OperateTool\Web\Data\Lottery.ashx.cs:行号 108
+ 
+
+ 
+记录时间：2016-12-18 22:05:49,156 
+线程ID:[7] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：,System.Reflection.TargetParameterCountException: 参数计数不匹配。
+   在 System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   在 System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   在 Framework.Validate.DataAnnotationHelper.IsValid(Type t, Object o, Boolean only1Level) 位置 e:\Knowledge\Operate\OperateTool\Framework\Validate\DataAnnotationHelper.cs:行号 76
+   在 Framework.Validate.DataAnnotationHelper.IsValid(Type t, Object o, Boolean only1Level) 位置 e:\Knowledge\Operate\OperateTool\Framework\Validate\DataAnnotationHelper.cs:行号 79
+   在 Framework.Validate.DataAnnotationHelper.IsValid[T](T o, Boolean only1Level) 位置 e:\Knowledge\Operate\OperateTool\Framework\Validate\DataAnnotationHelper.cs:行号 46
+   在 YYT.Api.OperationBase`1.Validate() 位置 e:\Knowledge\Operate\OperateTool\YYT.Api\OperationBase.cs:行号 78
+ 
+
+ 
+记录时间：2016-12-18 22:13:51,182 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:13:51
+ 
+
+ 
+记录时间：2016-12-18 22:14:39,826 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:14:39
+ 
+
+ 
+记录时间：2016-12-18 22:14:50,124 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:14:50.114729+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:14:50,319 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:14:50.3197404+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:14:50,319 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:14:50.3197404+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:15:05,392 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:15:05.392662+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:15:05,513 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:15:05.5136675+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:15:05,513 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:15:05.5136675+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:15:32,043 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:15:32.0431924+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:15:32,166 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:15:32.1661989+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:15:32,166 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:15:32.1661989+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:16:46,770 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:16:46
+ 
+
+ 
+记录时间：2016-12-18 22:17:06,100 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:17:06.0926906+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:17:06,297 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:17:06.2977697+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:17:06,297 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:17:06.2977697+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:17:28,439 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:17:28.4399699+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:17:28,562 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:17:28.5629756+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:17:28,562 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:17:28.5629756+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:18:43,090 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:18:43.0901991+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:18:43,215 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:18:43.2152065+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:18:43,215 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:18:43.2152065+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:21:53,367 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:21:53
+ 
+
+ 
+记录时间：2016-12-18 22:22:02,959 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:22:02.9303786+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:22:03,843 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:22:03.8424296+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:22:03,843 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:22:03.8434303+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:22:55,093 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:22:55
+ 
+
+ 
+记录时间：2016-12-18 22:23:03,174 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:23:03.1470488+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:23:04,047 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:23:04.0470334+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:23:04,047 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:23:04.0470334+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:23:04,882 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述："System.Collections.Generic.List`1[LuckDraw.Model.WinRecordModel]"
+ 
+
+ 
+记录时间：2016-12-18 22:23:07,198 
+线程ID:[6] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: S. Path '', line 0, position 0.
+   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 Framework.Utility.JsonToObject[T](String value) 位置 e:\Knowledge\Operate\OperateTool\Framework\Utility.cs:行号 278
+   在 Web.Data.Lottery.MemberBindLottery() 位置 e:\Knowledge\Operate\OperateTool\Web\Data\Lottery.ashx.cs:行号 141
+ 
+
+ 
+记录时间：2016-12-18 22:25:35,831 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:25:35
+ 
+
+ 
+记录时间：2016-12-18 22:26:19,836 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:26:19.8061347+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:26:20,706 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:26:20.705249+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:26:20,706 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:26:20.7062498+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:26:30,178 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:26:30.1788784+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:26:30,296 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:26:30.2964604+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:26:30,296 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:26:30.2964604+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:27:19,124 
+线程ID:[6] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: S. Path '', line 0, position 0.
+   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 Framework.Utility.JsonToObject[T](String value) 位置 e:\Knowledge\Operate\OperateTool\Framework\Utility.cs:行号 278
+   在 Web.Data.Lottery.MemberBindLottery() 位置 e:\Knowledge\Operate\OperateTool\Web\Data\Lottery.ashx.cs:行号 139
+ 
+
+ 
+记录时间：2016-12-18 22:28:01,795 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:28:01
+ 
+
+ 
+记录时间：2016-12-18 22:28:09,002 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:28:08.9720588+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:28:09,883 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:28:09.8831103+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:28:09,883 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:28:09.8831103+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:28:09,900 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "Message": "成功",  "Result": 1,  "Data": [    {      "Id": 2498,      "PrizeId": 6,      "ActivityId": 3,      "PrizeName": null,      "PrizePrice": 0.0,      "PrizeLevel": null,      "PrizeType": 0,      "PrizeImg": null,      "Introduction": null,      "Receivetime": "2016-12-18T17:46:20.81",      "data_type": "WX",      "out_id": "o_jctwEKMWg5XKRGFzjCDzIYnb-I",      "mobile": "",      "nickname": ""    }  ]}
+ 
+
+ 
+记录时间：2016-12-18 22:28:09,975 
+线程ID:[7] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: S. Path '', line 0, position 0.
+   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   在 Framework.Utility.JsonToObject[T](String value) 位置 e:\Knowledge\Operate\OperateTool\Framework\Utility.cs:行号 278
+   在 Web.Data.Lottery.MemberBindLottery() 位置 e:\Knowledge\Operate\OperateTool\Web\Data\Lottery.ashx.cs:行号 140
+ 
+
+ 
+记录时间：2016-12-18 22:30:10,502 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:30:10
+ 
+
+ 
+记录时间：2016-12-18 22:30:18,692 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:30:18.6634978+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:30:19,604 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:30:19.6046197+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:30:19,605 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:30:19.6046197+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:30:20,615 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "Message": "成功",  "Result": 1,  "Data": [    {      "Id": 2498,      "PrizeId": 6,      "ActivityId": 3,      "PrizeName": null,      "PrizePrice": 0.0,      "PrizeLevel": null,      "PrizeType": 0,      "PrizeImg": null,      "Introduction": null,      "Receivetime": "2016-12-18T17:46:20.81",      "data_type": "WX",      "out_id": "o_jctwEKMWg5XKRGFzjCDzIYnb-I",      "mobile": "",      "nickname": ""    }  ]}
+ 
+
+ 
+记录时间：2016-12-18 22:32:14,106 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/18 22:32:14
+ 
+
+ 
+记录时间：2016-12-18 22:32:22,581 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据之前",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:32:22.5521667+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:32:23,471 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据成功",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": "",  "RawData": null,  "OperationTime": "2016-12-18T22:32:23.4712851+08:00"}
+ 
+
+ 
+记录时间：2016-12-18 22:32:23,472 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：{  "OperationUserName": "",  "OperationName": "获取会员抽奖奖品数据完成",  "OperationType": 0,  "OperationFilePath": "LuckDraw.LotteryBase..ctor",  "Description": null,  "RawData": null,  "OperationTime": "2016-12-18T22:32:23.4722864+08:00"}
+ 

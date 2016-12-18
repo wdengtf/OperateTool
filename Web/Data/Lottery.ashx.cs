@@ -20,6 +20,9 @@ namespace Web.Data
     public class Lottery : BaseHandle
     {
         private int actitityId = 3;
+
+        private string channelUser = "webyyt";
+        private string sign = "f784b0b357de5741ff03a78e5d978754";
         public override JsonResult HandleProcess()
         {
             JsonResult re = new JsonResult();
@@ -49,11 +52,14 @@ namespace Web.Data
             {
                 ReqLotteryActivityModel req = new ReqLotteryActivityModel()
                 {
+                    sign = sign,
+                    channelUser = channelUser,
                     activity_id = actitityId,
                     data_type = memberBaseModel.data_type,
                     out_id = memberBaseModel.out_id,
                     mobile = memberBaseModel.mobile,
                     nickname = memberBaseModel.nickname
+
                 };
                 IOperation<ReqLotteryActivityModel> oper = ApiFactory.GetLotteryActivity();
                 re = APICall.MainExcute(req, oper);
@@ -116,6 +122,8 @@ namespace Web.Data
                 List<int> actitityIdList = new List<int>() { actitityId };
                 ReqLotteryPrizeModel req = new ReqLotteryPrizeModel()
                 {
+                    sign = sign,
+                    channelUser = channelUser,
                     activityIdList = actitityIdList,
                     data_type = memberBaseModel.data_type,
                     out_id = memberBaseModel.out_id,
@@ -128,13 +136,14 @@ namespace Web.Data
                 {
                     return JsonResult.FailResult(reLotteryPrize.Message);
                 }
-
-                List<WinRecordModel> winRecordList = Utility.JsonToObject<List<WinRecordModel>>(reLotteryPrize.Data.ToString());
+                List<WinRecordModel> winRecordList = (List<WinRecordModel>)reLotteryPrize.Data;
                 if (winRecordList == null || winRecordList.Count < 1)
                 {
                     //未抽奖
                     ReqLotteryActivityModel reqActivity = new ReqLotteryActivityModel()
                     {
+                        sign = sign,
+                        channelUser = channelUser,
                         activity_id = actitityId,
                         data_type = memberBaseModel.data_type,
                         out_id = memberBaseModel.out_id,
@@ -147,7 +156,7 @@ namespace Web.Data
                     {
                         return JsonResult.FailResult(reLotteryActivity.Message);
                     }
-                    Luck_ActivityPrize luckActivityPrizeModel = Utility.JsonToObject<Luck_ActivityPrize>(reLotteryActivity.Data.ToString());
+                    Luck_ActivityPrize luckActivityPrizeModel = (Luck_ActivityPrize)reLotteryActivity.Data;
                     re = JsonResult.SuccessResult(luckActivityPrizeModel.id - 2);
                 }
                 else

@@ -10,6 +10,8 @@ using YYT.BLL;
 using Framework.Log;
 using YYT.Model;
 using WebControllers;
+using System.Linq.Expressions;
+using Framework.EF;
 
 namespace Web.Authorized
 {
@@ -40,7 +42,10 @@ namespace Web.Authorized
                     LogService.LogError("获取公众号AccessToken和JsapiTicket失败");
                     return false;
                 }
-                Wx_Config wxConfigModel = wxConfigBo.Find(ConfigBL.AccountUserId());
+                Expression<Func<Wx_Config, bool>> where = PredicateExtensionses.True<Wx_Config>();
+                int accountUserId = ConfigBL.AccountUserId();
+                where = where.AndAlso(p => p.channelUserId == accountUserId);
+                Wx_Config wxConfigModel = wxConfigBo.GetSingle<int>(where);
                 if (wxConfigModel == null)
                 {
                     LogService.LogError("微信账号不存在");
@@ -50,6 +55,7 @@ namespace Web.Authorized
                 wxConfigModel.jsapi_ticket = serverTokenAndTicketModel.ticket;
                 wxConfigModel.Updatetime = DateTime.Now;
                 wxConfigBo.Update(wxConfigModel);
+                result = true;
             }
             catch (Exception ex)
             {

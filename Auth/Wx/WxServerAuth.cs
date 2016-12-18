@@ -68,7 +68,7 @@ namespace Auth.Wx
             ServerTokenAndTicketModel serverTicketModel = null;
             try
             {
-                string accessToken = webUtils.DoGet(GetAccess_token(), null);
+                string accessToken = webUtils.DoGet(GetAccess_token(),null);
                 if (!accessToken.Contains("access_token"))
                 {
                     LogService.LogInfo("获取Access_token失败:" + accessToken);
@@ -81,6 +81,7 @@ namespace Auth.Wx
                     LogService.LogInfo("获取jsapi_ticket信息失败:" + jsapiTicket);
                     return serverTicketModel;
                 }
+                serverTicketModel = Utility.JsonToObject<ServerTokenAndTicketModel>(jsapiTicket);
             }
             catch (Exception ex)
             {

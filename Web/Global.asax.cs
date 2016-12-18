@@ -1,9 +1,11 @@
 ﻿using Auth.Model;
 using Auth.Wx;
+using Framework.EF;
 using Framework.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Web;
 using System.Web.Security;
@@ -44,7 +46,11 @@ namespace Web
                 {
                     LogService.LogError("获取公众号AccessToken和JsapiTicket失败");
                 }
-                Wx_Config wxConfigModel = wxConfigBo.Find(ConfigBL.AccountUserId());
+
+                Expression<Func<Wx_Config, bool>> where = PredicateExtensionses.True<Wx_Config>();
+                int accountUserId = ConfigBL.AccountUserId();
+                where = where.AndAlso(p => p.channelUserId == accountUserId);
+                Wx_Config wxConfigModel = wxConfigBo.GetSingle<int>(where);
                 if (wxConfigModel == null)
                 {
                     LogService.LogError("微信账号不存在");

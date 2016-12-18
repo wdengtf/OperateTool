@@ -165,6 +165,11 @@ namespace WebControllers.Handle
         /// <returns></returns>
         protected virtual JsonResult GetListByObject<T>(Expression<Func<T, bool>> expre, BaseBO<T> t, Expression<Func<T, int>> orderBy) where T : class
         {
+            return GetListByObject<T,int>(expre, t, orderBy);
+        }
+
+        protected virtual JsonResult GetListByObject<T,S>(Expression<Func<T, bool>> expre, BaseBO<T> t, Expression<Func<T, S>> orderBy) where T : class
+        {
             JsonResult re = new JsonResult();
             try
             {
@@ -178,7 +183,7 @@ namespace WebControllers.Handle
                 int pageSize = Utility.FNumeric("rows") == 0 ? 20 : Utility.FNumeric("rows");
                 int totalRecord = 0;
 
-                List<T> list = t.FindAllByPage<int>(expre, orderBy, defaultSort, pageIndex, pageSize, out totalRecord);
+                List<T> list = t.FindAllByPage<S>(expre, orderBy, defaultSort, pageIndex, pageSize, out totalRecord);
                 int totalPage = GetTotalPage(totalRecord, pageSize);
                 JqGridPagingModel<List<T>> jqGridPagingModel = new JqGridPagingModel<List<T>>(pageIndex, totalPage, totalRecord, list);
                 re = JsonResult.SuccessResult(jqGridPagingModel);

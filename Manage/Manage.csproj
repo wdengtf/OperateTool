@@ -75,6 +75,7 @@
     <Content Include="Activity\Lottery\LotteryJackpotDel.aspx" />
     <Content Include="Activity\Lottery\LotteryExport.aspx" />
     <Content Include="Activity\Lottery\LotteryPrizeEdit.aspx" />
+    <Content Include="Channel\ChannelLogList.aspx" />
     <Content Include="css\easyui.css" />
     <Content Include="css\jquery-ui-1.10.3.custom\images\add.png" />
     <Content Include="css\jquery-ui-1.10.3.custom\images\add_hover.png" />
@@ -250,6 +251,13 @@
     <Compile Include="Activity\Lottery\LotteryPrizeEdit.aspx.designer.cs">
       <DependentUpon>LotteryPrizeEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Channel\ChannelLogList.aspx.cs">
+      <DependentUpon>ChannelLogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\ChannelLogList.aspx.designer.cs">
+      <DependentUpon>ChannelLogList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="data\Activity\LotteryJackpotList.ashx.cs">
       <DependentUpon>LotteryJackpotList.ashx</DependentUpon>
     </Compile>
@@ -258,6 +266,9 @@
     </Compile>
     <Compile Include="data\Activity\Lottery\LotteryPrize.ashx.cs">
       <DependentUpon>LotteryPrize.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="data\Channel\ChannelLogList.ashx.cs">
+      <DependentUpon>ChannelLogList.ashx</DependentUpon>
     </Compile>
     <Compile Include="data\Common\jquery_ajax_upload.ashx.cs">
       <DependentUpon>jquery_ajax_upload.ashx</DependentUpon>
@@ -408,6 +419,7 @@
     <Content Include="data\User\droit.ashx" />
     <Content Include="data\User\group.ashx" />
     <Content Include="data\Activity\LotteryJackpotList.ashx" />
+    <Content Include="data\Channel\ChannelLogList.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E881D902-821B-4C3D-BFD3-179535C52BEF}</ProjectGuid>
+    <ProjectGuid>{94096570-3700-4A9F-9540-5A14D8822A69}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -21,9 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -51,35 +49,41 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Framework\Packages\EntityFramework.Extended.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Framework\Packages\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Packages\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Packages\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework\Packages\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Authorized\wxAuth.aspx" />
     <Content Include="Authorized\wxServerAuth.aspx" />
     <Content Include="dist\static\img\banner-1.3317afd.png" />
     <Content Include="dist\static\img\banner-2.1115cfe.png" />
@@ -129,37 +133,13 @@
     <Content Include="dist\static\img\title-1.8513fb0.png" />
     <Content Include="dist\static\img\title-2.fcbacb6.png" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
-    <Content Include="logout.aspx" />
-    <Content Include="packages.config" />
-    <Content Include="Config\appSettings.config" />
-    <Content Include="Config\connectionStrings.config" />
-    <Content Include="Master\MasterPageBase.Master" />
-    <Content Include="static\.DS_Store" />
-    <Content Include="static\css\app.5c70006fb3ccf2404c3b7b07ec7d40f0.css.map" />
-    <Content Include="static\css\app.899b6cdebe90d564db55b166aebe2630.css.map" />
-    <Content Include="static\js\app.8a7d81558c277fec26a3.js.map" />
-    <Content Include="static\js\app.d9bb2158b064be434170.js.map" />
-    <Content Include="static\js\index.js" />
-    <Content Include="static\js\jquery-1.9.0.min.js" />
-    <Content Include="static\js\manifest.ce3e748c5c65f0bca263.js.map" />
-    <Content Include="static\js\manifest.ce4ad675d7f3afc4e801.js.map" />
-    <Content Include="static\js\vendor.39050354d6fa5708363d.js.map" />
-    <Content Include="static\js\vendor.db9768dcc0f6066ce4db.js.map" />
-    <Fakes Include="Fakes\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.fakes" />
-    <Content Include="Data\Lottery.ashx" />
-    <Content Include="Data\Member.ashx" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Authorized\wxAuth.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="index.html" />
     <Content Include="log4net.xml" />
+    <Content Include="logout.aspx" />
+    <Content Include="Log\2016-12\20161216.txt" />
+    <Content Include="Log\2016-12\20161217.txt" />
+    <Content Include="Log\2016-12\20161218.txt" />
     <Content Include="static\css\app.5c70006fb3ccf2404c3b7b07ec7d40f0.css" />
     <Content Include="static\css\app.899b6cdebe90d564db55b166aebe2630.css" />
     <Content Include="static\img\banner-1.3317afd.png" />
@@ -215,6 +195,8 @@
     <Content Include="static\img\title-2.fcbacb6.png" />
     <Content Include="static\js\app.8a7d81558c277fec26a3.js" />
     <Content Include="static\js\app.d9bb2158b064be434170.js" />
+    <Content Include="static\js\index.js" />
+    <Content Include="static\js\jquery-1.9.0.min.js" />
     <Content Include="static\js\manifest.ce3e748c5c65f0bca263.js" />
     <Content Include="static\js\manifest.ce4ad675d7f3afc4e801.js" />
     <Content Include="static\js\vendor.39050354d6fa5708363d.js" />
@@ -242,6 +224,9 @@
     <Compile Include="Data\Member.ashx.cs">
       <DependentUpon>Member.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Data\Wechat.ashx.cs">
+      <DependentUpon>Wechat.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -267,6 +252,32 @@
       <DependentUpon>MasterPageBase.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Config\appSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\connectionStrings.config" />
+    <Content Include="Data\Lottery.ashx" />
+    <Content Include="Data\Member.ashx" />
+    <Content Include="Master\MasterPageBase.Master" />
+    <Content Include="static\.DS_Store" />
+    <Content Include="static\css\app.5c70006fb3ccf2404c3b7b07ec7d40f0.css.map" />
+    <Content Include="static\css\app.899b6cdebe90d564db55b166aebe2630.css.map" />
+    <Content Include="static\js\app.8a7d81558c277fec26a3.js.map" />
+    <Content Include="static\js\app.d9bb2158b064be434170.js.map" />
+    <Content Include="static\js\manifest.ce3e748c5c65f0bca263.js.map" />
+    <Content Include="static\js\manifest.ce4ad675d7f3afc4e801.js.map" />
+    <Content Include="static\js\vendor.39050354d6fa5708363d.js.map" />
+    <Content Include="static\js\vendor.db9768dcc0f6066ce4db.js.map" />
+    <Content Include="Data\Wechat.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Auth\Auth.csproj">
@@ -298,7 +309,6 @@
       <Name>YYT.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -312,7 +322,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>31636</DevelopmentServerPort>
+          <DevelopmentServerPort>60524</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:62104/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -324,13 +334,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

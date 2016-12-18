@@ -69,7 +69,6 @@ namespace YYT.Api.Model
         /// <summary>
         /// 活动id
         /// </summary>
-        [Required(ErrorMessage = "活动列表不能为空")]
         public List<int> activityIdList { get; set; }
     }
 }
