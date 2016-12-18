@@ -41,7 +41,8 @@ var ajax = {
                     //alert("信息提交成功");
                 }
                 else {
-                    alert(data.Message);
+                    paraVerify.ShowTempMessage(data.Message);
+                    //alert(data.Message);
                 }
             }, 'json');
         }
@@ -116,5 +117,55 @@ var paraVerify = {
         if (!reg.test(str))
             return false;
         return true;
+    },
+    ShowTempMessage: function (msg, delaySeconds, option) {
+        if (top && top.Dialog && top.Dialog.tip) {
+            top.Dialog.tip(msg, delaySeconds);
+            return;
+        }
+        if (msg == "") return;
+        var Tip = $('<span>' + msg + '</span>'),
+            move = 30;
+        option = {
+            position: 'absolute',
+            padding: '5px 10px',
+            color: '#fff',
+            left: '50%',
+            top: '50%',
+            opacity: 0,
+            "line-height": "20px",
+            'z-index': 99999,
+            'background-color': '#333',
+            'margin-top': -Tip.outerHeight() / 2,
+            'margin-left': -Tip.outerWidth() / 2
+        }
+        Tip.appendTo(document.body).css(option);
+        if (Tip.width() > 300) {
+            Tip.css({ width: 300 });
+            Tip.css({ 'margin-left': -Tip.outerWidth() / 2 });
+        }
+        Tip.addClass("tip");
+
+        var showTipTimer = setTimeout(function () {
+            var top = Tip.offset().top;
+            Tip.css({
+                top: top + move / 2
+            });
+            Tip.animate({
+                top: top - move / 2,
+                opacity: 1
+            }, function () {
+                setTimeout(function () {
+                    var top = Tip.offset().top;
+                    Tip.animate({
+                        top: top - move,
+                        opacity: 0
+                    }, function () {
+                        Tip.remove();
+                    });
+                }, delaySeconds || 1000);
+            });
+        });
+        return Tip;
     }
 }

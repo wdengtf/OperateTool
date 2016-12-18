@@ -1,4 +1,5 @@
-﻿using Framework.Log;
+﻿using Auth.Wx;
+using Framework.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,20 +7,25 @@ using System.Text;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using YYT.BLL;
 
 namespace Web
 {
     public class Global : System.Web.HttpApplication
     {
+        private Wx_ConfigBO wxConfigBo = new Wx_ConfigBO();
+        private WxServerAuth wxServerAuthor = new WxServerAuth();
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            LogService.logInfo("第一个人访问时间：" + DateTime.Now.ToString());
+            LogService.LogInfo("第一个人访问时间：" + DateTime.Now.ToString());
+
+            //业务逻辑
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            LogService.logInfo("网站关闭,或重启时时间：" + DateTime.Now.ToString());
+           
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -67,7 +73,7 @@ namespace Web
             //处理完及时清理异常 
             Server.ClearError();
             //跳转至出错页面 
-            LogService.logFatal(strErr.ToString());
+            LogService.LogFatal(strErr.ToString());
 
             return;
         }
@@ -79,7 +85,7 @@ namespace Web
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            LogService.LogInfo("网站关闭,或重启时时间：" + DateTime.Now.ToString());
         }
     }
 }

@@ -7,6 +7,7 @@ using Framework.Log;
 using Framework.Model;
 using LuckDraw.Model;
 using YYT.Model;
+using Events;
 
 namespace LuckDraw
 {
@@ -16,7 +17,8 @@ namespace LuckDraw
     public class LotteryCall
     {
         private readonly ILottery lottery = null;
-        //private readonly BusinessEvent.IEvent events = new BusinessEvent.Handle.MsmqEvent();
+        //private readonly IEvent events = new MsmqEvents();
+        private readonly IEvent events = new Log4NetEvents();
 
         /// <summary>
         /// 构造函数
@@ -38,23 +40,22 @@ namespace LuckDraw
         /// <summary>
         /// 获取抽奖活动数据
         /// </summary>
-        /// <param name="data_type">平台类型</param>
-        /// <param name="out_id">Out_id</param>
-        /// <param name="activity_id">活动id</param>
+        /// <param name="member"></param>
+        /// <param name="activity_id"></param>
         /// <returns></returns>
         public LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id)
         {
             LotteryModel lotteryModel = new LotteryModel();
             try
             {
-                //DeleteEvent();
-                //AddEvent();
+                DeleteEvent();
+                AddEvent();
 
                 lotteryModel = lottery.GetLotteryActivity(member, activity_id);
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return lotteryModel;
         }
@@ -62,25 +63,22 @@ namespace LuckDraw
         /// <summary>
         /// 绑定会员抽奖数据
         /// </summary>
-        /// <param name="data_type">平台类型</param>
-        /// <param name="out_id">Out_id</param>
-        /// <param name="activity_id">活动id</param>
-        /// <param name="win_name">抽奖人名称</param>
-        /// <param name="win_phone">抽奖人手机</param>
+        /// <param name="member"></param>
+        /// <param name="activity_id"></param>
         /// <returns></returns>
         public Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id)
         {
             Luck_ActivityPrize model = null;
             try
             {
-                //DeleteEvent();
-                //AddEvent();
+                DeleteEvent();
+                AddEvent();
 
                 model = lottery.MemberBindLottery(member, activity_id);
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return model;
         }
@@ -89,23 +87,22 @@ namespace LuckDraw
         /// <summary>
         /// 获取会员抽奖奖品数据
         /// </summary>
-        /// <param name="data_type">平台类型</param>
-        /// <param name="out_id">Out_id</param>
-        /// <param name="activity_id">活动id</param>
+        /// <param name="member"></param>
+        /// <param name="activityIdList"></param>
         /// <returns></returns>
         public List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList)
         {
             List<WinRecordModel> winRecordList = new List<WinRecordModel>();
             try
             {
-                //DeleteEvent();
-                //AddEvent();
+                DeleteEvent();
+                AddEvent();
 
                 winRecordList = lottery.GetLotteryPrize(member, activityIdList);
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return winRecordList;
         }
@@ -124,7 +121,7 @@ namespace LuckDraw
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return message;
         }
@@ -142,37 +139,37 @@ namespace LuckDraw
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return result;
         }
 
         #region 事件操作
-        ///// <summary>
-        ///// 添加事件
-        ///// </summary>
-        //private void AddEvent()
-        //{
-        //    lottery.OnBegin += new EventHandler(events.OnBegin);
-        //    lottery.OnTipMsg += new EventHandler(events.OnTipMsg);
-        //    lottery.OnSuccess += new EventHandler(events.OnSuccess);
-        //    lottery.OnFail += new EventHandler(events.OnFail);
-        //    lottery.OnException += new EventHandler(events.OnException);
-        //    lottery.OnCompelete += new EventHandler(events.OnCompelete);
-        //}
+        /// <summary>
+        /// 添加事件
+        /// </summary>
+        private void AddEvent()
+        {
+            lottery.OnBegin += new EventHandler(events.OnBegin);
+            lottery.OnTipMsg += new EventHandler(events.OnTipMsg);
+            lottery.OnSuccess += new EventHandler(events.OnSuccess);
+            lottery.OnFail += new EventHandler(events.OnFail);
+            lottery.OnException += new EventHandler(events.OnException);
+            lottery.OnCompelete += new EventHandler(events.OnCompelete);
+        }
 
-        ///// <summary>
-        ///// 取消事件
-        ///// </summary>
-        //private void DeleteEvent()
-        //{
-        //    lottery.OnBegin -= new EventHandler(events.OnBegin);
-        //    lottery.OnTipMsg -= new EventHandler(events.OnTipMsg);
-        //    lottery.OnException -= new EventHandler(events.OnException);
-        //    lottery.OnSuccess -= new EventHandler(events.OnSuccess);
-        //    lottery.OnFail -= new EventHandler(events.OnFail);
-        //    lottery.OnCompelete -= new EventHandler(events.OnCompelete);
-        //}
+        /// <summary>
+        /// 取消事件
+        /// </summary>
+        private void DeleteEvent()
+        {
+            lottery.OnBegin -= new EventHandler(events.OnBegin);
+            lottery.OnTipMsg -= new EventHandler(events.OnTipMsg);
+            lottery.OnException -= new EventHandler(events.OnException);
+            lottery.OnSuccess -= new EventHandler(events.OnSuccess);
+            lottery.OnFail -= new EventHandler(events.OnFail);
+            lottery.OnCompelete -= new EventHandler(events.OnCompelete);
+        }
         #endregion
     }
 }

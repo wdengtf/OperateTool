@@ -85,7 +85,7 @@ namespace Manage.Activity.Lottery
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Framework.Log
         /// 功能：信息日志
         /// </summary>
         /// <param name="info"></param>
-        public static void logInfo(string info)
+        public static void LogInfo(string info)
         {
             log.Info(info);
         }
@@ -33,7 +33,7 @@ namespace Framework.Log
         /// 功能：异常日志
         /// </summary>
         /// <param name="ex"></param>
-        public static void logDebug(string ex)
+        public static void LogDebug(string ex)
         {
             log.Debug(ex);
         }
@@ -42,7 +42,7 @@ namespace Framework.Log
         /// 功能：异常日志
         /// </summary>
         /// <param name="ex"></param>
-        public static void logDebug(Exception ex)
+        public static void LogDebug(Exception ex)
         {
             log.Debug(ex);
         }
@@ -51,7 +51,7 @@ namespace Framework.Log
         /// 功能：警告日志
         /// </summary>
         /// <param name="info"></param>
-        public static void logWarn(string info)
+        public static void LogWarn(string info)
         {
             log.Warn(info);
         }
@@ -59,7 +59,7 @@ namespace Framework.Log
         /// 功能：错误日志
         /// </summary>
         /// <param name="info"></param>
-        public static void logError(string info)
+        public static void LogError(string info)
         {
             log.Error(info);
         }
@@ -68,7 +68,7 @@ namespace Framework.Log
         /// 功能：严重错误日志
         /// </summary>
         /// <param name="info"></param>
-        public static void logFatal(string info)
+        public static void LogFatal(string info)
         {
             log.Fatal(info);
         }

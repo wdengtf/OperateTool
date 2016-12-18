@@ -50,7 +50,7 @@ namespace Web.Manage.Activity
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
 
@@ -81,19 +81,19 @@ namespace Web.Manage.Activity
                 {
                     luckActivityBO.Update(model);
                     Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','修改成功!');");
-                    LogService.logInfo(manageUserModel.UserName + "修改数据，成功！");
+                    LogService.LogInfo(manageUserModel.UserName + "修改数据，成功！");
                 }
                 else
                 {
                     luckActivityBO.Add(model);
                     Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('add','新增成功!');");
-                    LogService.logInfo(manageUserModel.UserName + "新增数据成功！");
+                    LogService.LogInfo(manageUserModel.UserName + "新增数据成功！");
                 }
             }
             catch (Exception ex)
             {
                 Utility.ScriptMessage("parent.dialog.ShowTempMessage('参数错误!');");
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
     }

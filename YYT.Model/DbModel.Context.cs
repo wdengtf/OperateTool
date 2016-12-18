@@ -33,7 +33,6 @@ namespace YYT.Model
         public virtual DbSet<Luck_ActivityPrize> Luck_ActivityPrize { get; set; }
         public virtual DbSet<QD_Channel> QD_Channel { get; set; }
         public virtual DbSet<QD_ChannelLog> QD_ChannelLog { get; set; }
-        public virtual DbSet<QD_ChannelUser> QD_ChannelUser { get; set; }
         public virtual DbSet<QD_ChanneWhilte> QD_ChanneWhilte { get; set; }
         public virtual DbSet<Wx_Config> Wx_Config { get; set; }
         public virtual DbSet<Wx_Redpack> Wx_Redpack { get; set; }
@@ -41,5 +40,6 @@ namespace YYT.Model
         public virtual DbSet<WxCompany_Payment> WxCompany_Payment { get; set; }
         public virtual DbSet<WxCompany_PaymentLog> WxCompany_PaymentLog { get; set; }
         public virtual DbSet<YYT_Member> YYT_Member { get; set; }
+        public virtual DbSet<QD_ChannelUser> QD_ChannelUser { get; set; }
     }
 }

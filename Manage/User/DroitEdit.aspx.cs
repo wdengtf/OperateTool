@@ -45,7 +45,7 @@ namespace Web.Manage.User
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
 
@@ -99,19 +99,19 @@ namespace Web.Manage.User
                 {
                     menuBO.Update(model);
                     Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','修改成功!');");
-                    LogService.logInfo(manageUserModel.UserName + "修改数据" + txtTitle.Text.Trim() + "，成功！");
+                    LogService.LogInfo(manageUserModel.UserName + "修改数据" + txtTitle.Text.Trim() + "，成功！");
                 }
                 else
                 {
                     menuBO.Add(model);
                     Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('add','新增成功!');");
-                    LogService.logInfo(manageUserModel.UserName + "新增数据" + txtTitle.Text.Trim() + "，成功！");
+                    LogService.LogInfo(manageUserModel.UserName + "新增数据" + txtTitle.Text.Trim() + "，成功！");
                 }
             }
             catch (Exception ex)
             {
                 Utility.ScriptMessage("parent.dialog.ShowTempMessage('参数错误!');");
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
     }

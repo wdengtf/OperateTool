@@ -104,12 +104,12 @@ namespace Framework.Utils
         #endregion
 
         /// <summary>
-        /// 签名检测
+        /// 名称和key签名 md5转大写
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="userKey"></param>
         /// <returns></returns>
-        public static String encode(String userName, String userKey)
+        public static String Encode(String userName, String userKey)
         {
             List<string> list = new List<string>() { userName, userKey };
             list.Sort();
@@ -118,7 +118,12 @@ namespace Framework.Utils
             return MD5Hash(tempstr).ToUpper();
         }
 
-
+        /// <summary>
+        ///  key+值 md5转小写 md5转大写
+        /// </summary>
+        /// <param name="secret_key"></param>
+        /// <param name="vals"></param>
+        /// <returns></returns>
         public static string GetSign(string secret_key,List<string> vals)
         {
 
@@ -126,11 +131,12 @@ namespace Framework.Utils
             list.Add(MD5Hash(secret_key).ToLower());
             foreach (String val in vals)
             {
-                if (!string.IsNullOrEmpty(val))
+                if (!string.IsNullOrWhiteSpace(val))
                 {
                    list.Add(MD5Hash(val).ToLower());
                 }
             }
+            list.Sort();
             return  MD5Hash(string.Join("", list)).ToUpper();
         }
 
@@ -166,20 +172,20 @@ namespace Framework.Utils
         /// 创建签名 将参数和值一起签名
         /// </summary>
         /// <param name="param"></param>
-        /// <param name="DC_Key"></param>
+        /// <param name="key"></param>
         /// <returns></returns>
-        public static string CreateSign(IDictionary<String, String> param, string DC_Key)
+        public static string CreateSign(IDictionary<String, String> param, string key)
         {
-            List<string> _list = new List<string>();
+            List<string> list = new List<string>();
             foreach (var item in param)
             {
-                _list.Add(item.Key + "=" + item.Value);
+                if (!string.IsNullOrWhiteSpace(item.Value))
+                    list.Add(item.Key + "=" + item.Value);
             }
-            _list.Add("key=" + DC_Key);
-            _list.Sort();
+            list.Add("key=" + key);
+            list.Sort();
 
-
-            return MD5Hash(string.Join("", _list)).ToLower();
+            return MD5Hash(string.Join("", list)).ToLower();
         }
 
 

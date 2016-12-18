@@ -10,6 +10,7 @@ using YYT.BLL;
 using YYT.Model;
 using System.Linq.Expressions;
 using Framework.EF;
+using Framework.Model;
 
 namespace WebControllers.Admin
 {

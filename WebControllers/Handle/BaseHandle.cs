@@ -60,7 +60,7 @@ namespace WebControllers.Handle
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.EmptyFunction);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             context.Response.Write(Utility.ToJson(re));
         }
@@ -186,7 +186,7 @@ namespace WebControllers.Handle
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -215,7 +215,7 @@ namespace WebControllers.Handle
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -242,7 +242,7 @@ namespace WebControllers.Handle
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

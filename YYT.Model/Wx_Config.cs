@@ -23,5 +23,6 @@ namespace YYT.Model
         public string access_token { get; set; }
         public Nullable<System.DateTime> Updatetime { get; set; }
         public string appSecret { get; set; }
+        public string jsapi_ticket { get; set; }
     }
 }

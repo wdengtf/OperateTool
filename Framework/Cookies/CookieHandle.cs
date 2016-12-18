@@ -110,7 +110,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -139,7 +139,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -166,7 +166,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -189,7 +189,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return strCookValue;
         }
@@ -218,7 +218,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -241,7 +241,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flage;
         }
@@ -261,7 +261,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
                 return "";
             }
             return "";
@@ -285,7 +285,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flage;
         }
@@ -327,7 +327,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -352,7 +352,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return userId;
         }
@@ -370,7 +370,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return strCookValue;
         }
@@ -388,7 +388,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return strCookValue;
         }
@@ -413,7 +413,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return groupId;
         }
@@ -439,7 +439,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return loginGroupId;
         }

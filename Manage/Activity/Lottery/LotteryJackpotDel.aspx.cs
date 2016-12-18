@@ -66,7 +66,7 @@ namespace Web.Manage.Activity.Lottery
                 luckActivityPrizeBO.Update(lotteryPrizeModel);
 
                 Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','删除成功!','" + subgrid_table_id + "');");
-                LogService.logInfo(manageUserModel.UserName + "删除数据，成功！");
+                LogService.LogInfo(manageUserModel.UserName + "删除数据，成功！");
             }
             else
             {

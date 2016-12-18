@@ -48,7 +48,7 @@ namespace Web.Manage.data.User
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -79,7 +79,7 @@ namespace Web.Manage.data.User
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

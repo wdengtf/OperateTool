@@ -4,7 +4,7 @@
     <title>NEWA美容仪</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadOtherCss" runat="server">
-    <link href=/static/css/app.d40e9bac0ca4cc691f17b4faa8972ed0.css rel=stylesheet>
+    <link href=/static/css/app.6622d689942f13ba63663ad023d627f4.css rel=stylesheet>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="HeadOtherJS" runat="server">
 </asp:Content>
@@ -12,9 +12,10 @@
     <div id="app"></div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="FootOtherJS" runat="server">
-   <script type=text/javascript src=/static/js/manifest.ec6f62b12de954b7fe7f.js></script>
-    <script type=text/javascript src=/static/js/vendor.bc9772ffa3e5dcb1b8c6.js></script>
-    <script type=text/javascript src=/static/js/app.d5501784822719d73347.js></script>
+    <script type=text/javascript src=/static/js/manifest.d0c48fb2a3c384cf79aa.js></script>
+    <script type=text/javascript src=/static/js/vendor.b45bd3395337e96dba82.js></script>
+    <script type=text/javascript src=/static/js/app.cd3f55643265def1c30d.js></script>
     <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </asp:Content>

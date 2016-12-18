@@ -74,7 +74,7 @@ namespace Web.Manage.data.Member
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

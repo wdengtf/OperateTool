@@ -19,8 +19,8 @@ namespace YYT.Model
         public string user_name { get; set; }
         public string user_key { get; set; }
         public Nullable<int> Status { get; set; }
-        public string start_time { get; set; }
-        public string end_time { get; set; }
+        public Nullable<System.DateTime> start_time { get; set; }
+        public Nullable<System.DateTime> end_time { get; set; }
         public Nullable<System.DateTime> Createtime { get; set; }
         public Nullable<int> validate_ip { get; set; }
     }

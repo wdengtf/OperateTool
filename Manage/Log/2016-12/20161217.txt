@@ -1,0 +1,1415 @@
+
+ 
+记录时间：2016-12-17 08:37:24,472 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 8:37:24
+ 
+
+ 
+记录时间：2016-12-17 08:37:25,121 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 8:37:25
+ 
+
+ 
+记录时间：2016-12-17 09:21:18,375 
+线程ID:[66] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 9:21:18
+ 
+
+ 
+记录时间：2016-12-17 11:39:08,960 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 11:39:08
+ 
+
+ 
+记录时间：2016-12-17 11:39:09,374 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 11:39:09
+ 
+
+ 
+记录时间：2016-12-17 11:55:36,574 
+线程ID:[14] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 11:55:36
+ 
+
+ 
+记录时间：2016-12-17 11:55:37,145 
+线程ID:[28] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 11:55:37
+ 
+
+ 
+记录时间：2016-12-17 12:40:32,348 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 12:40:32
+ 
+
+ 
+记录时间：2016-12-17 12:40:32,897 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 12:40:32
+ 
+
+ 
+记录时间：2016-12-17 12:40:32,897 
+线程ID:[98] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 12:40:32
+ 
+
+ 
+记录时间：2016-12-17 12:40:32,897 
+线程ID:[111] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 12:40:32
+ 
+
+ 
+记录时间：2016-12-17 12:42:31,898 
+线程ID:[99] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 12:42:31
+ 
+
+ 
+记录时间：2016-12-17 12:42:32,446 
+线程ID:[104] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 12:42:32
+ 
+
+ 
+记录时间：2016-12-17 12:43:35,437 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator新增数据抽奖奖池导出，成功！
+ 
+
+ 
+记录时间：2016-12-17 12:48:07,145 
+线程ID:[90] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator修改数据超级管理员，成功！
+ 
+
+ 
+记录时间：2016-12-17 12:48:19,505 
+线程ID:[102] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 12:48:19
+ 
+
+ 
+记录时间：2016-12-17 12:53:27,480 
+线程ID:[79] 
+日志级别：  FATAL 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：
+--------------------------------------------------------------------------------------------------
+2016.12.17 12:53:27
+.客户信息：
+	Ip:::1
+	浏览器:Firefox
+	浏览器版本:50
+	操作系统:WinNT
+.错误信息：
+	来源页面：http://localhost:62028/Activity/LotteryJackpotList.aspx?temid=21
+	页面：http://localhost:62028/Activity/LotteryExport.aspx?action=jackpotExport
+	错误信息：文件“/Activity/LotteryExport.aspx”不存在。
+	错误源：System.Web
+	异常方法：Void CheckVirtualFileExists(System.Web.VirtualPath)
+	堆栈信息：   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------------------
+ 
+
+ 
+记录时间：2016-12-17 12:54:34,251 
+线程ID:[96] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Threading.ThreadAbortException: 正在中止线程。
+   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 Manage.Activity.Lottery.LotteryExport.JackpotExport() 位置 e:\Knowledge\Operate\OperateTool\Manage\Activity\Lottery\LotteryExport.aspx.cs:行号 80
+ 
+
+ 
+记录时间：2016-12-17 13:04:57,716 
+线程ID:[46] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 13:04:57
+ 
+
+ 
+记录时间：2016-12-17 13:04:58,028 
+线程ID:[47] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 13:04:58
+ 
+
+ 
+记录时间：2016-12-17 13:04:58,029 
+线程ID:[49] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 13:04:58
+ 
+
+ 
+记录时间：2016-12-17 13:04:58,029 
+线程ID:[79] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 13:04:58
+ 
+
+ 
+记录时间：2016-12-17 16:51:16,999 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 16:51:16
+ 
+
+ 
+记录时间：2016-12-17 16:51:17,573 
+线程ID:[276] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 16:51:17
+ 
+
+ 
+记录时间：2016-12-17 16:51:17,573 
+线程ID:[279] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 16:51:17
+ 
+
+ 
+记录时间：2016-12-17 16:51:17,573 
+线程ID:[277] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 16:51:17
+ 
+
+ 
+记录时间：2016-12-17 16:54:38,861 
+线程ID:[99] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 16:54:38
+ 
+
+ 
+记录时间：2016-12-17 16:54:39,175 
+线程ID:[277] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 16:54:39
+ 
+
+ 
+记录时间：2016-12-17 16:54:39,372 
+线程ID:[276] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 16:54:39
+ 
+
+ 
+记录时间：2016-12-17 17:36:05,281 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 17:36:05
+ 
+
+ 
+记录时间：2016-12-17 17:36:05,894 
+线程ID:[7] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 17:36:05
+ 
+
+ 
+记录时间：2016-12-17 17:45:31,608 
+线程ID:[25] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 17:45:31
+ 
+
+ 
+记录时间：2016-12-17 17:45:32,155 
+线程ID:[20] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 17:45:32
+ 
+
+ 
+记录时间：2016-12-17 17:45:32,342 
+线程ID:[21] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 17:45:32
+ 
+
+ 
+记录时间：2016-12-17 17:45:59,981 
+线程ID:[20] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:83a3bbc7-9a45-4e35-b439-1a2eeb0cd218
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 17:46:05,719 
+线程ID:[22] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:83a3bbc7-9a45-4e35-b439-1a2eeb0cd218
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 17:46:09,860 
+线程ID:[22] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:83a3bbc7-9a45-4e35-b439-1a2eeb0cd218
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 17:53:20,961 
+线程ID:[25] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 17:53:20
+ 
+
+ 
+记录时间：2016-12-17 17:53:21,509 
+线程ID:[29] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 17:53:21
+ 
+
+ 
+记录时间：2016-12-17 17:53:46,660 
+线程ID:[16] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:0a8c614e-ca81-4e0b-ba3b-3e4392e1566a
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 17:53:52,773 
+线程ID:[16] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 17:53:52
+ 
+
+ 
+记录时间：2016-12-17 18:14:08,593 
+线程ID:[34] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator修改数据抽奖，成功！
+ 
+
+ 
+记录时间：2016-12-17 18:20:27,469 
+线程ID:[5] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:20:27
+ 
+
+ 
+记录时间：2016-12-17 18:20:28,034 
+线程ID:[44] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:20:28
+ 
+
+ 
+记录时间：2016-12-17 18:20:28,034 
+线程ID:[33] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:20:28
+ 
+
+ 
+记录时间：2016-12-17 18:20:28,034 
+线程ID:[46] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:20:28
+ 
+
+ 
+记录时间：2016-12-17 18:20:50,806 
+线程ID:[44] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：administrator修改数据抽奖，成功！
+ 
+
+ 
+记录时间：2016-12-17 18:20:52,488 
+线程ID:[31] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:20:52
+ 
+
+ 
+记录时间：2016-12-17 18:22:49,532 
+线程ID:[25] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:22:49
+ 
+
+ 
+记录时间：2016-12-17 18:22:50,107 
+线程ID:[33] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:22:50
+ 
+
+ 
+记录时间：2016-12-17 18:22:50,107 
+线程ID:[31] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:22:50
+ 
+
+ 
+记录时间：2016-12-17 18:22:50,107 
+线程ID:[38] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:22:50
+ 
+
+ 
+记录时间：2016-12-17 18:24:39,760 
+线程ID:[25] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:24:39
+ 
+
+ 
+记录时间：2016-12-17 18:24:40,672 
+线程ID:[38] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:24:40
+ 
+
+ 
+记录时间：2016-12-17 18:24:40,673 
+线程ID:[35] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:24:40
+ 
+
+ 
+记录时间：2016-12-17 18:24:40,673 
+线程ID:[29] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:24:40
+ 
+
+ 
+记录时间：2016-12-17 18:25:23,039 
+线程ID:[36] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:0c3d718d-78f2-4c38-b59e-adf2aee474c6
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 18:34:07,652 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:34:07
+ 
+
+ 
+记录时间：2016-12-17 18:34:08,212 
+线程ID:[27] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:34:08
+ 
+
+ 
+记录时间：2016-12-17 18:34:08,213 
+线程ID:[36] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:34:08
+ 
+
+ 
+记录时间：2016-12-17 18:34:08,213 
+线程ID:[35] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:34:08
+ 
+
+ 
+记录时间：2016-12-17 18:34:20,444 
+线程ID:[28] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:8a626dc8-38b7-4dca-b644-6508e21c5a0a
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 18:35:18,737 
+线程ID:[60] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:35:18
+ 
+
+ 
+记录时间：2016-12-17 18:35:19,326 
+线程ID:[35] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:35:19
+ 
+
+ 
+记录时间：2016-12-17 18:35:19,326 
+线程ID:[36] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:35:19
+ 
+
+ 
+记录时间：2016-12-17 18:35:19,326 
+线程ID:[29] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:35:19
+ 
+
+ 
+记录时间：2016-12-17 18:36:28,985 
+线程ID:[38] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:05499616-8770-4e33-9819-2b2cbf09e3b5
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 207
+ 
+
+ 
+记录时间：2016-12-17 18:36:47,546 
+线程ID:[58] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:36:47
+ 
+
+ 
+记录时间：2016-12-17 18:39:55,805 
+线程ID:[25] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:39:55
+ 
+
+ 
+记录时间：2016-12-17 18:39:56,507 
+线程ID:[35] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:39:56
+ 
+
+ 
+记录时间：2016-12-17 18:39:56,507 
+线程ID:[36] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:39:56
+ 
+
+ 
+记录时间：2016-12-17 18:39:56,508 
+线程ID:[27] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:39:56
+ 
+
+ 
+记录时间：2016-12-17 18:52:20,036 
+线程ID:[64] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 18:52:19
+ 
+
+ 
+记录时间：2016-12-17 18:52:20,600 
+线程ID:[44] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:52:20
+ 
+
+ 
+记录时间：2016-12-17 18:52:20,600 
+线程ID:[27] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:52:20
+ 
+
+ 
+记录时间：2016-12-17 18:52:20,600 
+线程ID:[29] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 18:52:20
+ 
+
+ 
+记录时间：2016-12-17 19:08:21,374 
+线程ID:[104] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 19:08:21
+ 
+
+ 
+记录时间：2016-12-17 19:08:21,965 
+线程ID:[100] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:08:21
+ 
+
+ 
+记录时间：2016-12-17 19:08:21,965 
+线程ID:[129] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:08:21
+ 
+
+ 
+记录时间：2016-12-17 19:08:21,965 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:08:21
+ 
+
+ 
+记录时间：2016-12-17 19:09:53,859 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 19:09:53
+ 
+
+ 
+记录时间：2016-12-17 19:09:54,423 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:09:54
+ 
+
+ 
+记录时间：2016-12-17 19:09:54,424 
+线程ID:[112] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:09:54
+ 
+
+ 
+记录时间：2016-12-17 19:09:54,424 
+线程ID:[129] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:09:54
+ 
+
+ 
+记录时间：2016-12-17 19:10:03,577 
+线程ID:[106] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:10:03
+ 
+
+ 
+记录时间：2016-12-17 19:10:17,270 
+线程ID:[112] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:10:17
+ 
+
+ 
+记录时间：2016-12-17 19:29:33,306 
+线程ID:[56] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 19:29:33
+ 
+
+ 
+记录时间：2016-12-17 19:29:33,869 
+线程ID:[114] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:29:33
+ 
+
+ 
+记录时间：2016-12-17 19:29:33,869 
+线程ID:[105] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:29:33
+ 
+
+ 
+记录时间：2016-12-17 19:29:33,869 
+线程ID:[113] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:29:33
+ 
+
+ 
+记录时间：2016-12-17 19:47:45,889 
+线程ID:[104] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 19:47:45
+ 
+
+ 
+记录时间：2016-12-17 19:47:46,455 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:47:46
+ 
+
+ 
+记录时间：2016-12-17 19:47:46,455 
+线程ID:[112] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:47:46
+ 
+
+ 
+记录时间：2016-12-17 19:47:46,455 
+线程ID:[48] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:47:46
+ 
+
+ 
+记录时间：2016-12-17 19:47:57,356 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:47:57
+ 
+
+ 
+记录时间：2016-12-17 19:50:00,085 
+线程ID:[10] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:50:00
+ 
+
+ 
+记录时间：2016-12-17 19:52:47,566 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:52:47
+ 
+
+ 
+记录时间：2016-12-17 19:56:40,005 
+线程ID:[64] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 19:56:39
+ 
+
+ 
+记录时间：2016-12-17 19:56:40,580 
+线程ID:[48] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:56:40
+ 
+
+ 
+记录时间：2016-12-17 19:56:40,580 
+线程ID:[74] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:56:40
+ 
+
+ 
+记录时间：2016-12-17 19:56:40,580 
+线程ID:[106] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:56:40
+ 
+
+ 
+记录时间：2016-12-17 19:58:49,025 
+线程ID:[5] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 19:58:48
+ 
+
+ 
+记录时间：2016-12-17 19:58:49,607 
+线程ID:[11] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:58:49
+ 
+
+ 
+记录时间：2016-12-17 19:58:49,607 
+线程ID:[48] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:58:49
+ 
+
+ 
+记录时间：2016-12-17 19:58:49,607 
+线程ID:[10] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 19:58:49
+ 
+
+ 
+记录时间：2016-12-17 20:12:22,410 
+线程ID:[104] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:12:22
+ 
+
+ 
+记录时间：2016-12-17 20:12:22,969 
+线程ID:[62] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:12:22
+ 
+
+ 
+记录时间：2016-12-17 20:12:22,969 
+线程ID:[105] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:12:22
+ 
+
+ 
+记录时间：2016-12-17 20:12:22,969 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:12:22
+ 
+
+ 
+记录时间：2016-12-17 20:13:20,941 
+线程ID:[113] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+ClientConnectionId:62026a10-b2ee-4882-bbb5-2fcef01b48b2
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql)
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount)
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage)
+ 
+
+ 
+记录时间：2016-12-17 20:13:23,962 
+线程ID:[62] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+ClientConnectionId:62026a10-b2ee-4882-bbb5-2fcef01b48b2
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql)
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount)
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage)
+ 
+
+ 
+记录时间：2016-12-17 20:13:33,186 
+线程ID:[113] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+ClientConnectionId:62026a10-b2ee-4882-bbb5-2fcef01b48b2
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql)
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount)
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage)
+ 
+
+ 
+记录时间：2016-12-17 20:13:44,424 
+线程ID:[105] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 'channelUserId' 附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+ClientConnectionId:62026a10-b2ee-4882-bbb5-2fcef01b48b2
+Error Number:102,State:1,Class:15
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL)
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql)
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount)
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage)
+ 
+
+ 
+记录时间：2016-12-17 20:14:47,111 
+线程ID:[104] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:14:47
+ 
+
+ 
+记录时间：2016-12-17 20:14:47,739 
+线程ID:[106] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:14:47
+ 
+
+ 
+记录时间：2016-12-17 20:14:47,739 
+线程ID:[61] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:14:47
+ 
+
+ 
+记录时间：2016-12-17 20:14:47,739 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:14:47
+ 
+
+ 
+记录时间：2016-12-17 20:15:09,349 
+线程ID:[113] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 列名 'channelUserId' 不明确。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:934c3db3-88e1-4263-9ce3-cca7068de35d
+Error Number:209,State:1,Class:16
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 209
+ 
+
+ 
+记录时间：2016-12-17 20:15:11,564 
+线程ID:[77] 
+日志级别：  DEBUG 
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：System.Exception: System.Data.SqlClient.SqlException (0x80131904): 列名 'channelUserId' 不明确。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 194
+ClientConnectionId:934c3db3-88e1-4263-9ce3-cca7068de35d
+Error Number:209,State:1,Class:16
+   在 YYT.DAL.SQLHelperBase.GetDataTable(String sSQL) 位置 e:\Knowledge\Operate\OperateTool\YYT.DAL\SQLHelperBase.cs:行号 199
+   在 YYT.BLL.Common.SqlBO.GetdataBySql(String sql) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\SqlBO.cs:行号 23
+   在 YYT.BLL.Common.CommonPage.getDataByPage(Int32 CurrentPage, Int32& recordCount) 位置 e:\Knowledge\Operate\OperateTool\YYT.BLL\Common\CommonPage.cs:行号 40
+   在 WebControllers.Handle.BaseHandle.GetListBySql(CommonPage clspage) 位置 e:\Knowledge\Operate\OperateTool\WebControllers\Handle\BaseHandle.cs:行号 209
+ 
+
+ 
+记录时间：2016-12-17 20:15:35,812 
+线程ID:[104] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:15:35
+ 
+
+ 
+记录时间：2016-12-17 20:15:36,356 
+线程ID:[105] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:15:36
+ 
+
+ 
+记录时间：2016-12-17 20:15:36,356 
+线程ID:[110] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:15:36
+ 
+
+ 
+记录时间：2016-12-17 20:15:36,357 
+线程ID:[77] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:15:36
+ 
+
+ 
+记录时间：2016-12-17 20:15:56,550 
+线程ID:[62] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:15:56
+ 
+
+ 
+记录时间：2016-12-17 20:22:35,069 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:22:35
+ 
+
+ 
+记录时间：2016-12-17 20:22:35,741 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:22:35
+ 
+
+ 
+记录时间：2016-12-17 20:25:24,172 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:25:24
+ 
+
+ 
+记录时间：2016-12-17 20:25:24,849 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:25:24
+ 
+
+ 
+记录时间：2016-12-17 20:28:55,372 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:28:55
+ 
+
+ 
+记录时间：2016-12-17 20:28:55,971 
+线程ID:[6] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:28:55
+ 
+
+ 
+记录时间：2016-12-17 20:29:37,392 
+线程ID:[8] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:29:37
+ 
+
+ 
+记录时间：2016-12-17 20:44:42,049 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 20:44:41
+ 
+
+ 
+记录时间：2016-12-17 20:44:42,588 
+线程ID:[24] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:44:42
+ 
+
+ 
+记录时间：2016-12-17 20:46:32,848 
+线程ID:[24] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 20:46:32
+ 
+
+ 
+记录时间：2016-12-17 21:13:37,191 
+线程ID:[28] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/17 21:13:37
+ 
+
+ 
+记录时间：2016-12-17 21:16:39,497 
+线程ID:[1] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/17 21:16:39
+ 

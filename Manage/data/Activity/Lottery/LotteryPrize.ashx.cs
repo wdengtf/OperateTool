@@ -70,7 +70,7 @@ namespace Web.Manage.data.Activity.Lottery
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -108,7 +108,7 @@ namespace Web.Manage.data.Activity.Lottery
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -169,7 +169,7 @@ namespace Web.Manage.data.Activity.Lottery
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

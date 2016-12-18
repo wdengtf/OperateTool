@@ -77,6 +77,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Authorized\wxServerAuth.aspx" />
     <Content Include="dist\static\img\banner-1.3317afd.png" />
     <Content Include="dist\static\img\banner-2.1115cfe.png" />
     <Content Include="dist\static\img\banner-3.3fa915c.png" />
@@ -225,6 +226,13 @@
     <Compile Include="Authorized\wxAuth.aspx.designer.cs">
       <DependentUpon>wxAuth.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Authorized\wxServerAuth.aspx.cs">
+      <DependentUpon>wxServerAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authorized\wxServerAuth.aspx.designer.cs">
+      <DependentUpon>wxServerAuth.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Data\Lottery.ashx.cs">
       <DependentUpon>Lottery.ashx</DependentUpon>
     </Compile>
@@ -273,6 +281,10 @@
     <ProjectReference Include="..\WebControllers\WebControllers.csproj">
       <Project>{1c734833-a708-486e-b53c-a2dd045fea23}</Project>
       <Name>WebControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YYT.Api\YYT.Api.csproj">
+      <Project>{4b82186c-dd2a-4ab6-b794-7d511de2ff5d}</Project>
+      <Name>YYT.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\YYT.BLL\YYT.BLL.csproj">
       <Project>{bc20b60e-8882-403d-9751-7e5db77f405a}</Project>

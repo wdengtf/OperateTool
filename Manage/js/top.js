@@ -13,7 +13,7 @@
             //window.parent.leftFrame.location.href = $this.attr("href");
             window.clearInterval(topInterval);
         }
-    }, 500);
+    }, 200);
 })
 
 var vueTop = new Vue({

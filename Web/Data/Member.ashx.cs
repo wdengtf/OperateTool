@@ -51,7 +51,7 @@ namespace Web.Data
                 YYT.Model.YYT_Member memberModel = memberBo.GetSingle<int>(where);
                 if (memberModel == null)
                 {
-                    LogService.logFatal("未找到该会员信息" + Utility.ToJson(memberBaseModel));
+                    LogService.LogFatal("未找到该会员信息" + Utility.ToJson(memberBaseModel));
                     return JsonResult.FailResult("请重新刷新授权");
                 }
                 List<int> actitityIdList = new List<int>() { 3 };
@@ -75,7 +75,7 @@ namespace Web.Data
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

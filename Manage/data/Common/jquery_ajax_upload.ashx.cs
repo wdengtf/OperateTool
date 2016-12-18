@@ -50,7 +50,7 @@ namespace Web.Manage.data.Common
             catch (Exception ex)
             {
                 re.Message = MsgShowConfig.Exception;
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

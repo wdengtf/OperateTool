@@ -11,6 +11,7 @@ using Framework.Log;
 using WebControllers.Handle;
 using YYT.BLL;
 using YYT.Model;
+using Framework.Model;
 
 namespace Web.Manage.Activity.Lottery
 {
@@ -93,13 +94,13 @@ namespace Web.Manage.Activity.Lottery
             {
                 luckActivityPrizeBO.Update(model);
                 Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','修改成功!','" + subgrid_table_id + "');");
-                LogService.logInfo(manageUserModel.UserName + "修改数据，成功！");
+                LogService.LogInfo(manageUserModel.UserName + "修改数据，成功！");
             }
             else
             {
                 luckActivityPrizeBO.Add(model);
                 Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('add','新增成功!','" + subgrid_table_id + "');");
-                LogService.logInfo(manageUserModel.UserName + "新增数据成功！");
+                LogService.LogInfo(manageUserModel.UserName + "新增数据成功！");
             }
         }
 

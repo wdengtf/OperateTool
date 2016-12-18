@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using WebControllers.Member;
 using Framework.Model;
-using LuckDraw;
 using Framework.Log;
-using LuckDraw.Model;
 using YYT.Model;
+using YYT.Api;
+using YYT.Api.Model;
+using LuckDraw.Model;
+using Framework;
 
 namespace Web.Data
 {
@@ -16,7 +18,6 @@ namespace Web.Data
     /// </summary>
     public class Lottery : BaseHandle
     {
-        private LotteryCall lotteryCall = new LotteryCall();
         private int actitityId = 3;
         public override JsonResult HandleProcess()
         {
@@ -45,16 +46,21 @@ namespace Web.Data
             JsonResult re = new JsonResult();
             try
             {
-                LotteryModel lotteryModel = lotteryCall.GetLotteryActivity(memberBaseModel, actitityId);
-                if (lotteryCall.GetResultState())
-                    re = JsonResult.SuccessResult(MsgShowConfig.Success);
-                else
-                    re = JsonResult.SuccessResult(lotteryCall.GetMessage());
+                ReqLotteryActivityModel req = new ReqLotteryActivityModel()
+                {
+                    activity_id = actitityId,
+                    data_type = memberBaseModel.data_type,
+                    out_id = memberBaseModel.out_id,
+                    mobile = memberBaseModel.mobile,
+                    nickname = memberBaseModel.nickname
+                };
+                IOperation<ReqLotteryActivityModel> oper = ApiFactory.GetLotteryActivity();
+                re = APICall.MainExcute(req, oper);
             }
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -96,37 +102,54 @@ namespace Web.Data
             JsonResult re = new JsonResult();
             try
             {
-                Luck_ActivityPrize luckActivityPrizeModel = new Luck_ActivityPrize();
-
                 List<int> actitityIdList = new List<int>() { actitityId };
-                List<WinRecordModel> winRecordList = lotteryCall.GetLotteryPrize(memberBaseModel, actitityIdList);
-                if (lotteryCall.GetResultState())
+                ReqLotteryPrizeModel req = new ReqLotteryPrizeModel()
                 {
-                    if (winRecordList == null || winRecordList.Count < 1)
+                    activityIdList = actitityIdList,
+                    data_type = memberBaseModel.data_type,
+                    out_id = memberBaseModel.out_id,
+                    mobile = memberBaseModel.mobile,
+                    nickname = memberBaseModel.nickname
+                };
+                IOperation<ReqLotteryPrizeModel> oper = ApiFactory.GetLotteryPrize();
+                JsonResult reLotteryPrize = APICall.MainExcute(req, oper);
+                if (reLotteryPrize.Result != Result.success)
+                {
+                    return JsonResult.FailResult(reLotteryPrize.Message);
+                }
+
+                List<WinRecordModel> winRecordList = Utility.JsonToObject<List<WinRecordModel>>(reLotteryPrize.Data.ToString());
+                if (winRecordList == null || winRecordList.Count < 1)
+                {
+                    //未抽奖
+                    ReqLotteryActivityModel reqActivity = new ReqLotteryActivityModel()
                     {
-                        //未抽奖
-                        luckActivityPrizeModel = lotteryCall.MemberBindLottery(memberBaseModel, actitityId);
-                        if (lotteryCall.GetResultState())
-                            re = JsonResult.SuccessResult(luckActivityPrizeModel.id - 2);
-                        else
-                            re = JsonResult.FailResult(lotteryCall.GetMessage());
-                    }
-                    else
+                        activity_id = actitityId,
+                        data_type = memberBaseModel.data_type,
+                        out_id = memberBaseModel.out_id,
+                        mobile = memberBaseModel.mobile,
+                        nickname = memberBaseModel.nickname
+                    };
+                    IOperation<ReqLotteryActivityModel> operActivity = ApiFactory.MemberBindLottery();
+                    JsonResult reLotteryActivity = APICall.MainExcute(reqActivity, operActivity);
+                    if (reLotteryActivity.Result != Result.success)
                     {
-                        //已抽奖 返回抽奖记录
-                        WinRecordModel winRecordModel = winRecordList.OrderBy(n => n.Id).FirstOrDefault();
-                        re = JsonResult.SuccessResult(winRecordModel.PrizeId - 2);
+                        return JsonResult.FailResult(reLotteryActivity.Message);
                     }
+                    Luck_ActivityPrize luckActivityPrizeModel = Utility.JsonToObject<Luck_ActivityPrize>(reLotteryActivity.Data.ToString());
+                    re = JsonResult.SuccessResult(luckActivityPrizeModel.id - 2);
                 }
                 else
                 {
-                    re = JsonResult.SuccessResult(lotteryCall.GetMessage());
+                    //已经抽奖
+                    WinRecordModel winRecordModel = winRecordList.OrderBy(n => n.Id).FirstOrDefault();
+                    re = JsonResult.SuccessResult(winRecordModel.PrizeId - 2);
                 }
             }
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(ex.ToString());
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
