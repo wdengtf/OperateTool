@@ -415,3 +415,19 @@
 出错类：Framework.Log.LogService property: [(null)] - 
 错误描述：网站关闭,或重启时时间：2016/12/16 19:21:04
  
+
+ 
+记录时间：2016-12-16 19:26:42,318 
+线程ID:[82] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：第一个人访问时间：2016/12/16 19:26:42
+ 
+
+ 
+记录时间：2016-12-16 19:26:42,425 
+线程ID:[969] 
+日志级别：  INFO  
+出错类：Framework.Log.LogService property: [(null)] - 
+错误描述：网站关闭,或重启时时间：2016/12/16 19:26:42
+ 
