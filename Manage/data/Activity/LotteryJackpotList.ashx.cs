@@ -60,7 +60,7 @@ namespace Manage.data.Activity
                     strWhere.Append(String.Format(" and a.channelUserId = {0}", manageUserModel.UserId));
 
                 if (!String.IsNullOrWhiteSpace(out_id))
-                    strWhere.Append(String.Format(" and a.out_id ={0}", out_id));
+                    strWhere.Append(String.Format(" and a.out_id ='{0}'", out_id));
                 if (award_id > 0)
                     strWhere.Append(String.Format(" and a.PrizeId ={0}", award_id));
                 if (activity_id > 0)
@@ -70,7 +70,7 @@ namespace Manage.data.Activity
 
                 clspage.PageSize = pageSize;
                 clspage.Table = "  Luck_ActivityJackpot a inner join Luck_ActivityPrize b on a.PrizeId=b.id inner join Luck_Activity c on c.id=a.ActivityId left join YYT_Member d on d.out_id=a.out_id";
-                clspage.Order = " a.id desc";
+                clspage.Order = " a.updatetime desc, a.id desc";
                 clspage.columns = " a.id,b.name as prizeName,c.name as activityName,a.out_id,a.data_type,a.Status,a.createtime,a.updatetime,a.PrizeId,a.ActivityId,d.Mobile,d.addr";
                 clspage.where = strWhere.ToString();
 

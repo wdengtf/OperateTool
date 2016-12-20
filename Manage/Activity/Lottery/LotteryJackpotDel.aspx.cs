@@ -65,7 +65,7 @@ namespace Web.Manage.Activity.Lottery
                 lotteryPrizeModel.num = delMaxNum - delNum;
                 luckActivityPrizeBO.Update(lotteryPrizeModel);
 
-                Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','删除成功!','" + subgrid_table_id + "');");
+                Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('del_" + id + "','删除成功!','" + subgrid_table_id + "');");
                 LogService.LogInfo(manageUserModel.UserName + "删除数据，成功！");
             }
             else

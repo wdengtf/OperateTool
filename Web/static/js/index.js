@@ -2,6 +2,7 @@
     $("#subft").bind('click', function () {
         ajax.submitForm();
     })
+    //ajax.memberBindLottery();
     wechat.createSharePage(wx);
 });
 

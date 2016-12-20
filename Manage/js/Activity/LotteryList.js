@@ -128,7 +128,7 @@ var commonOper = {
                             var operate = "";
 
                             operate += "<a href=\"javascript:;\" id=\"editrow_sub_" + id + "\" style=\"color:#ff6005\" class=\"hidden\" onclick=\"commonOper.subCreateJackpot(" + id + ",'" + subgrid_table_id + "')\">生成奖池</a>&nbsp;&nbsp;&nbsp;&nbsp;";
-                            operate += "<a href=\"javascript:;\" id=\"editrow_sub_" + id + "\" style=\"color:#ff6005\" class=\"hidden\" onclick=\"commonOper.subDelJackpot(" + id + ",'" + subgrid_table_id + "')\">删除奖池</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                            operate += "<a href=\"javascript:;\" id=\"delrow_sub_" + id + "\" style=\"color:#ff6005\" class=\"hidden\" onclick=\"commonOper.subDelJackpot(" + id + ",'" + subgrid_table_id + "')\">删除奖池</a>&nbsp;&nbsp;&nbsp;&nbsp;";
                             operate += "<a href=\"javascript:;\" id=\"editrow_sub_" + id + "\" style=\"color:#ff6005\" class=\"hidden\" onclick=\"commonOper.subEdit(" + row_id + "," + id + ",'" + subgrid_table_id + "')\">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;";
                             operate += "<a href=\"javascript:;\" id=\"delrow_sub_" + id + "\" style=\"color:#ff6005\" class=\"hidden\" onclick=\"commonOper.subDelSingle(" + row_id + "," + id + ",'" + subgrid_table_id + "')\">删除</a>";
                             $("#" + subgrid_table_id).jqGrid("setRowData", id, { Operate: operate });
@@ -240,7 +240,7 @@ var commonOper = {
     },
     //删除奖池记录
     subDelJackpot: function (id, subgrid_table_id) {
-        dialog.showDialog("edit_" + id, "Lottery/LotteryJackpotDel.aspx?id=" + id + "&subgrid_table_id=" + subgrid_table_id, "删除奖池记录", 200, 400);
+        dialog.showDialog("del_" + id, "Lottery/LotteryJackpotDel.aspx?id=" + id + "&subgrid_table_id=" + subgrid_table_id, "删除奖池记录", 200, 400);
     },
 }
 

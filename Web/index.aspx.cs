@@ -10,7 +10,7 @@ using WebControllers.Member;
 
 namespace Web
 {
-    public partial class index :  BaseMemberPage
+    public partial class index :System.Web.UI.Page//BaseMemberPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
