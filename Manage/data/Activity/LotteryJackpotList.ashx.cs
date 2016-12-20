@@ -20,6 +20,7 @@ namespace Manage.data.Activity
     public class LotteryJackpotList : BaseHandle
     {
         private Luck_ActivityPrizeBO luckActivityPrizeBo = new Luck_ActivityPrizeBO();
+
         public override JsonResult HandleProcess()
         {
             JsonResult re = new JsonResult();
@@ -55,6 +56,9 @@ namespace Manage.data.Activity
 
                 StringBuilder strWhere = new StringBuilder(255);
                 strWhere.Append(" 1=1 ");
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    strWhere.Append(String.Format(" and a.channelUserId = {0}", manageUserModel.UserId));
+
                 if (!String.IsNullOrWhiteSpace(out_id))
                     strWhere.Append(String.Format(" and a.out_id ={0}", out_id));
                 if (award_id > 0)
@@ -66,8 +70,8 @@ namespace Manage.data.Activity
 
                 clspage.PageSize = pageSize;
                 clspage.Table = "  Luck_ActivityJackpot a inner join Luck_ActivityPrize b on a.PrizeId=b.id inner join Luck_Activity c on c.id=a.ActivityId left join YYT_Member d on d.out_id=a.out_id";
-                clspage.Order = " a.Id desc";
-                clspage.columns = " a.Id,b.name as prizeName,c.name as activityName,a.out_id,a.data_type,a.Status,a.createtime,a.updatetime,a.PrizeId,a.ActivityId,d.Mobile,d.addr";
+                clspage.Order = " a.id desc";
+                clspage.columns = " a.id,b.name as prizeName,c.name as activityName,a.out_id,a.data_type,a.Status,a.createtime,a.updatetime,a.PrizeId,a.ActivityId,d.Mobile,d.addr";
                 clspage.where = strWhere.ToString();
 
                 re = GetListBySql(clspage);
@@ -75,7 +79,7 @@ namespace Manage.data.Activity
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -96,13 +100,13 @@ namespace Manage.data.Activity
 
                 Expression<Func<Luck_ActivityPrize, bool>> expre = PredicateExtensionses.True<Luck_ActivityPrize>();
                 expre = expre.AndAlso(p => p.sortid == activity_id);
-                Expression<Func<Luck_ActivityPrize, int>> orderBy = p => p.Id;
+                Expression<Func<Luck_ActivityPrize, int>> orderBy = p => p.id;
                 re = GetListByObject<Luck_ActivityPrize>(expre, luckActivityPrizeBo, orderBy);
             }
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

@@ -9,13 +9,18 @@ using YYT.BLL;
 using YYT.Model;
 using System.Linq.Expressions;
 using Framework.EF;
+using WebControllers;
 
 namespace Web.Authorized
 {
+    /// <summary>
+    /// 微信网页授权
+    /// </summary>
     public partial class wxAuth : System.Web.UI.Page
     {
         private string strCode = "";
         private YYT_MemberBO memberBo = new YYT_MemberBO();
+        private WxWebAuth wxWebAuth = new WxWebAuth();
         protected void Page_Load(object sender, EventArgs e)
         {
             strCode = Utility.RF("code");
@@ -23,7 +28,7 @@ namespace Web.Authorized
             {
                 if (!String.IsNullOrWhiteSpace(strCode))
                 {
-                    WxMemberModel wxMemberModel = new WxWebAuth().WxAuthGetUserInfo(strCode);
+                    WxMemberModel wxMemberModel = wxWebAuth.WxAuthGetUserInfo(strCode);
                     if (wxMemberModel == null)
                     {
                         Response.Redirect("/404.html");
@@ -55,7 +60,7 @@ namespace Web.Authorized
 
                         member.area = "";
                         member.addr = "";
-                        member.channelUserId = 1;
+                        member.channelUserId = ConfigBL.AccountUserId(); ;
                         member.userName = "";
                         member.Mobile = "";
                         member.email = "";

@@ -8,7 +8,7 @@ using EntityFramework.Extensions;
 
 namespace YYT.DAL
 {
-    public class BaseDAO
+    public class BaseDAO<T> where T : class
     {
         public DbContext context;
         public BaseDAO()
@@ -16,13 +16,19 @@ namespace YYT.DAL
             this.context = new YYT_DBEntities();
         }
 
-        public  int Add<T>(T entity) where T : class
+        public  int Add(T entity)
         {
             context.Set<T>().Add(entity);
             return context.SaveChanges();
         }
 
-        public int Update<T>(T entity) where T : class
+        public int AddRange(List<T> entityList)
+        {
+            context.Set<T>().AddRange(entityList);
+            return context.SaveChanges();
+        }
+
+        public int Update(T entity)
         {
             var set = context.Set<T>();
             set.Attach(entity);
@@ -30,28 +36,28 @@ namespace YYT.DAL
             return context.SaveChanges();
         }
 
-        public int UpdateByWhere<T, S>(Expression<Func<T, bool>> conditions, Expression<Func<T, T>> updateExpression) where T : class
+        public int UpdateByWhere(Expression<Func<T, bool>> conditions, Expression<Func<T, T>> updateExpression)
         {
             return context.Set<T>().Where(conditions).Update(updateExpression);
         }
 
-        public int Delete<T>(T entity) where T : class
+        public int Delete(T entity)
         {
             context.Entry<T>(entity).State = EntityState.Deleted;
             return context.SaveChanges();
         }
 
-        public int DeleteByWhere<T>(Expression<Func<T, bool>> conditions) where T : class
+        public int DeleteByWhere(Expression<Func<T, bool>> conditions)
         {
             return context.Set<T>().Where(conditions).Delete();
         }
 
-        public T Find<T>(params object[] keyValues) where T : class
+        public T Find(params object[] keyValues)
         {
             return context.Set<T>().Find(keyValues);
         }
      
-        public T GetSingle<T, S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction) where T : class
+        public T GetSingle<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction)
         {
             direction = String.IsNullOrWhiteSpace(direction) ? "desc" : direction;
             var result = conditions == null ? context.Set<T>() : context.Set<T>().Where(conditions) as IQueryable<T>;
@@ -61,7 +67,7 @@ namespace YYT.DAL
             return result.FirstOrDefault();
         }
 
-        public List<T> FindAll<T, S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction) where T : class
+        public List<T> FindAll<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction)
         {
             direction = String.IsNullOrWhiteSpace(direction) ? "desc" : direction;
             var result = conditions == null ? context.Set<T>() : context.Set<T>().Where(conditions) as IQueryable<T>;
@@ -70,7 +76,7 @@ namespace YYT.DAL
             return result.ToList();
         }
 
-        public List<T> FindAllByPage<T, S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction, int pageIndex, int pageSize, out int totalRecord) where T : class
+        public List<T> FindAllByPage<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction, int pageIndex, int pageSize, out int totalRecord)
         {
             direction = String.IsNullOrWhiteSpace(direction) ? "desc" : direction;
             var result = conditions == null ? context.Set<T>() : context.Set<T>().Where(conditions) as IQueryable<T>;

@@ -49,6 +49,9 @@ namespace Web.Manage.data.Activity
                 string endTime = Utility.RF("endTime");
 
                 Expression<Func<Luck_Activity, bool>> expre = PredicateExtensionses.True<Luck_Activity>();
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    expre = expre.AndAlso(p => p.channelUserId == manageUserModel.UserId);
+
                 if (!String.IsNullOrEmpty(sortName))
                 {
                     expre = expre.AndAlso(p => p.Name.Contains(sortName));
@@ -63,13 +66,13 @@ namespace Web.Manage.data.Activity
                     DateTime endDate = DateTime.Parse(endTime).AddDays(1);
                     expre = expre.AndAlso(p => p.Startdate < endDate);
                 }
-                Expression<Func<Luck_Activity, int>> orderBy = p => p.Id;
+                Expression<Func<Luck_Activity, int>> orderBy = p => p.id;
                 re = GetListByObject<Luck_Activity>(expre, luckActivityBo, orderBy);
             }
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -100,7 +103,7 @@ namespace Web.Manage.data.Activity
                 }
 
                 Expression<Func<Luck_Activity, bool>> where = PredicateExtensionses.True<Luck_Activity>();
-                where = where.AndAlso(p => idList.Contains(p.Id.ToString()));
+                where = where.AndAlso(p => idList.Contains(p.id.ToString()));
                 if (luckActivityBo.DeleteByWhere(where) > 0)
                 {
                     re = JsonResult.SuccessResult(MsgShowConfig.Success);
@@ -109,7 +112,7 @@ namespace Web.Manage.data.Activity
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

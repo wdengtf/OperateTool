@@ -9,12 +9,12 @@ namespace Web.Manage
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            LogService.logInfo("第一个人访问时间：" + DateTime.Now.ToString());
+            LogService.LogInfo("第一个人访问时间：" + DateTime.Now.ToString());
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            LogService.logInfo("网站关闭,或重启时时间：" + DateTime.Now.ToString());
+            
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -62,9 +62,7 @@ namespace Web.Manage
             //处理完及时清理异常 
             Server.ClearError();
             //跳转至出错页面 
-            LogService.logFatal(strErr.ToString());
-
-            //Response.Redirect("http://m.wangcl.com/", false);
+            LogService.LogFatal(strErr.ToString());
             return;
         }
 
@@ -75,7 +73,7 @@ namespace Web.Manage
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            LogService.LogInfo("网站关闭,或重启时时间：" + DateTime.Now.ToString());
         }
     }
 }

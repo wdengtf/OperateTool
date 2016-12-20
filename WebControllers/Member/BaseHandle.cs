@@ -45,7 +45,7 @@ namespace WebControllers.Member
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.EmptyFunction);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
 
             string callback = Utility.RF("callback");

@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework;
 
 namespace WebControllers
 {
@@ -15,22 +16,26 @@ namespace WebControllers
         /// <returns></returns>
         public static string WxAuthUrl()
         {
-            return GetConfig("wxAuthUrl");
+            return Utility.GetConfig("wxAuthUrl");
+        }
+
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        /// <returns></returns>
+        public static int AccountUserId()
+        {
+            return int.Parse(Utility.GetConfig("accountUserId"));
         }
 
 
-        private static string GetConfig(string strName)
+        /// <summary>
+        /// 跳过权限组id
+        /// </summary>
+        /// <returns></returns>
+        public static int JumpDroitGroupId()
         {
-            string str = "";
-            try
-            {
-                if (String.IsNullOrEmpty(strName))
-                    return str;
-
-                str = ConfigurationManager.AppSettings[strName].ToString();
-            }
-            catch { str = ""; }
-            return str;
+            return int.Parse(Utility.GetConfig("JumpDroitGroupId"));
         }
     }
 }

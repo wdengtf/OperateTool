@@ -59,7 +59,7 @@ namespace Manage
         {
             Expression<Func<YYT_Member, bool>> where = PredicateExtensionses.True<YYT_Member>();
             where = where.AndAlso(p => p.Mobile.Contains("189"));
-            Expression<Func<YYT_Member, int>> orderBy = p => p.Id;
+            Expression<Func<YYT_Member, int>> orderBy = p => p.id;
             return memberBO.FindAll<int>(where, orderBy, "desc");
         }
 

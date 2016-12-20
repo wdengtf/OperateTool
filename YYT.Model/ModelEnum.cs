@@ -7,29 +7,6 @@ using System.Threading.Tasks;
 namespace YYT.Model
 {
     /// <summary>
-    /// 排序枚举
-    /// </summary>
-    public enum OrderByEnum
-    {
-        ASC, DESC
-    }
-
-    /// <summary>
-    /// 默认状态
-    /// </summary>
-    public enum StatusEnmu
-    {
-        /// <summary>
-        /// 正常
-        /// </summary>
-        Normal = 1,
-        /// <summary>
-        /// 锁定
-        /// </summary>
-        Locking = 0,
-    }
-
-    /// <summary>
     /// 栏目菜单
     /// </summary>
     public enum HT_MenuMenu

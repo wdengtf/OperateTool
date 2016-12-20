@@ -10,7 +10,6 @@ namespace YYT.BLL
 {
     public class Wx_RedpackBO : BaseBO<Wx_Redpack>
     {
-        private readonly BaseDAO dal = new BaseDAO();
         public Wx_RedpackBO()
         { }
     }

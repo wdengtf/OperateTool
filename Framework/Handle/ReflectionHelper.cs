@@ -84,7 +84,7 @@ namespace Framework.Handle
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
                 //发生异常，返回类型的默认值
                 return default(T);
             }

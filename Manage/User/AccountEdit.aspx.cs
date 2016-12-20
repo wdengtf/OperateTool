@@ -27,7 +27,7 @@ namespace Web.Manage.User
             if (!this.IsPostBack)
             {
                 if (id > 0) readInfo(id);
-                else txtCreatetime.Text = DateTime.Now.ToString();
+                else txtCreatetime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                 bindGroup();
             }
@@ -43,18 +43,22 @@ namespace Web.Manage.User
                 rblStatus.SelectedValue = model.status.ToString();
                 ddlGroup.SelectedValue = model.groupid.ToString();
                 txtTitle.ReadOnly = true;
-                txtCreatetime.Text = model.createtime.ToString();
+                txtCreatetime.Text = model.createtime.Value.ToString("yyyy-MM-dd HH:mm:ss");
                 CHK.Value = model.pwd;
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
 
         private void bindGroup()
         {
-            List<HT_UserGroup> admin_GroupList = userGroupBO.FindAll<int>(null);
+            Expression<Func<HT_UserGroup, bool>> expre = PredicateExtensionses.True<HT_UserGroup>();
+            if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                expre = expre.AndAlso(p => p.id == manageUserModel.UserId);
+
+            List<HT_UserGroup> admin_GroupList = userGroupBO.FindAll<int>(expre);
             ddlGroup.DataTextField = "Title";
             ddlGroup.DataValueField = "Id";
             ListItem item = new ListItem("请选择", "", true);
@@ -81,7 +85,7 @@ namespace Web.Manage.User
 
                     accountBO.Update(model);
                     Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','修改成功!');");
-                    LogService.logInfo(manageUserModel.UserName + "修改数据" + txtTitle.Text.Trim() + "，成功！");
+                    LogService.LogInfo(manageUserModel.UserName + "修改数据" + txtTitle.Text.Trim() + "，成功！");
                 }
                 else
                 {
@@ -89,13 +93,13 @@ namespace Web.Manage.User
                     model.createtime = DateTime.Now;
                     accountBO.Add(model);
                     Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('add','新增成功!');");
-                    LogService.logInfo(manageUserModel.UserName + "新增数据" + txtTitle.Text.Trim() + "，成功！");
+                    LogService.LogInfo(manageUserModel.UserName + "新增数据" + txtTitle.Text.Trim() + "，成功！");
                 }
             }
             catch (Exception ex)
             {
                 Utility.ScriptMessage("parent.dialog.ShowTempMessage('参数错误!');");
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
         }
     }

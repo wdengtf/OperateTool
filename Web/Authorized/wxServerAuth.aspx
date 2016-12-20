@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wxServerAuth.aspx.cs" Inherits="Web.Authorized.wxServerAuth" %>

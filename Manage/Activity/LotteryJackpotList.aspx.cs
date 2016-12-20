@@ -19,7 +19,9 @@ namespace Web.Manage.Activity
         {
             if (!Page.IsPostBack)
             {
-                Expression<Func<Luck_Activity, bool>> where= PredicateExtensionses.True<Luck_Activity>();
+                Expression<Func<Luck_Activity, bool>> where = PredicateExtensionses.True<Luck_Activity>();
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    where = where.AndAlso(p => p.channelUserId == manageUserModel.UserId);
                 actLotteryList = luckActivityBo.FindAll<int>(where);
             }
         }

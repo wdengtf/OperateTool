@@ -80,16 +80,22 @@ namespace WebControllers.Member
             bool _flag = false;
             if (memberBaseModel == null)
             {
-                memberBaseModel = new MemberBaseModel()
-                {
-                    data_type = "GW",
-                    out_id = "o_jctwEKMWg5XKRGFzjCDzIYnb-I",
-                };
-                new WebControllers.Member.YYT_Member().SaveMemberCookies(memberBaseModel);
-                //return _flag;
+                //memberBaseModel = new MemberBaseModel()
+                //{
+                //    data_type = "WX",
+                //    out_id = "o_jctwEKMWg5XKRGFzjCDzIYnb-I",
+                //};
+                //new WebControllers.Member.YYT_Member().SaveMemberCookies(memberBaseModel);
+                return _flag;
             }
             _flag = true;
             return _flag;
+        }
+
+        public bool LoginOut()
+        {
+            CookieHandle cookieHandle = new CookieHandle();
+            return cookieHandle.RemoveCookies();
         }
     }
 }

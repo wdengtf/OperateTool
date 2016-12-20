@@ -15,6 +15,7 @@ namespace WebControllers.Handle
         protected ManageUserModel manageUserModel = null;
         protected AdminUser adminUser = new AdminUser();
         protected string defaultSort = "desc";//默认排序
+        protected int jumpDroitGroupId = 0;
 
         /// <summary>
         /// 后台页面公共程序 有授权
@@ -25,6 +26,7 @@ namespace WebControllers.Handle
         {
             adminUser.CheckLoginJump();
             manageUserModel = adminUser.GetManageUserModel();
+            jumpDroitGroupId = ConfigBL.JumpDroitGroupId();
             base.OnInit(e);
         }
     }

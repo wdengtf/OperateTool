@@ -46,6 +46,9 @@ namespace Web.Manage.data.Member
                 string endTime = Utility.RF("endTime");
 
                 Expression<Func<YYT_Member, bool>> expre = PredicateExtensionses.True<YYT_Member>();
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    expre = expre.AndAlso(p => p.channelUserId == manageUserModel.UserId);
+
                 if (!String.IsNullOrEmpty(mobile))
                 {
                     expre = expre.AndAlso(p => p.Mobile.Equals(mobile));
@@ -65,13 +68,13 @@ namespace Web.Manage.data.Member
                     expre = expre.AndAlso(p => p.Createtime < endDate);
                 }
 
-                Expression<Func<YYT_Member, int>> orderBy = p => p.Id;
+                Expression<Func<YYT_Member, int>> orderBy = p => p.id;
                 re = GetListByObject<YYT_Member>(expre, memberBO, orderBy);
             }
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

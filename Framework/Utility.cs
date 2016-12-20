@@ -3,6 +3,7 @@ using Framework.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -127,7 +128,7 @@ namespace Framework
             catch (Exception ex)
             {
                 sStr = "";
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
 
             if (!String.IsNullOrEmpty(sStr))
@@ -334,7 +335,7 @@ namespace Framework
             }
             catch (Exception e)
             {
-                LogService.logDebug(e);
+                LogService.LogDebug(e);
             }
 
             return ip;
@@ -375,11 +376,30 @@ namespace Framework
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
 
             return name;
         }
         #endregion
+
+        /// <summary>
+        /// 获取配置文件
+        /// </summary>
+        /// <param name="strName"></param>
+        /// <returns></returns>
+        public static string GetConfig(string strName)
+        {
+            string str = "";
+            try
+            {
+                if (String.IsNullOrEmpty(strName))
+                    return str;
+
+                str = ConfigurationManager.AppSettings[strName].ToString();
+            }
+            catch { str = ""; }
+            return str;
+        }
     }
 }

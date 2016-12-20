@@ -8,7 +8,7 @@ using YYT.Model;
 
 namespace YYT.BLL
 {
-    public class QD_ChannelLogBO : BaseBO<Luck_ActivityPrize>
+    public class QD_ChannelLogBO : BaseBO<QD_ChannelLog>
     {
         public QD_ChannelLogBO()
         { }

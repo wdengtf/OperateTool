@@ -110,7 +110,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -139,7 +139,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -166,7 +166,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -189,7 +189,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return strCookValue;
         }
@@ -218,7 +218,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -241,7 +241,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flage;
         }
@@ -261,7 +261,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
                 return "";
             }
             return "";
@@ -285,7 +285,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flage;
         }
@@ -294,27 +294,31 @@ namespace Framework.Cookies
 
         #region 设置后台用户信息
         private string strManagerCookName = "YYTManage";
-        private string[] UserCookName = { "userId", "UserName", "Droit" };
+        private string[] UserCookName = { "userId", "userName", "droit", "groupId", "loginGroupId" };
 
         /// <summary>
         /// 设置后台用户的Cookies
         /// </summary>
         /// <param name="userId">会员id</param>
-        /// <param name="UserName">会员名</param>
+        /// <param name="userName">会员名</param>
         /// <param name="Droit">权限值</param>
+        /// <param name="groupId">权限id</param>
+        /// <param name="loginGroupId">登陆权限id</param>
         /// <returns></returns>
-        public bool SetManagerUser(int userId, string UserName, string Droit)
+        public bool SetManagerUser(int userId, string userName, string droit, int groupId,int loginGroupId)
         {
             bool flag = false;
             try
             {
-                if (userId < 1 || string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Droit))
+                if (userId < 1 || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(droit))
                     return false;
 
                 IDictionary<string, string> parm = new Dictionary<string, string>();
                 parm.Add(UserCookName[0], userId.ToString());
-                parm.Add(UserCookName[1], UserName);
-                parm.Add(UserCookName[2], Droit);
+                parm.Add(UserCookName[1], userName);
+                parm.Add(UserCookName[2], droit);
+                parm.Add(UserCookName[3], groupId.ToString());
+                parm.Add(UserCookName[4], loginGroupId.ToString());
 
                 DateTime ExpiresTime = DateTime.Now.AddDays(1);
 
@@ -323,7 +327,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return flag;
         }
@@ -334,23 +338,23 @@ namespace Framework.Cookies
         /// <returns></returns>
         public int GetManagerUserId()
         {
-            int UserId = 0;
+            int userId = 0;
             try
             {
                 string cookValue = CookUtils.GetCookieValue(strManagerCookName, UserCookName[0]);
 
                 if (string.IsNullOrEmpty(cookValue))
-                    return UserId;
+                    return userId;
 
-                int.TryParse(cookValue, out UserId);
+                int.TryParse(cookValue, out userId);
 
-                return UserId;
+                return userId;
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
-            return UserId;
+            return userId;
         }
 
         /// <summary>
@@ -366,7 +370,7 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return strCookValue;
         }
@@ -384,9 +388,60 @@ namespace Framework.Cookies
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return strCookValue;
+        }
+
+        /// <summary>
+        /// 获取后台用户组id
+        /// </summary>
+        /// <returns></returns>
+        public int GetManagerGroupId()
+        {
+            int groupId = 0;
+            try
+            {
+                string cookValue = CookUtils.GetCookieValue(strManagerCookName, UserCookName[3]);
+
+                if (string.IsNullOrEmpty(cookValue))
+                    return groupId;
+
+                int.TryParse(cookValue, out groupId);
+
+                return groupId;
+            }
+            catch (Exception ex)
+            {
+                LogService.LogDebug(ex);
+            }
+            return groupId;
+        }
+
+
+        /// <summary>
+        /// 获取后台用户登陆组id
+        /// </summary>
+        /// <returns></returns>
+        public int GetManagerLoginGroupId()
+        {
+            int loginGroupId = 0;
+            try
+            {
+                string cookValue = CookUtils.GetCookieValue(strManagerCookName, UserCookName[4]);
+
+                if (string.IsNullOrEmpty(cookValue))
+                    return loginGroupId;
+
+                int.TryParse(cookValue, out loginGroupId);
+
+                return loginGroupId;
+            }
+            catch (Exception ex)
+            {
+                LogService.LogDebug(ex);
+            }
+            return loginGroupId;
         }
 
         #endregion

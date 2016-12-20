@@ -20,5 +20,6 @@ namespace Framework.Model
         public const string Success = "成功";
         public const string Fail = "失败";
         public const string Exception = "异常";
+        public const string IllegalOperation = "非法操作";
     }
 }

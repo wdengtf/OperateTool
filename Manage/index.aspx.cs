@@ -8,6 +8,7 @@ using YYT.BLL;
 using YYT.Model;
 using System.Linq.Expressions;
 using Framework.EF;
+using Framework.Model;
 
 namespace Web.Manage
 {
@@ -60,7 +61,7 @@ namespace Web.Manage
                     ClientScript.RegisterStartupScript(Page.GetType(), "message", "dialog.ShowTempMessage('该用户未分配权限，请联系管理员');", true);
                     return;
                 }
-                cookieHandle.SetManagerUser(adminUserList.id, adminUserList.username, adminGroupModel.Droit);
+                cookieHandle.SetManagerUser(adminUserList.id, adminUserList.username, adminGroupModel.Droit, adminGroupModel.id, adminGroupModel.id);
                 this.Response.Redirect("MainFrm.html");
             }
         }

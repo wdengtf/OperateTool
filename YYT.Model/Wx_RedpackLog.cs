@@ -14,7 +14,7 @@ namespace YYT.Model
     
     public partial class Wx_RedpackLog
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public Nullable<int> channelUserId { get; set; }
         public Nullable<int> RedpackId { get; set; }
         public string ResultCode { get; set; }

@@ -34,10 +34,13 @@ namespace Framework.Utils
         /// <param name="url">请求地址</param>
         /// <param name="url_Parm">请求参数</param>
         /// <returns>HTTP响应</returns>
-        public string DoPost(string url, string url_Parm)
+        public string DoPost(string url, string url_Parm, string ContentType = null)
         {
             HttpWebRequest req = GetWebRequest(url, "POST");
-            req.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+            if (String.IsNullOrEmpty(ContentType))
+                req.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+            else
+                req.ContentType = "application/" + ContentType + ";charset=utf-8";
 
             byte[] postData = Encoding.UTF8.GetBytes(url_Parm);
             System.IO.Stream reqStream = req.GetRequestStream();
@@ -128,7 +131,8 @@ namespace Framework.Utils
             req.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
 
             HttpWebResponse rsp = (HttpWebResponse)req.GetResponse();
-            Encoding encoding = Encoding.GetEncoding(rsp.CharacterSet);
+            //Encoding encoding = Encoding.GetEncoding(rsp.CharacterSet);
+            Encoding encoding = Encoding.UTF8;
             return GetResponseAsString(rsp, encoding);
         }
 
@@ -364,16 +368,6 @@ namespace Framework.Utils
             }
 
             return postData.ToString();
-        }
-
-        public static String PostToDc(String api_name, String jsonData, String dcReceiveUrl, String dcUserName, String sign)
-        {
-            IDictionary<String, String> param = new Dictionary<String, String>();
-            param.Add("json", jsonData);
-            param.Add("api_name", api_name);
-            String url = String.Format(dcReceiveUrl + "?dcUserName={0}&sign={1}", dcUserName, sign);
-            WebUtils utils = new WebUtils();
-            return utils.DoPost(url, param);
         }
 
       

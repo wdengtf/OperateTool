@@ -44,6 +44,9 @@ namespace Web.Manage.data.User
                 string userName = Utility.RF("userName");
 
                 Expression<Func<HT_Account, bool>> expre = PredicateExtensionses.True<HT_Account>();
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    expre = expre.AndAlso(p => p.groupid == manageUserModel.UserId);
+
                 if (!String.IsNullOrEmpty(userName))
                 {
                     expre = expre.AndAlso(p => p.username.Contains(userName));
@@ -55,7 +58,7 @@ namespace Web.Manage.data.User
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -86,7 +89,7 @@ namespace Web.Manage.data.User
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

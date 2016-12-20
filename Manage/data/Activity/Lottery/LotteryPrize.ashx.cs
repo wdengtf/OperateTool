@@ -52,10 +52,13 @@ namespace Web.Manage.data.Activity.Lottery
             JsonResult re = new JsonResult();
             try
             {
-                string strWhere = "";
+                string strWhere = " 1=1 ";
                 int sortId = Utility.FNumeric("id");
+
                 if (sortId > 0)
-                    strWhere += String.Format(" sortid = {0}", sortId);
+                    strWhere += String.Format(" and sortid = {0}", sortId);
+                if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                    strWhere += String.Format(" and channelUserId = {0}", manageUserModel.UserId);
 
                 clspage.Table = "  Luck_ActivityPrize ";
                 clspage.Order = " id desc";
@@ -67,7 +70,7 @@ namespace Web.Manage.data.Activity.Lottery
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -99,13 +102,13 @@ namespace Web.Manage.data.Activity.Lottery
                 }
 
                 Expression<Func<Luck_ActivityPrize, bool>> where = PredicateExtensionses.True<Luck_ActivityPrize>();
-                where = where.AndAlso(p => idList.Contains(p.Id.ToString()));
+                where = where.AndAlso(p => idList.Contains(p.id.ToString()));
                 re = DelDataById(luckActivityPrizeBo, where);
             }
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }
@@ -139,7 +142,7 @@ namespace Web.Manage.data.Activity.Lottery
                     Luck_ActivityJackpot actJackpotModel = new Luck_ActivityJackpot();
                     actJackpotModel.channelUserId = manageUserModel.UserId;
                     actJackpotModel.ActivityId = luckActivityPrizeModel.sortid;
-                    actJackpotModel.PrizeId = luckActivityPrizeModel.Id;
+                    actJackpotModel.PrizeId = luckActivityPrizeModel.id;
                     actJackpotModel.Status = (int)LuckActivityJackpotStatus.NotDraw;
                     actJackpotModel.data_type = "";
                     actJackpotModel.out_id = "";
@@ -166,7 +169,7 @@ namespace Web.Manage.data.Activity.Lottery
             catch (Exception ex)
             {
                 re = JsonResult.FailResult(MsgShowConfig.Exception);
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return re;
         }

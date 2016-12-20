@@ -32,7 +32,7 @@ namespace LuckDraw
             DataHandleEventArgs Args = new DataHandleEventArgs();
             Args.OperationUserName = OperationUserName;
             Args.OperationFilePath = OperationFilePath;
-            Args.OperationType = DataHandleEventArgs.OperationTypeEnum.WangclGWInterfaceLog;
+            Args.OperationType = MessageObjType.LuckDraw;
             Args.OperationTime = DateTime.Now;
 
             switch (eEvent)

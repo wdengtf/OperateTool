@@ -1,7 +1,7 @@
 ﻿var commonJqGrid = {
     //参数初始化
     options: {
-        url: "",
+        url: "",//列表Url
         urlParm: '',
         addEditUrl: "",
         title: "权限",
@@ -92,12 +92,12 @@
                 total: "Data.totalPage",        //json中代表页码总数的数据
                 records: "Data.totalRecord",    //json中代表数据行总数的数据
                 repeatitems: false,             //如果repeatitems为false，json 中数据可以乱序，并且允许数据空缺
-                id: "Id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
+                id: "id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
             },
             multiselect: this.options.multiselect,
             pager: '#pagernav',
             mtype: "post",
-            sortname: 'Id',
+            sortname: 'id',
             viewrecords: true,
             autowidth: true,
             subGrid: this.options.subGrid,
@@ -120,10 +120,10 @@
                         total: "Data.totalPage",        //json中代表页码总数的数据
                         records: "Data.totalRecord",    //json中代表数据行总数的数据
                         repeatitems: false,             //如果repeatitems为false，json 中数据可以乱序，并且允许数据空缺
-                        id: "Id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
+                        id: "id"                        //表示当在编辑数据模块中发送数据时，使用的id的名称.不设置默认为行索引
                     },
                     pager: pager_id,
-                    sortname: 'Id',
+                    sortname: 'id',
                     autowidth: true,
                     gridComplete: function () {
                         //此事件发生在表格所有数据装入和进程完成后

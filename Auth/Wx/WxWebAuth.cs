@@ -10,14 +10,22 @@ using Framework;
 
 namespace Auth.Wx
 {
+    /// <summary>
+    /// 微信网页授权
+    /// </summary>
     public class WxWebAuth
     {
-        private const string appid = "wxb5f424ccbb74ed55"; //"wxf2467c535a774bbd";
-        private const string appSecret = "419238a2732fdac9641e714f57c62013"; //"a257f94c37e30cfe7eb87d10690e7dca";
+        private const string appid = WxConfig.appid;
+        private const string appSecret = WxConfig.appSecret;
         private WebUtils webUtils = new WebUtils();
         public WxWebAuth()
         { }
 
+        /// <summary>
+        /// 获取微信Code
+        /// </summary>
+        /// <param name="redirectUrl"></param>
+        /// <returns></returns>
         public static string GetCode(string redirectUrl)
         {
             string codeUrl = "";
@@ -32,6 +40,11 @@ namespace Auth.Wx
             return codeUrl;
         }
 
+        /// <summary>
+        /// 获取微信Access_token
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public static string GetAccess_token(string code)
         {
             string tokenUrl = "";
@@ -46,6 +59,11 @@ namespace Auth.Wx
             return tokenUrl;
         }
 
+        /// <summary>
+        /// 刷新token
+        /// </summary>
+        /// <param name="refresh_token"></param>
+        /// <returns></returns>
         public static string RefreshToken(string refresh_token)
         {
             string tokenUrl = "";
@@ -60,6 +78,12 @@ namespace Auth.Wx
             return tokenUrl;
         }
 
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="access_token"></param>
+        /// <param name="open_id"></param>
+        /// <returns></returns>
         public static string GetUserInfo(string access_token, string open_id)
         {
             string userinfoUrl = "";
@@ -74,6 +98,11 @@ namespace Auth.Wx
             return userinfoUrl;
         }
 
+        /// <summary>
+        /// 保存微信信息
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public WxMemberModel WxAuthGetUserInfo(string code)
         {
             WxMemberModel wxMemberModel = null;
@@ -85,24 +114,24 @@ namespace Auth.Wx
                 string tokenPost = webUtils.DoGet(GetAccess_token(code), null);
                 if (!tokenPost.Contains("access_token"))
                 {
-                    LogService.logInfo("获取Access_token失败:" + tokenPost);
+                    LogService.LogInfo("获取Access_token失败:" + tokenPost);
                     return wxMemberModel;
                 }
-                AccessTokenModel accessTokenModel = Utility.JsonToObject<AccessTokenModel>(tokenPost);
+                AccessTokenWebModel accessTokenModel = Utility.JsonToObject<AccessTokenWebModel>(tokenPost);
 
                 string strUserinfo = webUtils.DoGet(GetUserInfo(accessTokenModel.access_token, accessTokenModel.openid), null);
                 strUserinfo = System.Text.Encoding.UTF8.GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(strUserinfo));
 
                 if (!strUserinfo.Contains("openid"))
                 {
-                    LogService.logInfo("获取微信用户信息失败:" + strUserinfo);
+                    LogService.LogInfo("获取微信用户信息失败:" + strUserinfo);
                     return wxMemberModel;
                 }
                 wxMemberModel = Utility.JsonToObject<WxMemberModel>(strUserinfo);
             }
             catch (Exception ex)
             {
-                LogService.logDebug(ex);
+                LogService.LogDebug(ex);
             }
             return wxMemberModel;
         }

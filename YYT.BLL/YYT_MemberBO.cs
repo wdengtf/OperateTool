@@ -10,7 +10,6 @@ namespace YYT.BLL
 {
     public class YYT_MemberBO : BaseBO<YYT_Member>
     {
-        private readonly BaseDAO dal = new BaseDAO();
         public YYT_MemberBO()
         { }
     }

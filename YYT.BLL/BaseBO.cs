@@ -10,7 +10,7 @@ namespace YYT.BLL
 {
     public class BaseBO<T> where T : class
     {
-        private readonly BaseDAO dal = new BaseDAO();
+        private readonly BaseDAO<T> dal = new BaseDAO<T>();
         public BaseBO()
         { }
 
@@ -22,6 +22,16 @@ namespace YYT.BLL
         public int Add(T model)
         {
             return dal.Add(model);
+        }
+
+        /// <summary>
+        /// 批量新增 EF自带
+        /// </summary>
+        /// <param name="modelList"></param>
+        /// <returns></returns>
+        public int AddRange(List<T> modelList)
+        {
+            return dal.AddRange(modelList);
         }
 
         /// <summary>
@@ -42,7 +52,7 @@ namespace YYT.BLL
         /// <returns></returns>
         public int UpdateByWhere(Expression<Func<T, bool>> conditions, Expression<Func<T, T>> updateExpression)
         {
-            return dal.UpdateByWhere<T, T>(conditions, updateExpression);
+            return dal.UpdateByWhere(conditions, updateExpression);
         }
 
         /// <summary>
@@ -62,7 +72,7 @@ namespace YYT.BLL
         /// <returns></returns>
         public int DeleteByWhere(Expression<Func<T, bool>> conditions)
         {
-            return dal.DeleteByWhere<T>(conditions);
+            return dal.DeleteByWhere(conditions);
         }
         /// <summary>
         /// 查找
@@ -71,7 +81,7 @@ namespace YYT.BLL
         /// <returns></returns>
         public T Find(int id)
         {
-            return dal.Find<T>(id);
+            return dal.Find(id);
         }
 
         /// <summary>
@@ -81,7 +91,7 @@ namespace YYT.BLL
         /// <returns></returns>
         public T GetSingle<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy = null, string direction = "")
         {
-            return dal.GetSingle<T, S>(conditions, orderBy, direction);
+            return dal.GetSingle<S>(conditions, orderBy, direction);
         }
         /// <summary>
         /// 根据条件查找List
@@ -93,7 +103,7 @@ namespace YYT.BLL
         /// <returns></returns>
         public List<T> FindAll<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy = null, string direction = "")
         {
-            return dal.FindAll<T, S>(conditions, orderBy, direction);
+            return dal.FindAll<S>(conditions, orderBy, direction);
         }
 
         /// <summary>
@@ -109,7 +119,7 @@ namespace YYT.BLL
         /// <returns></returns>
         public List<T> FindAllByPage<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction, int pageIndex, int pageSize, out int totalRecord)
         {
-            return dal.FindAllByPage<T, S>(conditions, orderBy, direction, pageIndex, pageSize, out totalRecord);
+            return dal.FindAllByPage<S>(conditions, orderBy, direction, pageIndex, pageSize, out totalRecord);
         }
     }
 }

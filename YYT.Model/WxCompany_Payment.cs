@@ -14,7 +14,7 @@ namespace YYT.Model
     
     public partial class WxCompany_Payment
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public Nullable<int> channelUserId { get; set; }
         public Nullable<int> WxConfigId { get; set; }
         public string partner_trade_no { get; set; }

@@ -41,6 +41,9 @@ namespace Web.Manage.Activity.Lottery
                 return actJackpotList;
 
             Expression<Func<Luck_ActivityJackpot, bool>> where = PredicateExtensionses.True<Luck_ActivityJackpot>();
+            if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
+                where = where.AndAlso(p => p.channelUserId == manageUserModel.UserId);
+
             where = where.AndAlso(p => p.PrizeId == id && p.Status==(int)LuckActivityJackpotStatus.NotDraw);
             return luckActivityJackpotBO.FindAll<int>(where);
         }
@@ -63,7 +66,7 @@ namespace Web.Manage.Activity.Lottery
                 luckActivityPrizeBO.Update(lotteryPrizeModel);
 
                 Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','删除成功!','" + subgrid_table_id + "');");
-                LogService.logInfo(manageUserModel.UserName + "删除数据，成功！");
+                LogService.LogInfo(manageUserModel.UserName + "删除数据，成功！");
             }
             else
             {

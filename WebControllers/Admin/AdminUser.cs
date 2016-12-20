@@ -10,6 +10,7 @@ using YYT.BLL;
 using YYT.Model;
 using System.Linq.Expressions;
 using Framework.EF;
+using Framework.Model;
 
 namespace WebControllers.Admin
 {
@@ -36,6 +37,8 @@ namespace WebControllers.Admin
                     manageUserModel.UserId = cookieHandle.GetManagerUserId();
                     manageUserModel.UserName = cookieHandle.GetManagerUserName();
                     manageUserModel.UserDroit = cookieHandle.GetManagerDroit();
+                    manageUserModel.GroupId = cookieHandle.GetManagerGroupId();
+                    manageUserModel.LoginGroupId = cookieHandle.GetManagerLoginGroupId();
                 }
             }
             catch (Exception ex)

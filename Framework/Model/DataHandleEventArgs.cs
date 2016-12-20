@@ -7,6 +7,10 @@ namespace Framework.Model
 {
     public class DataHandleEventArgs : EventArgs
     {
+        public DataHandleEventArgs()
+        {
+            this.OperationTime = DateTime.Now;
+        }
 
         /// <summary>
         /// 操作用户名
@@ -20,43 +24,23 @@ namespace Framework.Model
         /// <summary>
         /// 类型
         /// </summary>
-        public OperationTypeEnum OperationType { get; set; }
+        public MessageObjType OperationType { get; set; }
         /// <summary>
         /// 文件路径
         /// </summary>
         public string OperationFilePath { get; set; }
         /// <summary>
-        /// 描述
+        /// 错误描述
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// 原始数据
+        /// </summary>
+        public string RawData { get; set; }
         /// <summary>
         /// 执行时间
         /// </summary>
         public DateTime OperationTime { get; set; }
-
-
-        public DataHandleEventArgs()
-        {
-            this.OperationType = OperationTypeEnum.WangclGWInterfaceLog;
-            this.OperationTime = DateTime.Now;
-            
-        }
-
-
-        public enum OperationTypeEnum
-        {
-            /// <summary>
-            /// 官网接口日志
-            /// </summary>
-            WangclGWInterfaceLog,
-            /// <summary>
-            /// 官网调DC接口日志
-            /// </summary>
-            WangclDCInterfaceLog,
-            /// <summary>
-            /// 会员表
-            /// </summary>
-            GW_Member,
-        }
     }
 }
