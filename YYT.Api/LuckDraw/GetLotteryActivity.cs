@@ -1,6 +1,6 @@
 ﻿using Framework.Model;
-using LuckDraw;
-using LuckDraw.Model;
+using Act.LuckDraw;
+using Act.LuckDraw.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -8,7 +8,7 @@ using Framework.Log;
 using YYT.Model;
 using YYT.Api;
 using YYT.Api.Model;
-using LuckDraw.Model;
+using Act.LuckDraw.Model;
 using Framework;
 using YYT.BLL;
 

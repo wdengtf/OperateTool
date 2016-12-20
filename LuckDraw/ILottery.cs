@@ -1,5 +1,5 @@
 ﻿using Framework.Model;
-using LuckDraw.Model;
+using Act.LuckDraw.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YYT.Model;
 
-namespace LuckDraw
+namespace Act.LuckDraw
 {
     /// <summary>
     /// 抽奖活动接口

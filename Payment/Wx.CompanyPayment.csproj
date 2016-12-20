@@ -7,8 +7,8 @@
     <ProjectGuid>{1869F22C-75C3-42B5-A8E8-3A33E8DC2FA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Payment</RootNamespace>
-    <AssemblyName>Payment</AssemblyName>
+    <RootNamespace>Wx.CompanyPayment</RootNamespace>
+    <AssemblyName>Wx.CompanyPayment</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

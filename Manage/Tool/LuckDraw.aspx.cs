@@ -6,8 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Framework.Model;
 using Framework;
-using LuckDraw;
-using LuckDraw.Model;
+using Act.LuckDraw;
+using Act.LuckDraw.Model;
 using YYT.Model;
 
 namespace Manage.Tool

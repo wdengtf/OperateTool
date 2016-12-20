@@ -1,6 +1,6 @@
 ﻿using Framework.EF;
 using Framework.Model;
-using LuckDraw.Model;
+using Act.LuckDraw.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using YYT.Model;
 using Framework;
 using Events;
 
-namespace LuckDraw
+namespace Act.LuckDraw
 {
     /// <summary>
     /// 抽奖活动基类

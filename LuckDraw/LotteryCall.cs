@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Log;
 using Framework.Model;
-using LuckDraw.Model;
+using Act.LuckDraw.Model;
 using YYT.Model;
 using Events;
 
-namespace LuckDraw
+namespace Act.LuckDraw
 {
     /// <summary>
     /// 外部调用类

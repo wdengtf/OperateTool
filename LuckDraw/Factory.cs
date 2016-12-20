@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LuckDraw
+namespace Act.LuckDraw
 {
     public class Factory
     {
@@ -19,7 +19,7 @@ namespace LuckDraw
             switch (className)
             {
                 default:
-                    handle = new LuckDraw.Handle.DefaultApi();
+                    handle = new LuckDraw.LotteryBase();
                     break;
             }
             return handle;

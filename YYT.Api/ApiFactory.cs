@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YYT.Api.Model;
+using Act.LuckDraw;
 
 namespace YYT.Api
 {
@@ -40,6 +41,25 @@ namespace YYT.Api
             return new LuckDraw.MemberBindLottery();
         }
         #endregion
+
+        /// <summary>
+        /// 抽奖接口
+        /// </summary>
+        /// <param name="className">类型名</param>
+        /// <returns></returns>
+        //public static LuckDraw.ILottery Lottery(string className = null)
+        //{
+        //    LuckDraw.GetLotteryActivity
+
+        //    LuckDraw.ILottery handle = null;
+        //    switch (className)
+        //    {
+        //        default:
+        //            handle = new LuckDraw.LotteryBase();
+        //            break;
+        //    }
+        //    return handle;
+        //}
 
     }
 }

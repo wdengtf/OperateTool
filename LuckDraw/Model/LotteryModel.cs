@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YYT.Model;
 
-namespace LuckDraw.Model
+namespace Act.LuckDraw.Model
 {
     /// <summary>
     /// 获取抽奖对象

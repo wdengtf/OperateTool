@@ -9,8 +9,8 @@ using WebControllers.Member;
 using YYT.BLL;
 using Framework;
 using Framework.Log;
-using LuckDraw;
-using LuckDraw.Model;
+using Act.LuckDraw;
+using Act.LuckDraw.Model;
 
 namespace Web.Data
 {
