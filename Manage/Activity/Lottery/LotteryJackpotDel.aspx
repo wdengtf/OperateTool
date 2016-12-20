@@ -9,6 +9,12 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="server">
     <table border="0" cellpadding="4" cellspacing="1" bgcolor="#e7e7e7" width="100%">
         <tr>
+            <td height="25" align="right" bgcolor="#f7f7f7" width="100px" class="w123">奖品数量：</td>
+            <td align="left" bgcolor="#ffffff">
+                <%=prizeNum %>
+            </td>
+        </tr>
+        <tr>
             <td height="25" align="right" bgcolor="#f7f7f7" width="100px" class="w123">可删除奖品数量：</td>
             <td align="left" bgcolor="#ffffff">
                 <%=delMaxNum %>

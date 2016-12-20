@@ -19,7 +19,7 @@ namespace Web.Manage.Activity.Lottery
         private string subgrid_table_id = "";
         private Luck_ActivityPrizeBO luckActivityPrizeBO = new Luck_ActivityPrizeBO();
         private Luck_ActivityJackpotBO luckActivityJackpotBO = new Luck_ActivityJackpotBO();
-        protected int delMaxNum = 0;
+        protected int delMaxNum = 0, prizeNum = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,14 +27,16 @@ namespace Web.Manage.Activity.Lottery
             subgrid_table_id = Utility.RF("subgrid_table_id");
             if (!Page.IsPostBack)
             {
-                delMaxNum = GettDelNum(id).Count;
+                List<Luck_ActivityJackpot> luckActivityJackpotList = GetTotalNum(id);
+                prizeNum = luckActivityJackpotList.Count;
+                delMaxNum = luckActivityJackpotList.Where(p => p.Status == (int)LuckActivityJackpotStatus.NotDraw).Count();
             }
         }
 
         /// <summary>
-        /// 获取可以删除数量
+        /// 获取奖池总数量
         /// </summary>
-        private List<Luck_ActivityJackpot> GettDelNum(int id)
+        private List<Luck_ActivityJackpot> GetTotalNum(int id)
         {
             List<Luck_ActivityJackpot> actJackpotList = new List<Luck_ActivityJackpot>();
             if (id < 1)
@@ -44,13 +46,16 @@ namespace Web.Manage.Activity.Lottery
             if (manageUserModel.GroupId != jumpDroitGroupId || jumpDroitGroupId == 0)
                 where = where.AndAlso(p => p.channelUserId == manageUserModel.UserId);
 
-            where = where.AndAlso(p => p.PrizeId == id && p.Status==(int)LuckActivityJackpotStatus.NotDraw);
+            where = where.AndAlso(p => p.PrizeId == id);
             return luckActivityJackpotBO.FindAll<int>(where);
         }
 
         protected void Submit_Click(object sender, EventArgs e)
         {
-            List<Luck_ActivityJackpot> actJackpotList = GettDelNum(id);
+            List<Luck_ActivityJackpot> luckActivityJackpotList = GetTotalNum(id);
+            prizeNum = luckActivityJackpotList.Count;
+
+            List<Luck_ActivityJackpot> actJackpotList = luckActivityJackpotList.Where(p => p.Status == (int)LuckActivityJackpotStatus.NotDraw).ToList();
             int delMaxNum = actJackpotList.Count;
             int delNum = int.Parse(txtNum.Text.Trim());
             if (delNum > 0 && delMaxNum > 0 && delMaxNum > delNum)
@@ -62,10 +67,10 @@ namespace Web.Manage.Activity.Lottery
 
                 //更新总数
                 Luck_ActivityPrize lotteryPrizeModel = luckActivityPrizeBO.Find(id);
-                lotteryPrizeModel.num = delMaxNum - delNum;
+                lotteryPrizeModel.num = prizeNum - delNum;
                 luckActivityPrizeBO.Update(lotteryPrizeModel);
 
-                Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('edit_" + id + "','删除成功!','" + subgrid_table_id + "');");
+                Utility.ScriptMessage("parent.dialog.closeDialogAlertMsgReferJqGrid('del_" + id + "','删除成功!','" + subgrid_table_id + "');");
                 LogService.LogInfo(manageUserModel.UserName + "删除数据，成功！");
             }
             else

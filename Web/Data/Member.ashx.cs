@@ -69,6 +69,7 @@ namespace Web.Data
                 memberModel.Mobile = mobile;
                 memberModel.addr = addr;
                 memberModel.realName = realName;
+                memberModel.Updatetime = DateTime.Now;
                 memberBo.Update(memberModel);
                 re = JsonResult.SuccessResult(MsgShowConfig.Success);
             }

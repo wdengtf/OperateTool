@@ -69,6 +69,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Activity\LotteryDataEdit.aspx" />
     <Content Include="Activity\LotteryEdit.aspx" />
     <Content Include="Activity\LotteryJackpotList.aspx" />
     <Content Include="Activity\LotteryList.aspx" />
@@ -209,6 +210,13 @@
     <Content Include="Tool\WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity\LotteryDataEdit.aspx.cs">
+      <DependentUpon>LotteryDataEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity\LotteryDataEdit.aspx.designer.cs">
+      <DependentUpon>LotteryDataEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Activity\LotteryEdit.aspx.cs">
       <DependentUpon>LotteryEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
