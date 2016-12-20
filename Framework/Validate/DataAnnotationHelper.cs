@@ -66,23 +66,33 @@ namespace Framework.Validate
                     }
                 }
             }
-
             if (!only1Level)
             {
                 if (o.GetType().IsClass && !o.GetType().Equals(typeof(string)))
                 {
                     foreach (var p in o.GetType().GetProperties())
                     {
-                        object pValue = p.GetValue(o, null);
-                        if (pValue != null)
+                        if (p.Name == "Item")
                         {
-                            List<BrokenRule> pErrors = IsValid(p.PropertyType, pValue, only1Level);
-                            errors.AddRange(pErrors);
+                            IEnumerable m = o as IEnumerable;
+                            foreach (object item in m)
+                            {
+                                List<BrokenRule> pErrors = IsValid(item.GetType(), item, only1Level);
+                                errors.AddRange(pErrors);
+                            }
+                        }
+                        else
+                        {
+                            object pValue = p.GetValue(o, null);
+                            if (pValue != null)
+                            {
+                                List<BrokenRule> pErrors = IsValid(p.PropertyType, pValue, only1Level);
+                                errors.AddRange(pErrors);
+                            }
                         }
                     }
                 }
             }
-
             return errors;
         }
         private static ICustomTypeDescriptor GetTypeDescriptor(Type type)

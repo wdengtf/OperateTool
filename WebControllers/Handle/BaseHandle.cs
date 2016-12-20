@@ -258,7 +258,7 @@ namespace WebControllers.Handle
         /// <param name="totalRecord"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        protected int GetTotalPage(int totalRecord, int pageSize)
+        private int GetTotalPage(int totalRecord, int pageSize)
         {
             return totalRecord > ((totalRecord / pageSize) * pageSize) ? (totalRecord / pageSize) + 1 : (totalRecord / pageSize);
         }

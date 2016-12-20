@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventBase.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Handle\DefaultApi.cs" />
     <Compile Include="ILottery.cs" />

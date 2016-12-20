@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using YYT.BLL;
 using YYT.Model;
 using Framework;
+using Events;
 
 namespace LuckDraw
 {
@@ -47,9 +48,13 @@ namespace LuckDraw
                 BaseEvent(EventEnum.OnBegin);
 
                 #region 参数验证
-                Luck_Activity model = VerifyLottery(activity_id);
+                Luck_Activity model = Verify(activity_id);
                 if (model == null)
+                {
+                    Description = BaseMessage;
+                    BaseEvent(EventEnum.OnTipMsg);
                     return null;
+                }
 
                 //获取活动奖品
                 Expression<Func<Luck_ActivityPrize, bool>> where = PredicateExtensionses.True<Luck_ActivityPrize>();
@@ -69,7 +74,8 @@ namespace LuckDraw
                 Expression<Func<Luck_ActivityJackpot, bool>> whereJackpot = PredicateExtensionses.True<Luck_ActivityJackpot>();
                 whereJackpot = whereJackpot.AndAlso(p => p.out_id.Equals(member.out_id)).AndAlso(p => p.data_type.Equals(member.data_type));
                 whereJackpot = whereJackpot.AndAlso(p => p.ActivityId == activity_id);
-                if (model.Rules == (int)Luck_ActivityRules.EveryDay) {
+                if (model.Rules == (int)Luck_ActivityRules.EveryDay)
+                {
                     DateTime startDate = DateTime.Now.Date;
                     DateTime endDate = DateTime.Now.Date.AddDays(1);
                     whereJackpot = whereJackpot.AndAlso(p => p.Updatetime.Value > startDate && p.Updatetime < endDate);
@@ -108,7 +114,7 @@ namespace LuckDraw
         }
 
         /// <summary>
-        /// 获取会员抽奖奖品数据
+        /// 获取会员抽奖奖品数据 未参加抽奖返回Null 抽奖返回List
         /// </summary>
         /// <returns></returns>
         public virtual List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList)
@@ -179,16 +185,20 @@ namespace LuckDraw
         public virtual Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id)
         {
             Luck_ActivityPrize luckActivityPrizeModel = new Luck_ActivityPrize();
-             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
+            OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
             OperationName = "绑定会员" + ClassName + "数据";
             try
             {
                 BaseEvent(EventEnum.OnBegin);
 
                 #region 参数验证
-                Luck_Activity model = VerifyLottery(activity_id);
+                Luck_Activity model = Verify(activity_id);
                 if (model == null)
+                {
+                    Description = BaseMessage;
+                    BaseEvent(EventEnum.OnTipMsg);
                     return null;
+                }
 
                 //抽奖记录表里判断是否可以抽奖
                 Expression<Func<Luck_ActivityJackpot, bool>> whereJackpot = PredicateExtensionses.True<Luck_ActivityJackpot>();
@@ -258,44 +268,28 @@ namespace LuckDraw
         }
 
         /// <summary>
-        /// 验证抽奖活动
+        /// 验证抽奖活动[外部调用]
         /// </summary>
         /// <param name="activity_id"></param>
         /// <returns></returns>
         public Luck_Activity VerifyLottery(int activity_id)
         {
-            Luck_Activity model = null;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
-            OperationName = "验证" + ClassName + "活动";
+            OperationName = "验证" + ClassName + "数据";
+
+            Luck_Activity luckActivityModel = null;
             try
             {
                 BaseEvent(EventEnum.OnBegin);
 
-                model = luckActivityBO.Find(activity_id);
-                if (model == null || model.id < 1)
+                luckActivityModel = Verify(activity_id);
+                if (luckActivityModel == null)
                 {
-                    Description = BaseMessage = "加载抽奖活动失败";
+                    Description = BaseMessage;
                     BaseEvent(EventEnum.OnTipMsg);
-                    return null;
                 }
-                if (model.Status == (int)StatusEnmu.Locking)
-                {
-                    Description = BaseMessage = "该活动已锁定";
-                    BaseEvent(EventEnum.OnTipMsg);
-                    return null;
-                }
-                if (model.Startdate.Value >= DateTime.Now)
-                {
-                    Description = BaseMessage = "该活动未开始";
-                    BaseEvent(EventEnum.OnTipMsg);
-                    return null;
-                }
-                if (model.Enddate.Value.AddDays(1) < DateTime.Now)
-                {
-                    Description = BaseMessage = "该活动已结束";
-                    BaseEvent(EventEnum.OnTipMsg);
-                    return null;
-                }
+
+                BaseEvent(EventEnum.OnSuccess);
             }
             catch (Exception ex)
             {
@@ -304,6 +298,45 @@ namespace LuckDraw
                 BaseEvent(EventEnum.OnException);
             }
             BaseEvent(EventEnum.OnCompelete);
+            return luckActivityModel;
+        }
+
+        /// <summary>
+        /// 验证抽奖活动[内部调用 未加事件]
+        /// </summary>
+        /// <param name="activity_id"></param>
+        /// <returns></returns>
+        private Luck_Activity Verify(int activity_id)
+        {
+            Luck_Activity model = null;
+            try
+            {
+                model = luckActivityBO.Find(activity_id);
+                if (model == null || model.id < 1)
+                {
+                    BaseMessage = "加载抽奖活动失败";
+                    return null;
+                }
+                if (model.Status == (int)StatusEnmu.Locking)
+                {
+                    BaseMessage = "该活动已锁定";
+                    return null;
+                }
+                if (model.Startdate.Value >= DateTime.Now)
+                {
+                    BaseMessage = "该活动未开始";
+                    return null;
+                }
+                if (model.Enddate.Value.AddDays(1) < DateTime.Now)
+                {
+                    BaseMessage = "该活动已结束";
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                BaseMessage = ex.ToString();
+            }
             return model;
         }
 

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventBase.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="Log4NetEvents.cs" />
     <Compile Include="MsmqEvents.cs" />

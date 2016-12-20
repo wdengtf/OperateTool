@@ -69,11 +69,16 @@ namespace YYT.DAL
 
         public List<T> FindAll<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction)
         {
+            return iQueryableFindAll<S>(conditions, orderBy, direction).ToList();
+        }
+
+        public IQueryable<T> iQueryableFindAll<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction)
+        {
             direction = String.IsNullOrWhiteSpace(direction) ? "desc" : direction;
             var result = conditions == null ? context.Set<T>() : context.Set<T>().Where(conditions) as IQueryable<T>;
             if (orderBy != null)
                 result = direction.ToLower() == "asc" ? result.OrderBy(orderBy) : result.OrderByDescending(orderBy);
-            return result.ToList();
+            return result;
         }
 
         public List<T> FindAllByPage<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction, int pageIndex, int pageSize, out int totalRecord)

@@ -75,51 +75,52 @@ namespace YYT.Api
                     this.message = MsgShowConfig.ParmNotEmpty;
                     return false;
                 }
-                //var listError = req.IsValid();
-                //if (listError.Count > 0)
-                //{
-                //    this.message = listError[0].Message;
-                //    return false;
-                //}
+                var listError = req.IsValid();
+                if (listError.Count > 0)
+                {
+                    this.message = listError[0].Message;
+                    return false;
+                }
                 #endregion
 
                 #region 签名认证
-                //Expression<Func<QD_ChannelUser, bool>> where = PredicateExtensionses.True<QD_ChannelUser>();
-                //where = where.AndAlso(p => p.user_name.Equals(req.channelUser));
-                //QD_ChannelUser channelUserModel = channelUserBo.GetSingle<int>(where);
-                //if (channelUserModel == null)
-                //{
-                //    this.message = "授权用户不存在";
-                //    return false;
-                //}
-                //if (channelUserModel.Status == (int)StatusEnmu.Locking)
-                //{
-                //    this.message = "用户已锁定,请和管理员联系";
-                //    return false;
-                //}
-                //if (channelUserModel.end_time.Value <= DateTime.Now)
-                //{
-                //    this.message = "用户账号已过期,请和管理员联系";
-                //    return false;
-                //}
-                //IDictionary<string, string> dic;
-                //try
-                //{
-                //    dic = BaseApiModel.CreateSignDictionary(req);
-                //}
-                //catch (Exception ex)
-                //{
-                //    this.message = ex.Message;
-                //    return false;
-                //}
-                //string sign = Framework.Utils.SignUtil.CreateSign(dic, channelUserModel.user_key);
-                //if (sign != req.sign)
-                //{
-                //    this.message = "签名错误";
-                //    LogService.LogError("签名错误:" + Utility.ToJson(req));
-                //    return false;
-                //}
+                Expression<Func<QD_ChannelUser, bool>> where = PredicateExtensionses.True<QD_ChannelUser>();
+                where = where.AndAlso(p => p.user_name.Equals(req.channelUser));
+                QD_ChannelUser channelUserModel = channelUserBo.GetSingle<int>(where);
+                if (channelUserModel == null)
+                {
+                    this.message = "授权用户不存在";
+                    return false;
+                }
+                if (channelUserModel.Status == (int)StatusEnmu.Locking)
+                {
+                    this.message = "用户已锁定,请和管理员联系";
+                    return false;
+                }
+                if (channelUserModel.end_time.Value <= DateTime.Now)
+                {
+                    this.message = "用户账号已过期,请和管理员联系";
+                    return false;
+                }
+                IDictionary<string, string> dic;
+                try
+                {
+                    dic = BaseApiModel.CreateSignDictionary(req);
+                }
+                catch (Exception ex)
+                {
+                    this.message = ex.Message;
+                    return false;
+                }
+                string sign = Framework.Utils.SignUtil.CreateSign(dic, channelUserModel.user_key);
+                if (sign != req.sign)
+                {
+                    this.message = "签名错误";
+                    LogService.LogError("签名错误:" + Utility.ToJson(req));
+                    return false;
+                }
                 #endregion
+
                 result= true;
             }
             catch (Exception ex)
