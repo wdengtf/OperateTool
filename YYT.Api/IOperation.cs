@@ -41,5 +41,15 @@ namespace YYT.Api
         /// </summary>
         /// <returns></returns>
         bool Validate();
+
+        /// <summary>
+        /// 事件
+        /// </summary>
+        event EventHandler OnBegin;
+        event EventHandler OnTipMsg;
+        event EventHandler OnException;
+        event EventHandler OnCompelete;
+        event EventHandler OnSuccess;
+        event EventHandler OnFail;
     }
 }
