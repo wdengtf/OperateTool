@@ -16,6 +16,24 @@ namespace YYT.Api.LuckDraw
     /// </summary>
     public class GetLotteryPrize : OperationBase<ReqLotteryPrizeModel>
     {
+        private readonly ILottery lottery = null;
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        public GetLotteryPrize()
+        {
+            lottery = Factory.Lottery();
+        }
+
+        /// <summary>
+        /// 带参数构造函数
+        /// </summary>
+        /// <param name="className">类名</param>
+        public GetLotteryPrize(string className)
+        {
+            lottery = Factory.Lottery(className);
+        }
+
         public override bool Excute()
         {
             LotteryCall call = new LotteryCall();
@@ -26,7 +44,10 @@ namespace YYT.Api.LuckDraw
                 mobile = req.mobile,
                 nickname = req.nickname,
             };
-            List<WinRecordModel> winRecordList = call.GetLotteryPrize(user, req.activityIdList);
+            //List<WinRecordModel> winRecordList = call.GetLotteryPrize(user, req.activityIdList);
+            DeleteEvent(lottery);
+            AddEvent(lottery);
+            List<WinRecordModel> winRecordList = lottery.GetLotteryPrize(user, req.activityIdList);
             if (call.GetResultState())
             {
                 this.result = true;

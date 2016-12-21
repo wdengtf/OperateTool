@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="APICall.cs" />
     <Compile Include="ApiFactory.cs" />
+    <Compile Include="Auth\WxAuthCall.cs" />
     <Compile Include="BaseApiModel.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="LuckDraw\GetLotteryActivity.cs" />
@@ -77,6 +78,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Auth\Auth.csproj">
+      <Project>{0bea9405-f661-4f86-8997-0aa73cb36fbb}</Project>
+      <Name>Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Events\Events.csproj">
+      <Project>{75864256-28a6-4141-86b3-65e5ed3172d9}</Project>
+      <Name>Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{f5acb59c-5f88-400b-aa26-c25e1f508968}</Project>
       <Name>Framework</Name>

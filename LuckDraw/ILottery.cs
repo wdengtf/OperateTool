@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YYT.Model;
+using Events;
 
 namespace Act.LuckDraw
 {
     /// <summary>
     /// 抽奖活动接口
     /// </summary>
-    public interface ILottery
+    public interface ILottery : IEventHandler
     {
         /// <summary>
         /// 获取抽奖活动
@@ -50,15 +51,5 @@ namespace Act.LuckDraw
         /// </summary>
         /// <returns></returns>
         bool GetResultState();
-
-        /// <summary>
-        /// 事件
-        /// </summary>
-        event EventHandler OnBegin;
-        event EventHandler OnTipMsg;
-        event EventHandler OnException;
-        event EventHandler OnCompelete;
-        event EventHandler OnSuccess;
-        event EventHandler OnFail;
     }
 }

@@ -7,6 +7,9 @@ using Auth.Model;
 using Framework.Log;
 using Framework.Utils;
 using Framework;
+using Events;
+using System.Reflection;
+using Framework.Model;
 
 namespace Auth.Wx
 {
@@ -15,6 +18,9 @@ namespace Auth.Wx
     /// </summary>
     public class WxWebAuth
     {
+        private MethodBase methodBase = System.Reflection.MethodBase.GetCurrentMethod();
+        protected string ClassName = "微信网页授权";
+
         private const string appid = WxConfig.appid;
         private const string appSecret = WxConfig.appSecret;
         private WebUtils webUtils = new WebUtils();
@@ -45,7 +51,7 @@ namespace Auth.Wx
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public static string GetAccess_token(string code)
+        private static string GetAccess_token(string code)
         {
             string tokenUrl = "";
             try
@@ -64,7 +70,7 @@ namespace Auth.Wx
         /// </summary>
         /// <param name="refresh_token"></param>
         /// <returns></returns>
-        public static string RefreshToken(string refresh_token)
+        private static string RefreshToken(string refresh_token)
         {
             string tokenUrl = "";
             try
@@ -84,7 +90,7 @@ namespace Auth.Wx
         /// <param name="access_token"></param>
         /// <param name="open_id"></param>
         /// <returns></returns>
-        public static string GetUserInfo(string access_token, string open_id)
+        private static string GetUserInfo(string access_token, string open_id)
         {
             string userinfoUrl = "";
             try
@@ -106,8 +112,12 @@ namespace Auth.Wx
         public WxMemberModel WxAuthGetUserInfo(string code)
         {
             WxMemberModel wxMemberModel = null;
+            //OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
+            //OperationName = "获取" + ClassName + "数据";
             try
             {
+                //BaseEvent(EventEnum.OnBegin);
+
                 if (String.IsNullOrWhiteSpace(code))
                     return wxMemberModel;
 
@@ -128,11 +138,16 @@ namespace Auth.Wx
                     return wxMemberModel;
                 }
                 wxMemberModel = Utility.JsonToObject<WxMemberModel>(strUserinfo);
+
+                //BaseEvent(EventEnum.OnSuccess);
             }
             catch (Exception ex)
             {
                 LogService.LogDebug(ex);
+                //Description = ex.ToString();
+                //BaseEvent(EventEnum.OnException);
             }
+            //BaseEvent(EventEnum.OnCompelete);
             return wxMemberModel;
         }
     }
