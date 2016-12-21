@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YYT.Model;
+using YYT.BLL;
 
 namespace YYT.Api
 {
@@ -30,8 +32,21 @@ namespace YYT.Api
                 bool result = operation.Validate();
                 if (!result)
                 {
-                    LogService.LogError(operation.GetMessage());
-                    return JsonResult.FailResult(operation.GetMessage());
+                    string strErrMsg = operation.GetMessage();
+                    //添加日志
+                    QD_ChannelLog channelLogModel = new QD_ChannelLog();
+                    channelLogModel.channelName = req.channelUser;
+                    channelLogModel.@interface = Utility.LimitTitleLen("YYT.Api.APICall.MainExcute", 100, "");
+                    channelLogModel.status = (int)StatusSFEnmu.Fail;
+                    channelLogModel.failType = EventEnum.OnFail.ToString();
+                    channelLogModel.failMessage = Utility.LimitTitleLen(strErrMsg, 50, "");
+                    channelLogModel.RawData = Utility.ToJson(req);
+                    channelLogModel.ip = Utility.GetRealIp();
+                    channelLogModel.Createtime = DateTime.Now;
+                    new QD_ChannelLogBO().Add(channelLogModel);
+
+                    LogService.LogError(strErrMsg);
+                    return JsonResult.FailResult(strErrMsg);
                 }
                 //执行操作
                 result = operation.Excute();
@@ -43,14 +58,14 @@ namespace YYT.Api
                 else
                 {
                     //执行出错
-                    re = JsonResult.FailResult(operation.GetMessage());
                     LogService.LogError(operation.GetMessage());
+                    re = JsonResult.FailResult(operation.GetMessage());
                 }
             }
             catch (Exception ex)
             {
-                re = JsonResult.FailResult(MsgShowConfig.Exception);
                 LogService.LogDebug(operation.GetMessage() + "," + ex.Message);
+                re = JsonResult.FailResult(MsgShowConfig.Exception);
             }
             return re;
         }

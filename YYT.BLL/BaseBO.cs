@@ -107,6 +107,19 @@ namespace YYT.BLL
         }
 
         /// <summary>
+        /// 返回IQueryable 
+        /// </summary>
+        /// <typeparam name="S"></typeparam>
+        /// <param name="conditions"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="direction"></param>
+        /// <returns></returns>
+        public IQueryable<T> iQueryableFindAll<S>(Expression<Func<T, bool>> conditions, Expression<Func<T, S>> orderBy, string direction)
+        {
+            return dal.iQueryableFindAll<S>(conditions, orderBy, direction);
+        }
+
+        /// <summary>
         /// 分页
         /// </summary>
         /// <typeparam name="S"></typeparam>

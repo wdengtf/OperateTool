@@ -448,6 +448,10 @@
       <Project>{1c734833-a708-486e-b53c-a2dd045fea23}</Project>
       <Name>WebControllers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YYT.Api\YYT.Api.csproj">
+      <Project>{4b82186c-dd2a-4ab6-b794-7d511de2ff5d}</Project>
+      <Name>YYT.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YYT.BLL\YYT.BLL.csproj">
       <Project>{bc20b60e-8882-403d-9751-7e5db77f405a}</Project>
       <Name>YYT.BLL</Name>

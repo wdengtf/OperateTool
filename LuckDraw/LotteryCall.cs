@@ -43,7 +43,7 @@ namespace Act.LuckDraw
         /// <param name="member"></param>
         /// <param name="activity_id"></param>
         /// <returns></returns>
-        public LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id)
+        public LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id, string channelUser)
         {
             LotteryModel lotteryModel = new LotteryModel();
             try
@@ -51,7 +51,7 @@ namespace Act.LuckDraw
                 DeleteEvent();
                 AddEvent();
 
-                lotteryModel = lottery.GetLotteryActivity(member, activity_id);
+                lotteryModel = lottery.GetLotteryActivity(member, activity_id, channelUser);
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace Act.LuckDraw
         /// <param name="member"></param>
         /// <param name="activity_id"></param>
         /// <returns></returns>
-        public Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id)
+        public Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id, string channelUser)
         {
             Luck_ActivityPrize model = null;
             try
@@ -74,7 +74,7 @@ namespace Act.LuckDraw
                 DeleteEvent();
                 AddEvent();
 
-                model = lottery.MemberBindLottery(member, activity_id);
+                model = lottery.MemberBindLottery(member, activity_id, channelUser);
             }
             catch (Exception ex)
             {
@@ -90,7 +90,7 @@ namespace Act.LuckDraw
         /// <param name="member"></param>
         /// <param name="activityIdList"></param>
         /// <returns></returns>
-        public List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList)
+        public List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList, string channelUser)
         {
             List<WinRecordModel> winRecordList = new List<WinRecordModel>();
             try
@@ -98,7 +98,7 @@ namespace Act.LuckDraw
                 DeleteEvent();
                 AddEvent();
 
-                winRecordList = lottery.GetLotteryPrize(member, activityIdList);
+                winRecordList = lottery.GetLotteryPrize(member, activityIdList, channelUser);
             }
             catch (Exception ex)
             {
@@ -106,7 +106,6 @@ namespace Act.LuckDraw
             }
             return winRecordList;
         }
-
 
         /// <summary>
         /// 获取错误消息

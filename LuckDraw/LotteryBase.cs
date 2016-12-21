@@ -37,10 +37,11 @@ namespace Act.LuckDraw
         /// 获取抽奖活动数据
         /// </summary>
         /// <returns></returns>
-        public virtual LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id)
+        public virtual LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id,string channelUser)
         {
             LotteryModel lotteryModel = new LotteryModel();
 
+            OperationUserName = channelUser;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
             OperationName = "获取" + ClassName + "数据";
             try
@@ -117,9 +118,10 @@ namespace Act.LuckDraw
         /// 获取会员抽奖奖品数据 未参加抽奖返回Null 抽奖返回List
         /// </summary>
         /// <returns></returns>
-        public virtual List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList)
+        public virtual List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList, string channelUser)
         {
             List<WinRecordModel> lists = new List<WinRecordModel>();
+            OperationUserName = channelUser;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
             OperationName = "获取会员" + ClassName + "奖品数据";
             try
@@ -182,9 +184,10 @@ namespace Act.LuckDraw
         /// 绑定会员抽奖数据并返回奖品
         /// </summary>
         /// <returns></returns>
-        public virtual Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id)
+        public virtual Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id,string channelUser)
         {
             Luck_ActivityPrize luckActivityPrizeModel = new Luck_ActivityPrize();
+            OperationUserName = channelUser;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
             OperationName = "绑定会员" + ClassName + "数据";
             try

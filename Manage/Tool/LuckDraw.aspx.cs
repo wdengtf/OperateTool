@@ -40,21 +40,21 @@ namespace Manage.Tool
                 switch (strApiName)
                 {
                     case "GetLotteryActivity":
-                        LotteryModel lotteryModel = lotteryCall.GetLotteryActivity(memberBaseModel, actitityId);
+                        LotteryModel lotteryModel = lotteryCall.GetLotteryActivity(memberBaseModel, actitityId,"");
                         if (lotteryCall.GetResultState())
                             txt_Result.Text = Utility.ToJson(lotteryModel);
                         else
                             txt_Result.Text = lotteryCall.GetMessage();
                         break;
                     case "GetLotteryPrize":
-                        List<WinRecordModel> winRecordList = lotteryCall.GetLotteryPrize(memberBaseModel, new List<int>() { actitityId });
+                        List<WinRecordModel> winRecordList = lotteryCall.GetLotteryPrize(memberBaseModel, new List<int>() { actitityId },"");
                         if (lotteryCall.GetResultState())
                             txt_Result.Text = Utility.ToJson(winRecordList);
                         else
                             txt_Result.Text = lotteryCall.GetMessage();
                         break;
                     case "MemberBindLottery":
-                        Luck_ActivityPrize luckActivityPrizeModel = lotteryCall.MemberBindLottery(memberBaseModel, actitityId);
+                        Luck_ActivityPrize luckActivityPrizeModel = lotteryCall.MemberBindLottery(memberBaseModel, actitityId,"");
                         if (lotteryCall.GetResultState())
                             txt_Result.Text = Utility.ToJson(luckActivityPrizeModel);
                         else

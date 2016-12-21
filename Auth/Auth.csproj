@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAuth.cs" />
     <Compile Include="Model\AccessTokenModel.cs" />
     <Compile Include="Model\WxCommonModel.cs" />
     <Compile Include="Model\WxMemberModel.cs" />

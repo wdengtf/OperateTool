@@ -21,7 +21,7 @@ namespace YYT.Api
     /// 外部接口调用
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class OperationBase<T> :EventBase, IOperation<T> where T : BaseApiModel
+    public abstract class OperationBase<T> : IOperation<T> where T : BaseApiModel
     {
         protected string message = String.Empty;
         protected object date = null;
@@ -132,33 +132,5 @@ namespace YYT.Api
             }
             return result;
         }
-
-        #region 事件操作
-        /// <summary>
-        /// 添加事件
-        /// </summary>
-        protected virtual void AddEvent(IEventHandler iEvent)
-        {
-            iEvent.OnBegin += new EventHandler(events.OnBegin);
-            iEvent.OnTipMsg += new EventHandler(events.OnTipMsg);
-            iEvent.OnSuccess += new EventHandler(events.OnSuccess);
-            iEvent.OnFail += new EventHandler(events.OnFail);
-            iEvent.OnException += new EventHandler(events.OnException);
-            iEvent.OnCompelete += new EventHandler(events.OnCompelete);
-        }
-
-        /// <summary>
-        /// 取消事件
-        /// </summary>
-        protected virtual void DeleteEvent(IEventHandler iEvent)
-        {
-            iEvent.OnBegin -= new EventHandler(events.OnBegin);
-            iEvent.OnTipMsg -= new EventHandler(events.OnTipMsg);
-            iEvent.OnException -= new EventHandler(events.OnException);
-            iEvent.OnSuccess -= new EventHandler(events.OnSuccess);
-            iEvent.OnFail -= new EventHandler(events.OnFail);
-            iEvent.OnCompelete -= new EventHandler(events.OnCompelete);
-        }
-        #endregion
     }
 }

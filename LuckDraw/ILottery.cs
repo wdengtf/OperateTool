@@ -19,19 +19,19 @@ namespace Act.LuckDraw
         /// 获取抽奖活动
         /// </summary>
         /// <returns></returns>
-        LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id);
+        LotteryModel GetLotteryActivity(MemberBaseModel member, int activity_id, string channelUser);
 
         /// <summary>
         /// 会员绑定抽奖记录
         /// </summary>
         /// <returns></returns>
-        Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id);
+        Luck_ActivityPrize MemberBindLottery(MemberBaseModel member, int activity_id, string channelUser);
 
         /// <summary>
         /// 显示中奖奖品
         /// </summary>
         /// <returns></returns>
-        List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList);
+        List<WinRecordModel> GetLotteryPrize(MemberBaseModel member, List<int> activityIdList, string channelUser);
 
         /// <summary>
         /// 验证抽奖活动

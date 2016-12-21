@@ -26,7 +26,7 @@ namespace Events
         /// 默认事件处理
         /// </summary>
         /// <param name="eEvent"></param>
-        protected void BaseEvent(EventEnum eEvent)
+        protected virtual void BaseEvent(EventEnum eEvent)
         {
             DataHandleEventArgs Args = new DataHandleEventArgs();
             Args.OperationUserName = OperationUserName;

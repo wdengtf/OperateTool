@@ -1,16 +1,13 @@
-﻿using Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Events;
 
-namespace YYT.Api
+namespace Auth
 {
-    /// <summary>
-    /// 外部接口
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public interface IOperation<T> where T : BaseApiModel
+    public interface IAuth<T, K> : IEventHandler where T : class where K : class
     {
         /// <summary>
         /// 设置请求数据
@@ -19,27 +16,21 @@ namespace YYT.Api
         void Set(T req);
 
         /// <summary>
-        /// 获取消息
+        /// 返回结果
+        /// </summary>
+        /// <returns></returns>
+        K Auth();
+
+        /// <summary>
+        /// 返回提示消息
         /// </summary>
         /// <returns></returns>
         string GetMessage();
 
-
         /// <summary>
-        /// 获取返回数据
+        /// 执行结果
         /// </summary>
         /// <returns></returns>
-        object GetData();
-
-        /// <summary>
-        /// 执行操作
-        /// </summary>
-        bool Excute();
-
-        /// <summary>
-        /// 验证数据
-        /// </summary>
-        /// <returns></returns>
-        bool Validate();
+        bool GetResultState();
     }
 }

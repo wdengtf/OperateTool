@@ -55,7 +55,7 @@ namespace Web.Data
                     return JsonResult.FailResult("请重新刷新授权");
                 }
                 List<int> actitityIdList = new List<int>() { 3 };
-                List<WinRecordModel> winRecordList = lotteryCall.GetLotteryPrize(memberBaseModel, actitityIdList);
+                List<WinRecordModel> winRecordList = lotteryCall.GetLotteryPrize(memberBaseModel, actitityIdList, "");
                 if (!lotteryCall.GetResultState())
                     return JsonResult.FailResult(lotteryCall.GetMessage());
 
