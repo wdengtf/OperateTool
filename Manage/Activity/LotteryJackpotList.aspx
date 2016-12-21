@@ -27,6 +27,7 @@
             <option value="0">未分配</option>
         </select>
         <button id="submitButton" class="btn">查询</button>
+        <button id="addBtn" class="btn">新增</button>
         <button id="addExprot" class="btn hidden">导出</button>
     </div>
     <div class="title">查询结果</div>
@@ -39,7 +40,7 @@
             commonJqGrid.init({
                 url: "/data/Activity/LotteryJackpotList.ashx",
                 urlParm: "&status=" + $("#selStatus").val(),
-                addEditUrl: "",
+                addEditUrl: "LotteryDataEdit.aspx",
                 title: "奖池记录",
                 addEditDialogHeight: 600,
                 addEditDialogWidth: 600,

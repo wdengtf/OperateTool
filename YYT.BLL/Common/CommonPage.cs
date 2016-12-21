@@ -37,6 +37,9 @@ namespace YYT.BLL.Common
             DataTable ds = new DataTable();
             if (where == "") where = " 1=1";
             if (CurrentPage < 1) CurrentPage = 1;
+            //Table 需要替换掉left join
+           
+
             recordCount = int.Parse(sqlBo.GetdataBySql("select count(*) from " + Table + " where " + where).Rows[0][0].ToString());
             string sql = "select top " + PageSize + "  * from ";
             sql += " ( select top " + CurrentPage * PageSize + "  ROW_NUMBER() OVER(ORDER BY " + Order + ") as RowNum ," + columns + " from " + Table + " where " + where + " ) as tempTable";
