@@ -20,7 +20,6 @@ namespace Manage.Channel
         private QD_ChannelBO channelBo = new QD_ChannelBO();
         private QD_ChannelUserBO channelUserBo = new QD_ChannelUserBO();
         private QD_ChannelUser model = new QD_ChannelUser();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             id = Utility.FNumeric("id");
