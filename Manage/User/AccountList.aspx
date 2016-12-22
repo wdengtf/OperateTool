@@ -29,6 +29,7 @@
                 title: "账户",
                 addEditDialogHeight: 600,
                 addEditDialogWidth: 600,
+                multiselect: true,
                 gridRowOper: {
                     edit: true,
                     del: true,

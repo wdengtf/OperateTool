@@ -76,6 +76,8 @@
     <Content Include="Activity\Lottery\LotteryJackpotDel.aspx" />
     <Content Include="Activity\Lottery\LotteryExport.aspx" />
     <Content Include="Activity\Lottery\LotteryPrizeEdit.aspx" />
+    <Content Include="Channel\ChannelUserEdit.aspx" />
+    <Content Include="Channel\ChannelUserList.aspx" />
     <Content Include="Channel\ChannelLogList.aspx" />
     <Content Include="css\easyui.css" />
     <Content Include="css\jquery-ui-1.10.3.custom\images\add.png" />
@@ -259,6 +261,20 @@
     <Compile Include="Activity\Lottery\LotteryPrizeEdit.aspx.designer.cs">
       <DependentUpon>LotteryPrizeEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Channel\ChannelUserEdit.aspx.cs">
+      <DependentUpon>ChannelUserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\ChannelUserEdit.aspx.designer.cs">
+      <DependentUpon>ChannelUserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\ChannelUserList.aspx.cs">
+      <DependentUpon>ChannelUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\ChannelUserList.aspx.designer.cs">
+      <DependentUpon>ChannelUserList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Channel\ChannelLogList.aspx.cs">
       <DependentUpon>ChannelLogList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -274,6 +290,9 @@
     </Compile>
     <Compile Include="data\Activity\Lottery\LotteryPrize.ashx.cs">
       <DependentUpon>LotteryPrize.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="data\Channel\ChannelUserList.ashx.cs">
+      <DependentUpon>ChannelUserList.ashx</DependentUpon>
     </Compile>
     <Compile Include="data\Channel\ChannelLogList.ashx.cs">
       <DependentUpon>ChannelLogList.ashx</DependentUpon>
@@ -428,6 +447,7 @@
     <Content Include="data\User\group.ashx" />
     <Content Include="data\Activity\LotteryJackpotList.ashx" />
     <Content Include="data\Channel\ChannelLogList.ashx" />
+    <Content Include="data\Channel\ChannelUserList.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -45,7 +45,6 @@
         <tr>
             <td bgcolor="#f7f7f7">&nbsp;</td>
             <td colspan="3" align="left" bgcolor="#ffffff">
-                <asp:Label ID="lbltemid" runat="server" Visible="false"></asp:Label>
                 <asp:Button ID="Submit" runat="server" CssClass="btn_info" Text="保 存" OnClick="Submit_Click"></asp:Button></td>
         </tr>
     </table>

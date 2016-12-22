@@ -7,9 +7,9 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace Web.Manage.User {
+namespace Manage.Channel {
     
     
-    public partial class AccountList {
+    public partial class ChannelList {
     }
 }

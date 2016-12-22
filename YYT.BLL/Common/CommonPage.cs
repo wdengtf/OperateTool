@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
 namespace YYT.BLL.Common
 {    /// <summary>
-     /// 通用分页类
-     /// </summary>
+    /// 通用分页类
+    /// </summary>
     public class CommonPage
     {
         private SqlBO sqlBo = new SqlBO();
@@ -37,10 +38,14 @@ namespace YYT.BLL.Common
             DataTable ds = new DataTable();
             if (where == "") where = " 1=1";
             if (CurrentPage < 1) CurrentPage = 1;
-            //Table 需要替换掉left join
-           
+            //Table 需要替换掉left join， left join导致count很慢
+            string countTable = Table;
+            if (Table.ToLower().IndexOf("left join") > 0)
+            {
+                countTable = Regex.Split(Table.ToLower(), "left join", RegexOptions.IgnoreCase)[0];
+            }
 
-            recordCount = int.Parse(sqlBo.GetdataBySql("select count(*) from " + Table + " where " + where).Rows[0][0].ToString());
+            recordCount = int.Parse(sqlBo.GetdataBySql("select count(*) from " + countTable + " where " + where).Rows[0][0].ToString());
             string sql = "select top " + PageSize + "  * from ";
             sql += " ( select top " + CurrentPage * PageSize + "  ROW_NUMBER() OVER(ORDER BY " + Order + ") as RowNum ," + columns + " from " + Table + " where " + where + " ) as tempTable";
             sql += " where RowNum Between " + ((int)(CurrentPage - 1) * PageSize + 1) + " and " + CurrentPage * PageSize + " Order by RowNum asc";
