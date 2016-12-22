@@ -240,7 +240,7 @@ var commonOper = {
     },
     //删除奖池记录
     subDelJackpot: function (id, subgrid_table_id) {
-        dialog.showDialog("del_" + id, "Lottery/LotteryJackpotDel.aspx?id=" + id + "&subgrid_table_id=" + subgrid_table_id, "删除奖池记录", 200, 400);
+        dialog.showDialog("del_" + id, "Lottery/LotteryJackpotDel.aspx?id=" + id + "&subgrid_table_id=" + subgrid_table_id, "删除奖池记录", 300, 400);
     },
 }
 

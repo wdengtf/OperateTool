@@ -58,7 +58,7 @@ namespace Web.Manage.Activity.Lottery
             List<Luck_ActivityJackpot> actJackpotList = luckActivityJackpotList.Where(p => p.Status == (int)LuckActivityJackpotStatus.NotDraw).ToList();
             int delMaxNum = actJackpotList.Count;
             int delNum = int.Parse(txtNum.Text.Trim());
-            if (delNum > 0 && delMaxNum > 0 && delMaxNum > delNum)
+            if (delNum > 0 && delMaxNum > 0 && delMaxNum >= delNum)
             {
                 List<int> idList = actJackpotList.Select(n => n.id).Take(delNum).ToList();
                 Expression<Func<Luck_ActivityJackpot, bool>> where = PredicateExtensionses.True<Luck_ActivityJackpot>();
