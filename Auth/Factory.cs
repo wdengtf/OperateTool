@@ -17,7 +17,7 @@ namespace Auth
             switch (className)
             {
                 case "WxServerAuth":
-                    handle = new Wx.WxServerAuth<DBNull, ServerTokenAndTicketModel>();
+                    handle = new Wx.WxServerAuth<T, K>();
                     break;
                 //case "WxWebAuth":
                 //    handle = new Wx.WxWebAuth();
