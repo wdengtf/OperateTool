@@ -14,6 +14,7 @@ namespace Events
         protected string OperationName = "";//操作名称
         protected string OperationFilePath = "";//操作路径
         protected string Description = "";//操作描述
+        protected string RawData = "";//原始数据
 
         public virtual event EventHandler OnBegin;
         public virtual event EventHandler OnCompelete;
@@ -48,6 +49,7 @@ namespace Events
                     {
                         Args.OperationName = OperationName + "提示信息";
                         Args.Description = Description;
+                        Args.RawData = RawData;
                         this.OnTipMsg(this, Args);
                     }
                     break;
@@ -56,6 +58,7 @@ namespace Events
                     {
                         Args.OperationName = OperationName + "异常";
                         Args.Description = Description;
+                        Args.RawData = RawData;
                         this.OnException(this, Args);
                     }
                     break;
@@ -64,6 +67,7 @@ namespace Events
                     {
                         Args.OperationName = OperationName + "成功";
                         Args.Description = Description;
+                        Args.RawData = RawData;
                         this.OnSuccess(this, Args);
                     }
                     break;
@@ -72,6 +76,7 @@ namespace Events
                     {
                         Args.OperationName = OperationName + "失败";
                         Args.Description = Description;
+                        Args.RawData = RawData;
                         this.OnFail(this, Args);
                     }
                     break;

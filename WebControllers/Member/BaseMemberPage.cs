@@ -23,7 +23,7 @@ namespace WebControllers.Member
             //登录验证
             if (!member.MemberValidate(memberBaseModel))
             {
-                System.Web.HttpContext.Current.Response.Redirect(WxWebAuth.GetCode(ConfigBL.WxAuthUrl()));
+                System.Web.HttpContext.Current.Response.Redirect(WxConfig.GetCode(ConfigBL.WxAuthUrl()));
             }
         }
 

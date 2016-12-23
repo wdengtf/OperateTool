@@ -18,6 +18,25 @@ namespace Auth.Wx
         }
 
         /// <summary>
+        /// 获取微信Code
+        /// </summary>
+        /// <param name="redirectUrl"></param>
+        /// <returns></returns>
+        public static string GetCode(string redirectUrl)
+        {
+            string codeUrl = "";
+            try
+            {
+                codeUrl = String.Format("https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri={1}&response_type=code&scope=snsapi_userinfo&state={2}#wechat_redirect", appid, redirectUrl, 1);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return codeUrl;
+        }
+
+        /// <summary>
         /// 随机字符串
         /// </summary>
         /// <returns></returns>

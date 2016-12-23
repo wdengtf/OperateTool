@@ -16,11 +16,9 @@ namespace Auth.Wx
     /// <summary>
     /// 微信网页授权
     /// </summary>
-    public class WxWebAuth
+    public class WxWebAuth : AuthBase<String, WxMemberModel>
     {
-        private MethodBase methodBase = System.Reflection.MethodBase.GetCurrentMethod();
-        protected string ClassName = "微信网页授权";
-
+        private string ClassName = "微信网页授权";
         private const string appid = WxConfig.appid;
         private const string appSecret = WxConfig.appSecret;
         private WebUtils webUtils = new WebUtils();
@@ -28,24 +26,101 @@ namespace Auth.Wx
         { }
 
         /// <summary>
-        /// 获取微信Code
+        /// 授权操作
         /// </summary>
-        /// <param name="redirectUrl"></param>
         /// <returns></returns>
-        public static string GetCode(string redirectUrl)
+        public override WxMemberModel Auth()
         {
-            string codeUrl = "";
+            WxMemberModel wxMemberModel = null;
+            OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
+            OperationName = "获取" + ClassName + "数据";
             try
             {
-                codeUrl = String.Format("https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri={1}&response_type=code&scope=snsapi_userinfo&state={2}#wechat_redirect", appid, redirectUrl, 1);
+                BaseEvent(EventEnum.OnBegin);
+                if (!Validate())
+                {
+                    Description = BaseMessage;
+                    RawData = req;
+                    BaseEvent(EventEnum.OnTipMsg);
+                    return null;
+                }
+
+                string tokenPost = webUtils.DoGet(GetAccess_token(req), null);
+                if (!tokenPost.Contains("access_token"))
+                {
+                    Description = BaseMessage = "获取Access_token失败";
+                    RawData = tokenPost;
+                    BaseEvent(EventEnum.OnTipMsg);
+                    return wxMemberModel;
+                }
+                AccessTokenWebModel accessTokenModel = Utility.JsonToObject<AccessTokenWebModel>(tokenPost);
+
+                string strUserinfo = webUtils.DoGet(GetUserInfo(accessTokenModel.access_token, accessTokenModel.openid), null);
+                //strUserinfo = System.Text.Encoding.UTF8.GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(strUserinfo));
+
+                if (!strUserinfo.Contains("openid"))
+                {
+                    Description = BaseMessage = "获取微信用户信息失败";
+                    RawData = strUserinfo;
+                    BaseEvent(EventEnum.OnTipMsg);
+                    return wxMemberModel;
+                }
+                wxMemberModel = Utility.JsonToObject<WxMemberModel>(strUserinfo);
+                this.result = true;
+
+                RawData = strUserinfo;
+                BaseEvent(EventEnum.OnSuccess);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                BaseMessage = MsgShowConfig.Exception;
+                Description = ex.ToString();
+                BaseEvent(EventEnum.OnException);
             }
-            return codeUrl;
+            BaseEvent(EventEnum.OnCompelete);
+            return wxMemberModel;
         }
 
+
+        /// <summary>
+        /// 保存微信信息
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public WxMemberModel WxAuthGetUserInfo(string code)
+        {
+            WxMemberModel wxMemberModel = null;
+            try
+            {
+                if (String.IsNullOrWhiteSpace(code))
+                    return wxMemberModel;
+
+                string tokenPost = webUtils.DoGet(GetAccess_token(code), null);
+                if (!tokenPost.Contains("access_token"))
+                {
+                    LogService.LogInfo("获取Access_token失败:" + tokenPost);
+                    return wxMemberModel;
+                }
+                AccessTokenWebModel accessTokenModel = Utility.JsonToObject<AccessTokenWebModel>(tokenPost);
+
+                string strUserinfo = webUtils.DoGet(GetUserInfo(accessTokenModel.access_token, accessTokenModel.openid), null);
+                //strUserinfo = System.Text.Encoding.UTF8.GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(strUserinfo));
+
+                if (!strUserinfo.Contains("openid"))
+                {
+                    LogService.LogInfo("获取微信用户信息失败:" + strUserinfo);
+                    return wxMemberModel;
+                }
+                wxMemberModel = Utility.JsonToObject<WxMemberModel>(strUserinfo);
+            }
+            catch (Exception ex)
+            {
+                LogService.LogDebug(ex);
+            }
+            return wxMemberModel;
+        }
+
+        #region 私有方法
         /// <summary>
         /// 获取微信Access_token
         /// </summary>
@@ -103,52 +178,6 @@ namespace Auth.Wx
             }
             return userinfoUrl;
         }
-
-        /// <summary>
-        /// 保存微信信息
-        /// </summary>
-        /// <param name="code"></param>
-        /// <returns></returns>
-        public WxMemberModel WxAuthGetUserInfo(string code)
-        {
-            WxMemberModel wxMemberModel = null;
-            //OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
-            //OperationName = "获取" + ClassName + "数据";
-            try
-            {
-                //BaseEvent(EventEnum.OnBegin);
-
-                if (String.IsNullOrWhiteSpace(code))
-                    return wxMemberModel;
-
-                string tokenPost = webUtils.DoGet(GetAccess_token(code), null);
-                if (!tokenPost.Contains("access_token"))
-                {
-                    LogService.LogInfo("获取Access_token失败:" + tokenPost);
-                    return wxMemberModel;
-                }
-                AccessTokenWebModel accessTokenModel = Utility.JsonToObject<AccessTokenWebModel>(tokenPost);
-
-                string strUserinfo = webUtils.DoGet(GetUserInfo(accessTokenModel.access_token, accessTokenModel.openid), null);
-                //strUserinfo = System.Text.Encoding.UTF8.GetString(Encoding.GetEncoding("ISO-8859-1").GetBytes(strUserinfo));
-
-                if (!strUserinfo.Contains("openid"))
-                {
-                    LogService.LogInfo("获取微信用户信息失败:" + strUserinfo);
-                    return wxMemberModel;
-                }
-                wxMemberModel = Utility.JsonToObject<WxMemberModel>(strUserinfo);
-
-                //BaseEvent(EventEnum.OnSuccess);
-            }
-            catch (Exception ex)
-            {
-                LogService.LogDebug(ex);
-                //Description = ex.ToString();
-                //BaseEvent(EventEnum.OnException);
-            }
-            //BaseEvent(EventEnum.OnCompelete);
-            return wxMemberModel;
-        }
+        #endregion
     }
 }

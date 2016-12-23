@@ -19,7 +19,7 @@ namespace Web
     public class Global : System.Web.HttpApplication
     {
         private Wx_ConfigBO wxConfigBo = new Wx_ConfigBO();
-        private WxServerAuth wxServerAuthor = new WxServerAuth();
+        private WxServerAuth<DBNull, ServerTokenAndTicketModel> wxServerAuthor = new WxServerAuth<DBNull, ServerTokenAndTicketModel>();
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -41,7 +41,14 @@ namespace Web
         {
             try
             {
-                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.GetServerTokenAndTicken();
+                wxServerAuthor.Set(null, "");
+                if (!wxServerAuthor.GetResultState())
+                {
+                    LogService.LogInfo(wxServerAuthor.GetMessage());
+                    return;
+                }
+                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.Auth();
+                //ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.GetServerTokenAndTicken();
                 if (serverTokenAndTicketModel == null)
                 {
                     LogService.LogError("获取公众号AccessToken和JsapiTicket失败");

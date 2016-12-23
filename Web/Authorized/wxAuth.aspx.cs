@@ -20,7 +20,7 @@ namespace Web.Authorized
     {
         private string strCode = "";
         private YYT_MemberBO memberBo = new YYT_MemberBO();
-        private WxWebAuth wxWebAuth = new WxWebAuth();
+        private WxWebAuth<String, WxMemberModel> wxWebAuth = new WxWebAuth<String, WxMemberModel>();
         protected void Page_Load(object sender, EventArgs e)
         {
             strCode = Utility.RF("code");
@@ -28,7 +28,15 @@ namespace Web.Authorized
             {
                 if (!String.IsNullOrWhiteSpace(strCode))
                 {
-                    WxMemberModel wxMemberModel = wxWebAuth.WxAuthGetUserInfo(strCode);
+                    //微信授权
+                    wxWebAuth.Set(strCode, "");
+                    if (!wxWebAuth.GetResultState()) { 
+                        LogService.LogInfo(wxWebAuth.GetMessage());
+                        return;
+                    }
+                    WxMemberModel wxMemberModel = wxWebAuth.Auth();
+
+                    //WxMemberModel wxMemberModel = wxWebAuth.WxAuthGetUserInfo(strCode);
                     if (wxMemberModel == null)
                     {
                         Response.Redirect("/404.html");

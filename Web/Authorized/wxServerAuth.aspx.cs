@@ -21,7 +21,7 @@ namespace Web.Authorized
     public partial class wxServerAuth : System.Web.UI.Page
     {
         private Wx_ConfigBO wxConfigBo = new Wx_ConfigBO();
-        private WxServerAuth wxServerAuthor = new WxServerAuth();
+        private WxServerAuth<DBNull, ServerTokenAndTicketModel> wxServerAuthor = new WxServerAuth<DBNull, ServerTokenAndTicketModel>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
