@@ -59,7 +59,7 @@ namespace Auth
         /// 参数验证
         /// </summary>
         /// <returns></returns>
-        protected bool Validate()
+        protected virtual bool Validate()
         {
             bool result = false;
             try

@@ -4,26 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Events;
+using Auth;
 
 namespace Auth
 {
-    public class Factory<T, K>
-        where T : class
-        where K : class
+    public class Factory
     {
-        public static IAuth<T, K> Auth(string className)
+        private Factory()
         {
-            IAuth<T, K> handle = null;
-            switch (className)
-            {
-                case "WxServerAuth":
-                    handle = new Wx.WxServerAuth<T, K>();
-                    break;
-                //case "WxWebAuth":
-                //    handle = new Wx.WxWebAuth();
-                //    break;
-            }
-            return handle;
+
         }
+
+        public static IAuth<T, M> Auth<T, M>() where T : class where M : class
+        {
+            IAuth<T, M> iAuth = null;
+            if (typeof(M) == typeof(ServerTokenAndTicketModel))
+            {
+                iAuth = new Wx.WxServerAuth<T, M>();
+            }
+            else if (typeof(M) == typeof(WxMemberModel))
+            {
+                iAuth = new Wx.WxWebAuth<T, M>();
+            }
+            return iAuth;
+        }
+
+        //public static IAuth<DBNull, ServerTokenAndTicketModel> WxServerAuth()
+        //{
+        //    return new Wx.WxServerAuth();
+        //}
+
+        //public static IAuth<String, WxMemberModel> WxWebAuth()
+        //{
+        //    return new Wx.WxWebAuth();
+        //}
     }
 }

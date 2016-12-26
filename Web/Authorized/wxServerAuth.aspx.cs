@@ -12,6 +12,7 @@ using YYT.Model;
 using WebControllers;
 using System.Linq.Expressions;
 using Framework.EF;
+using Auth;
 
 namespace Web.Authorized
 {
@@ -21,7 +22,7 @@ namespace Web.Authorized
     public partial class wxServerAuth : System.Web.UI.Page
     {
         private Wx_ConfigBO wxConfigBo = new Wx_ConfigBO();
-        private WxServerAuth<DBNull, ServerTokenAndTicketModel> wxServerAuthor = new WxServerAuth<DBNull, ServerTokenAndTicketModel>();
+        private AuthCall<DBNull, ServerTokenAndTicketModel> wxServerAuthor = new AuthCall<DBNull, ServerTokenAndTicketModel>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -36,7 +37,15 @@ namespace Web.Authorized
             bool result = false;
             try
             {
-                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.GetServerTokenAndTicken();
+                wxServerAuthor.Set(null, "");
+                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.Auth();
+                if (!wxServerAuthor.GetResultState())
+                {
+                    LogService.LogInfo(wxServerAuthor.GetMessage());
+                    return false;
+                }
+               
+                //ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.GetServerTokenAndTicken();
                 if (serverTokenAndTicketModel == null)
                 {
                     LogService.LogError("获取公众号AccessToken和JsapiTicket失败");

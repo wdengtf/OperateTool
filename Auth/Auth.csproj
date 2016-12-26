@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthBase.cs" />
+    <Compile Include="AuthCall.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="IAuth.cs" />
     <Compile Include="Model\AccessTokenModel.cs" />

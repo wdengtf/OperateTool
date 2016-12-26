@@ -7,7 +7,7 @@ using Events;
 
 namespace Auth
 {
-    public interface IAuth<T, K> : IEventHandler where T : class where K : class
+    public interface IAuth<T, M> : IEventHandler where T : class where M : class
     {
         /// <summary>
         /// 设置请求数据
@@ -19,7 +19,7 @@ namespace Auth
         /// 返回结果
         /// </summary>
         /// <returns></returns>
-        K Auth();
+        M Auth();
 
         /// <summary>
         /// 返回提示消息

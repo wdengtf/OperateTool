@@ -10,6 +10,7 @@ using YYT.Model;
 using System.Linq.Expressions;
 using Framework.EF;
 using WebControllers;
+using Auth;
 
 namespace Web.Authorized
 {
@@ -20,7 +21,9 @@ namespace Web.Authorized
     {
         private string strCode = "";
         private YYT_MemberBO memberBo = new YYT_MemberBO();
-        private WxWebAuth<String, WxMemberModel> wxWebAuth = new WxWebAuth<String, WxMemberModel>();
+
+        private AuthCall<String, WxMemberModel> wxWebAuth = new AuthCall<String, WxMemberModel>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             strCode = Utility.RF("code");
@@ -30,11 +33,11 @@ namespace Web.Authorized
                 {
                     //微信授权
                     wxWebAuth.Set(strCode, "");
+                    WxMemberModel wxMemberModel = wxWebAuth.Auth();
                     if (!wxWebAuth.GetResultState()) { 
                         LogService.LogInfo(wxWebAuth.GetMessage());
                         return;
                     }
-                    WxMemberModel wxMemberModel = wxWebAuth.Auth();
 
                     //WxMemberModel wxMemberModel = wxWebAuth.WxAuthGetUserInfo(strCode);
                     if (wxMemberModel == null)

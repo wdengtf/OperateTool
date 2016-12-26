@@ -16,7 +16,7 @@ namespace Auth.Wx
     /// <summary>
     /// 微信网页授权
     /// </summary>
-    public class WxWebAuth<T, K> : AuthBase<String, WxMemberModel>
+    public class WxWebAuth<K, M> : AuthBase<K, M> where K : class where M : class //AuthBase<String, WxMemberModel>
     {
         private string ClassName = "微信网页授权";
         private const string appid = WxConfig.appid;
@@ -29,23 +29,24 @@ namespace Auth.Wx
         /// 授权操作
         /// </summary>
         /// <returns></returns>
-        public override WxMemberModel Auth()
+        public override M Auth()
         {
-            WxMemberModel wxMemberModel = null;
+            M wxMemberModel = null;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
             OperationName = "获取" + ClassName + "数据";
             try
             {
+                string code = (String)Convert.ChangeType(req, typeof(String));
                 BaseEvent(EventEnum.OnBegin);
                 if (!Validate())
                 {
                     Description = BaseMessage;
-                    RawData = req;
+                    RawData = code;
                     BaseEvent(EventEnum.OnTipMsg);
                     return null;
                 }
 
-                string tokenPost = webUtils.DoGet(GetAccess_token(req), null);
+                string tokenPost = webUtils.DoGet(GetAccess_token(code), null);
                 if (!tokenPost.Contains("access_token"))
                 {
                     Description = BaseMessage = "获取Access_token失败";
@@ -65,7 +66,7 @@ namespace Auth.Wx
                     BaseEvent(EventEnum.OnTipMsg);
                     return wxMemberModel;
                 }
-                wxMemberModel = Utility.JsonToObject<WxMemberModel>(strUserinfo);
+                wxMemberModel = Utility.JsonToObject<M>(strUserinfo);
                 this.result = true;
 
                 RawData = strUserinfo;
@@ -81,6 +82,33 @@ namespace Auth.Wx
             return wxMemberModel;
         }
 
+        /// <summary>
+        /// 参数验证
+        /// </summary>
+        /// <returns></returns>
+        protected override bool Validate()
+        {
+            bool result = false;
+            try
+            {
+                if (req.GetType() != typeof(String))
+                {
+                    BaseMessage = MsgShowConfig.InputParmTypeError;
+                    return false;
+                }
+                if (String.IsNullOrWhiteSpace((String)Convert.ChangeType(req, typeof(String))))
+                {
+                    BaseMessage = MsgShowConfig.ParmNotEmpty;
+                    return false;
+                }
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return result;
+        }
 
         /// <summary>
         /// 保存微信信息

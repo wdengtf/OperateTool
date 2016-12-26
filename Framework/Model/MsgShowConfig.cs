@@ -21,5 +21,6 @@ namespace Framework.Model
         public const string Fail = "失败";
         public const string Exception = "异常";
         public const string IllegalOperation = "非法操作";
+        public const string InputParmTypeError = "输入参数类型不正确";
     }
 }

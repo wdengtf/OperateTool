@@ -16,7 +16,7 @@ namespace Auth.Wx
     /// <summary>
     /// 微信公众号授权
     /// </summary>
-    public class WxServerAuth<T, K> : AuthBase<DBNull, ServerTokenAndTicketModel>
+    public class WxServerAuth<K, M> : AuthBase<K, M> where K : class where M : class//AuthBase<DBNull, ServerTokenAndTicketModel>
     {
         protected string ClassName = "微信公众号授权";
 
@@ -26,43 +26,9 @@ namespace Auth.Wx
         public WxServerAuth()
         { }
 
-       
-
-        /// <summary>
-        /// 获取公众号AccessToken和JsapiTicket
-        /// </summary>
-        /// <returns></returns>
-        public ServerTokenAndTicketModel GetServerTokenAndTicken()
+        public override M Auth()
         {
-            ServerTokenAndTicketModel serverTicketModel = null;
-            try
-            {
-                string accessToken = webUtils.DoGet(GetAccess_token(),null);
-                if (!accessToken.Contains("access_token"))
-                {
-                    LogService.LogInfo("获取Access_token失败:" + accessToken);
-                    return serverTicketModel;
-                }
-                AccessTokenServerModel accessTokenModel = Utility.JsonToObject<AccessTokenServerModel>(accessToken);
-                string jsapiTicket = webUtils.DoGet(GetJsapiTicket(accessTokenModel.access_token), null);
-                if (!jsapiTicket.Contains("ticket"))
-                {
-                    LogService.LogInfo("获取jsapi_ticket信息失败:" + jsapiTicket);
-                    return serverTicketModel;
-                }
-                serverTicketModel = Utility.JsonToObject<ServerTokenAndTicketModel>(jsapiTicket);
-            }
-            catch (Exception ex)
-            {
-                LogService.LogDebug(ex);
-            }
-            return serverTicketModel;
-        }
-
-
-        public override ServerTokenAndTicketModel Auth()
-        {
-            ServerTokenAndTicketModel serverTicketModel = null;
+            M serverTicketModel = null;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
             OperationName = "获取" + ClassName + "数据";
             try
@@ -86,7 +52,7 @@ namespace Auth.Wx
                     BaseEvent(EventEnum.OnTipMsg);
                     return serverTicketModel;
                 }
-                serverTicketModel = Utility.JsonToObject<ServerTokenAndTicketModel>(jsapiTicket);
+                serverTicketModel = Utility.JsonToObject<M>(jsapiTicket);
                 this.result = true;
 
                 RawData = jsapiTicket;
@@ -99,6 +65,38 @@ namespace Auth.Wx
                 BaseEvent(EventEnum.OnException);
             }
             BaseEvent(EventEnum.OnCompelete);
+            return serverTicketModel;
+        }
+
+
+        /// <summary>
+        /// 获取公众号AccessToken和JsapiTicket
+        /// </summary>
+        /// <returns></returns>
+        public ServerTokenAndTicketModel GetServerTokenAndTicken()
+        {
+            ServerTokenAndTicketModel serverTicketModel = null;
+            try
+            {
+                string accessToken = webUtils.DoGet(GetAccess_token(), null);
+                if (!accessToken.Contains("access_token"))
+                {
+                    LogService.LogInfo("获取Access_token失败:" + accessToken);
+                    return serverTicketModel;
+                }
+                AccessTokenServerModel accessTokenModel = Utility.JsonToObject<AccessTokenServerModel>(accessToken);
+                string jsapiTicket = webUtils.DoGet(GetJsapiTicket(accessTokenModel.access_token), null);
+                if (!jsapiTicket.Contains("ticket"))
+                {
+                    LogService.LogInfo("获取jsapi_ticket信息失败:" + jsapiTicket);
+                    return serverTicketModel;
+                }
+                serverTicketModel = Utility.JsonToObject<ServerTokenAndTicketModel>(jsapiTicket);
+            }
+            catch (Exception ex)
+            {
+                LogService.LogDebug(ex);
+            }
             return serverTicketModel;
         }
 

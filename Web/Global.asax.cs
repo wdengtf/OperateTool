@@ -13,13 +13,14 @@ using System.Web.SessionState;
 using WebControllers;
 using YYT.BLL;
 using YYT.Model;
+using Auth;
 
 namespace Web
 {
     public class Global : System.Web.HttpApplication
     {
         private Wx_ConfigBO wxConfigBo = new Wx_ConfigBO();
-        private WxServerAuth<DBNull, ServerTokenAndTicketModel> wxServerAuthor = new WxServerAuth<DBNull, ServerTokenAndTicketModel>();
+        private AuthCall<DBNull, ServerTokenAndTicketModel> wxServerAuthor = new AuthCall<DBNull, ServerTokenAndTicketModel>();
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -42,12 +43,12 @@ namespace Web
             try
             {
                 wxServerAuthor.Set(null, "");
+                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.Auth();
                 if (!wxServerAuthor.GetResultState())
                 {
                     LogService.LogInfo(wxServerAuthor.GetMessage());
                     return;
                 }
-                ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.Auth();
                 //ServerTokenAndTicketModel serverTokenAndTicketModel = wxServerAuthor.GetServerTokenAndTicken();
                 if (serverTokenAndTicketModel == null)
                 {
