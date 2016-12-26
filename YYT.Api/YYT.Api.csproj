@@ -68,7 +68,6 @@
     <Compile Include="APICall.cs" />
     <Compile Include="ApiFactory.cs" />
     <Compile Include="Auth\WxAuthCall.cs" />
-    <Compile Include="BaseApiModel.cs" />
     <Compile Include="IdCard\SendIdCard.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="LuckDraw\GetLotteryActivity.cs" />

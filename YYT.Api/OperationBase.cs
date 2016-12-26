@@ -21,7 +21,7 @@ namespace YYT.Api
     /// 外部接口调用
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class OperationBase<T> : IOperation<T> where T : BaseApiModel
+    public abstract class OperationBase<T> : IOperation<T> where T : BaseModel
     {
         protected string message = String.Empty;
         protected object date = null;

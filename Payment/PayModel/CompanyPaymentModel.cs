@@ -4,24 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Framework.Model;
 
 namespace Payment.PayModel
 {
     /// <summary>
     /// 微信企业付款
     /// </summary>
-    public class CompanyPaymentModel
+    public class CompanyPaymentModel : BaseModel
     {
         public CompanyPaymentModel()
         {
             this.postUrl = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers";
         }
-
-        /// <summary>
-        /// 渠道用户名
-        /// </summary>
-        [Required(ErrorMessage = "渠道用户名不能为空")]
-        public string channelUser { get; set; }
 
         /// <summary>
         /// 用户密钥

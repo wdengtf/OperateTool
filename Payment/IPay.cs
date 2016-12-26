@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Payment
 {
-    public class IPay<T> : IEventHandler where T : class
+    public interface IPay<T> : IEventHandler where T : class
     {
         /// <summary>
         /// 参数设置

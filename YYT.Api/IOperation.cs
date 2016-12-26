@@ -10,7 +10,7 @@ namespace YYT.Api
     /// 外部接口
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IOperation<T> where T : BaseApiModel
+    public interface IOperation<T> where T :class
     {
         /// <summary>
         /// 设置请求数据

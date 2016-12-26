@@ -20,7 +20,7 @@ namespace YYT.Api
         /// <param name="req"></param>
         /// <param name="operation"></param>
         /// <returns></returns>
-        public static JsonResult MainExcute<T>(T req, IOperation<T> operation) where T : BaseApiModel
+        public static JsonResult MainExcute<T>(T req, IOperation<T> operation) where T : BaseModel
         {
             JsonResult re = null;
             try

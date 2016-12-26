@@ -18,6 +18,7 @@ namespace YYT.Api.IdCard
         }
         public override bool Excute()
         {
+            result = false;
             //LotteryCall call = new LotteryCall();
             //MemberBaseModel user = new MemberBaseModel
             //{

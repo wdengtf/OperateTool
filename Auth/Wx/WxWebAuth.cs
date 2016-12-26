@@ -16,7 +16,7 @@ namespace Auth.Wx
     /// <summary>
     /// 微信网页授权
     /// </summary>
-    public class WxWebAuth<K, M> : AuthBase<K, M> where K : class where M : class //AuthBase<String, WxMemberModel>
+    public class WxWebAuth<K, M> : AuthBase<K, M> where K : class where M : class
     {
         private string ClassName = "微信网页授权";
         private const string appid = WxConfig.appid;

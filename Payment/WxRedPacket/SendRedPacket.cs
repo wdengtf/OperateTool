@@ -17,8 +17,9 @@ namespace Payment.WxRedPacket
         public SendRedPacket()
         { }
 
-        public override void Excute()
+        public override bool Excute()
         {
+            result = false;
             try
             {
                 #region 创建签名
@@ -30,7 +31,7 @@ namespace Payment.WxRedPacket
                 req.sign = sign;
                 #endregion
 
-                if (!Validate()) return;
+                if (!Validate()) return result;
 
                 string retrunPost = new Framework.Utils.WebUtils().DoPostWebRequest(req.postUrl, WxConfig.GetXmlStr(sortedList), Encoding.UTF8);
                 LogService.LogInfo("微信发放红包返回参数：" + retrunPost);
@@ -38,7 +39,7 @@ namespace Payment.WxRedPacket
                 if (String.IsNullOrEmpty(retrunPost))
                 {
                     this.message = "微信发放红包返回参数接口返回数据为空";
-                    return;
+                    return result;
                 }
 
                 SortedList<string, string> returnSortedList = WxConfig.XmlTransSortedList(retrunPost);
@@ -53,23 +54,23 @@ namespace Payment.WxRedPacket
                 if (!returnSortedList.ContainsKey("return_code"))
                 {
                     this.message = "未获取到微信红包返回状态码";
-                    return;
+                    return result;
                 }
                 if (returnSortedList["return_code"] != WxConfig.returnSuccessCode)
                 {
                     this.message = returnSortedList["return_msg"];
-                    return;
+                    return result;
                 }
                 if (returnSortedList["result_code"] != WxConfig.returnSuccessCode)
                 {
                     this.message = "业务结果错误,代码:[" + returnSortedList["err_code"] + "],错误代码描述:" + returnSortedList["err_code_des"];
-                    return;
+                    return result;
                 }
 
                 if (returnSortedList["sign"] != returnSign)
                 {
                     this.message = "返回参数签名错误";
-                    return;
+                    return result;
                 }
 
                 RedPacketNotifyModel redPacketNotifyModel = new RedPacketNotifyModel();
@@ -93,7 +94,7 @@ namespace Payment.WxRedPacket
             {
                 throw new Exception(ex.ToString());
             }
-            return;
+            return result;
         }
 
 

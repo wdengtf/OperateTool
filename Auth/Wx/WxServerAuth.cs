@@ -16,7 +16,7 @@ namespace Auth.Wx
     /// <summary>
     /// 微信公众号授权
     /// </summary>
-    public class WxServerAuth<K, M> : AuthBase<K, M> where K : class where M : class//AuthBase<DBNull, ServerTokenAndTicketModel>
+    public class WxServerAuth<K, M> : AuthBase<K, M> where K : class where M : class
     {
         protected string ClassName = "微信公众号授权";
 

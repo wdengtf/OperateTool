@@ -68,9 +68,10 @@
     <Compile Include="Cookies\CookUtils.cs" />
     <Compile Include="EF\ParameterReplacer.cs" />
     <Compile Include="EF\PredicateExtensionses.cs" />
-    <Compile Include="Handle\FromToObj.cs" />
+    <Compile Include="Handle\ConvertObj.cs" />
     <Compile Include="Handle\ReflectionHelper.cs" />
     <Compile Include="Log\LogService.cs" />
+    <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\CommandInfo.cs" />
     <Compile Include="Model\CommandParm.cs" />
     <Compile Include="Model\DataHandleEventArgs.cs" />

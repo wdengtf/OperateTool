@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace YYT.Api.Model
     /// <summary>
     /// 抽奖活动对象
     /// </summary>
-    public class ReqLotteryActivityModel : BaseApiModel
+    public class ReqLotteryActivityModel : BaseModel
     {
         /// <summary>
         /// 平台类型
@@ -43,7 +44,7 @@ namespace YYT.Api.Model
     /// <summary>
     /// 获取会员抽奖奖品对象
     /// </summary>
-    public class ReqLotteryPrizeModel : BaseApiModel
+    public class ReqLotteryPrizeModel : BaseModel
     {
         /// <summary>
         /// 平台类型

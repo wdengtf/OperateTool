@@ -24,7 +24,7 @@ namespace Payment
         }
 
 
-        public abstract void Excute();
+        public abstract bool Excute();
 
         public virtual string GetMessage()
         {

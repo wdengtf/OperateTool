@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace Framework.Handle
 {
     /// <summary>
-    /// 将表单转换成对象
+    /// 对象转换
     /// </summary>
-    public class FromToObj
+    public class ConvertObj
     {
-        public FromToObj()
+        public ConvertObj()
         { }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Framework.Handle
         /// <typeparam name="T"></typeparam>
         /// <param name="collection"></param>
         /// <returns></returns>
-        public T FormToClass<T>(NameValueCollection collection)
+        public static T FormToClass<T>(NameValueCollection collection)
         {
             T t = Activator.CreateInstance<T>();
             PropertyInfo[] properties = t.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -42,7 +42,7 @@ namespace Framework.Handle
         /// <typeparam name="K">对象K</typeparam>
         /// <param name="k">对象实例</param>
         /// <returns></returns>
-        public T ClassToClass<T, K>(K k)
+        public static T ClassToClass<T, K>(K k)
         {
             T t = Activator.CreateInstance<T>();
             PropertyInfo[] properties = t.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -72,7 +72,7 @@ namespace Framework.Handle
         /// <typeparam name="T"></typeparam>
         /// <param name="dt"></param>
         /// <returns></returns>
-        public List<T> ConvertToModel<T>(DataTable dt)
+        public static List<T> ConvertToModel<T>(DataTable dt)
         {
             // 定义集合    
             List<T> ts = new List<T>();
@@ -103,6 +103,42 @@ namespace Framework.Handle
                 ts.Add(t);
             }
             return ts;
+        }
+
+        /// <summary>
+        /// 将对象转换成IDictionary
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static IDictionary<string, string> ModelToIDictionary<T>(T model)
+        {
+            IDictionary<string, string> dic = new Dictionary<string, string>();
+            Type type = typeof(T);
+            foreach (PropertyInfo property in type.GetProperties())
+            {
+                if (property.Name != "sign")
+                {
+                    if (property.PropertyType.Name == "List`1") continue; //list集不加
+                    string name = property.Name;
+
+                    if (property.GetValue(model) != null)
+                    {
+                        string value = property.GetValue(model).ToString();
+                        string newValue = Utility.FilterString(value);
+                        if (newValue != value)
+                        {
+                            throw new Exception("输入数据含有特殊字符");
+                        }
+                        dic.Add(name, value);
+                    }
+                    else
+                    {
+                        dic.Add(name, "");
+                    }
+                }
+            }
+            return dic;
         }
     }
 }
