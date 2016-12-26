@@ -69,6 +69,7 @@
     <Compile Include="ApiFactory.cs" />
     <Compile Include="Auth\WxAuthCall.cs" />
     <Compile Include="BaseApiModel.cs" />
+    <Compile Include="IdCard\SendIdCard.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="LuckDraw\GetLotteryActivity.cs" />
     <Compile Include="LuckDraw\GetLotteryPrize.cs" />
@@ -81,6 +82,10 @@
     <ProjectReference Include="..\Auth\Auth.csproj">
       <Project>{0bea9405-f661-4f86-8997-0aa73cb36fbb}</Project>
       <Name>Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ayx\Ayx.csproj">
+      <Project>{bcb2fa2d-65ea-4999-95b4-eb5d09ade363}</Project>
+      <Name>Ayx</Name>
     </ProjectReference>
     <ProjectReference Include="..\Events\Events.csproj">
       <Project>{75864256-28a6-4141-86b3-65e5ed3172d9}</Project>

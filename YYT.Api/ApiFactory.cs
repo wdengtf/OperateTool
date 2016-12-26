@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YYT.Api.Model;
 using Act.LuckDraw;
+using Ayx.Model;
 
 namespace YYT.Api
 {
@@ -40,6 +41,13 @@ namespace YYT.Api
         {
             return new LuckDraw.MemberBindLottery();
         }
+        #endregion
+
+        #region 悦园数据接口
+        //public static IOperation<IdcardModel> SendIdCard()
+        //{
+        //    return new Ayx.IdCard.SendIdCard();
+        //}
         #endregion
 
     }
