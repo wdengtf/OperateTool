@@ -46,7 +46,6 @@
     <Compile Include="ILottery.cs" />
     <Compile Include="LotteryBase.cs" />
     <Compile Include="LotteryCall.cs" />
-    <Compile Include="Model\LotteryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

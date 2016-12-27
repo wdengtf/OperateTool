@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Validate;
-using Framework.Model;
 using Framework.Log;
 using YYT.Model;
 using YYT.BLL;
@@ -14,6 +13,7 @@ using Framework;
 using System.Linq.Expressions;
 using Framework.EF;
 using Events;
+using YYT.Model;
 
 namespace YYT.Api
 {
@@ -116,7 +116,7 @@ namespace YYT.Api
                     return false;
                 }
                 string sign = Framework.Utils.SignUtil.CreateSign(dic, channelUserModel.user_key);
-                if (sign != req.sign)
+                if (sign != req.channelSign)
                 {
                     this.message = "签名错误";
                     LogService.LogError("签名错误:" + Utility.ToJson(req));

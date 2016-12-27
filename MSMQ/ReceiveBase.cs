@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Log;
 using Framework;
-using Framework.Model;
+using YYT.Model;
 
 namespace MSMQ
 {

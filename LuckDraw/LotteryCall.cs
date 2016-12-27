@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Log;
-using Framework.Model;
-using Act.LuckDraw.Model;
 using YYT.Model;
 using Events;
+using YYT.Model.LuckDraw;
 
 namespace Act.LuckDraw
 {

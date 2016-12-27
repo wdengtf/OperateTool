@@ -2,7 +2,6 @@
 using Events;
 using Framework;
 using Framework.Log;
-using Framework.Model;
 using Framework.Utils;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using YYT.Model;
 
 namespace Auth.Wx
 {

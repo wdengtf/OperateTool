@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ayx.Model
+namespace YYT.Model.Ayx.IdCard
 {
     public class IdcardNotifyModel
     {

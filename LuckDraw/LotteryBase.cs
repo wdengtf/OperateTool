@@ -1,6 +1,4 @@
 ﻿using Framework.EF;
-using Framework.Model;
-using Act.LuckDraw.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +10,7 @@ using YYT.BLL;
 using YYT.Model;
 using Framework;
 using Events;
+using YYT.Model.LuckDraw;
 
 namespace Act.LuckDraw
 {

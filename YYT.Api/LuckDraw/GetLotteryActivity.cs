@@ -1,5 +1,4 @@
-﻿using Framework.Model;
-using Act.LuckDraw;
+﻿using Act.LuckDraw;
 using Act.LuckDraw.Model;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YYT.Api.Model;
+using YYT.Entities;
 
 namespace YYT.Api.LuckDraw
 {

@@ -4,8 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Framework.Model;
 using YYT.DAL;
+using YYT.Model;
 
 namespace YYT.BLL.Common
 {

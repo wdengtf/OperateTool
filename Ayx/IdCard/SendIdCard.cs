@@ -1,12 +1,13 @@
-﻿using Ayx.Model;
-using Framework.Log;
+﻿using Framework.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework;
-using Framework.Model;
+using YYT.Model;
+using YYT.Model.Ayx.IdCard;
+using Framework.Handle;
 
 namespace Ayx.IdCard
 {
@@ -36,7 +37,7 @@ namespace Ayx.IdCard
                     return false;
                 }
 
-                string retrunPost = new Framework.Utils.WebUtils().DoPost(req.postUrl, AyxConfig.GetSortedList(req));
+                string retrunPost = new Framework.Utils.WebUtils().DoPost(req.postUrl, ConvertObj.ModelToIDictionary(req));
                 LogService.LogInfo(ClassName + "返回参数：" + retrunPost);
 
                 if (String.IsNullOrEmpty(retrunPost))

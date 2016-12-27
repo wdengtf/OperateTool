@@ -7,7 +7,6 @@ using System.Web;
 using System.Web.SessionState;
 using Framework;
 using Framework.Log;
-using Framework.Model;
 using Framework.Validate;
 using WebControllers.Model;
 using WebControllers.Admin;
@@ -18,6 +17,7 @@ using YYT.Model;
 using System.Data;
 using YYT.BLL.Common;
 using Framework.Cookies;
+using YYT.Entities;
 
 namespace WebControllers.Handle
 {

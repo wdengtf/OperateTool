@@ -1,5 +1,4 @@
 ﻿using Events;
-using Framework.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Validate;
 using System.Reflection;
+using YYT.Model;
 
 namespace Auth
 {

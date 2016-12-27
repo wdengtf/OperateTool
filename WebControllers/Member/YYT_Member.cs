@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework;
 using Framework.Cookies;
-using Framework.Model;
 using Framework.Utils;
+using YYT.Entities;
 
 namespace WebControllers.Member
 {

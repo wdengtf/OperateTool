@@ -1,6 +1,5 @@
 ﻿using Framework;
 using Framework.Log;
-using Framework.Model;
 using MSMQ;
 using System;
 using System.Collections.Generic;

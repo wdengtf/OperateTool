@@ -3,8 +3,8 @@ using System.Messaging;
 using Framework;
 using Framework.Log;
 using Message = System.Messaging.Message;
-using Framework.Model;
 using System.Collections.Generic;
+using YYT.Model;
 
 namespace MSMQ
 {

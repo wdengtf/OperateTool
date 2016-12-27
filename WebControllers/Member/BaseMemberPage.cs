@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.SessionState;
 using Auth.Wx;
-using Framework.Model;
+using YYT.Entities;
 
 namespace WebControllers.Member
 {

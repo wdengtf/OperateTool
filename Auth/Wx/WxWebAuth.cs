@@ -9,7 +9,7 @@ using Framework.Utils;
 using Framework;
 using Events;
 using System.Reflection;
-using Framework.Model;
+using YYT.Model;
 
 namespace Auth.Wx
 {

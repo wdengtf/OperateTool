@@ -1,12 +1,11 @@
-﻿using Framework.Model;
-using Act.LuckDraw.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YYT.Model;
 using Events;
+using YYT.Model.LuckDraw;
 
 namespace Act.LuckDraw
 {
