@@ -25,9 +25,8 @@ namespace Auth
         /// 参数设置
         /// </summary>
         /// <param name="req"></param>
-        public virtual void Set(T req, string channelUser)
+        public virtual void Set(T req)
         {
-            this.OperationUserName = channelUser;
             this.req = req;
         }
 

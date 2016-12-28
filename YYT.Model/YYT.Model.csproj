@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\AccessTokenModel.cs" />
+    <Compile Include="Auth\WxCommonModel.cs" />
+    <Compile Include="Auth\WxConfig.cs" />
+    <Compile Include="Auth\WxMemberModel.cs" />
+    <Compile Include="Auth\WxServerAuthModel.cs" />
+    <Compile Include="Auth\WxWebAuthModel.cs" />
     <Compile Include="Ayx\IdCard\AyxConfig.cs" />
     <Compile Include="Ayx\IdCard\IdcardModel.cs" />
     <Compile Include="Ayx\IdCard\IdcardNotifyModel.cs" />
@@ -104,6 +111,14 @@
     <Compile Include="MessageModel.cs" />
     <Compile Include="ModelEnum.cs" />
     <Compile Include="MsgShowConfig.cs" />
+    <Compile Include="Pay\CompanyPaymentModel.cs" />
+    <Compile Include="Pay\CompanyPaymentNotifyModel.cs" />
+    <Compile Include="Pay\CompanyPaymentQueryModel.cs" />
+    <Compile Include="Pay\CompanyPaymentQueryNotifyModel.cs" />
+    <Compile Include="Pay\RedPacketModel.cs" />
+    <Compile Include="Pay\RedPacketNotifyModel.cs" />
+    <Compile Include="Pay\RedPacketQueryModel.cs" />
+    <Compile Include="Pay\RedPacketQueryNotifyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QD_Channel.cs">
       <DependentUpon>DbModel.tt</DependentUpon>

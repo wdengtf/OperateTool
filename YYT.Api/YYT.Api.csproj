@@ -72,7 +72,6 @@
     <Compile Include="LuckDraw\GetLotteryActivity.cs" />
     <Compile Include="LuckDraw\GetLotteryPrize.cs" />
     <Compile Include="LuckDraw\MemberBindLottery.cs" />
-    <Compile Include="Model\ReqLotteryActivity.cs" />
     <Compile Include="OperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

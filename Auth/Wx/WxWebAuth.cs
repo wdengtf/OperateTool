@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Auth.Model;
 using Framework.Log;
 using Framework.Utils;
 using Framework;
 using Events;
 using System.Reflection;
 using YYT.Model;
+using YYT.Model.Auth;
 
 namespace Auth.Wx
 {
     /// <summary>
     /// 微信网页授权
     /// </summary>
-    public class WxWebAuth<K, M> : AuthBase<K, M> where K : class where M : class
+    public class WxWebAuth<K, M> : AuthBase<K, M>
+        where K : class
+        where M : class
     {
         private string ClassName = "微信网页授权";
         private const string appid = WxConfig.appid;
@@ -36,17 +38,20 @@ namespace Auth.Wx
             OperationName = "获取" + ClassName + "数据";
             try
             {
-                string code = (String)Convert.ChangeType(req, typeof(String));
+                WxWebAuthModel wxWebAuthModel = (WxWebAuthModel)Convert.ChangeType(req, typeof(WxWebAuthModel));
+                OperationUserName = wxWebAuthModel.channelUser;
+
                 BaseEvent(EventEnum.OnBegin);
+                RawData = Utility.ToJson(wxWebAuthModel);
                 if (!Validate())
                 {
                     Description = BaseMessage;
-                    RawData = code;
+                    RawData = Utility.ToJson(wxWebAuthModel);
                     BaseEvent(EventEnum.OnTipMsg);
                     return null;
                 }
 
-                string tokenPost = webUtils.DoGet(GetAccess_token(code), null);
+                string tokenPost = webUtils.DoGet(GetAccess_token(wxWebAuthModel.code), null);
                 if (!tokenPost.Contains("access_token"))
                 {
                     Description = BaseMessage = "获取Access_token失败";
@@ -62,7 +67,7 @@ namespace Auth.Wx
                 if (!strUserinfo.Contains("openid"))
                 {
                     Description = BaseMessage = "获取微信用户信息失败";
-                    RawData = strUserinfo;
+                    RawData =  strUserinfo;
                     BaseEvent(EventEnum.OnTipMsg);
                     return wxMemberModel;
                 }
@@ -80,34 +85,6 @@ namespace Auth.Wx
             }
             BaseEvent(EventEnum.OnCompelete);
             return wxMemberModel;
-        }
-
-        /// <summary>
-        /// 参数验证
-        /// </summary>
-        /// <returns></returns>
-        protected override bool Validate()
-        {
-            bool result = false;
-            try
-            {
-                if (req.GetType() != typeof(String))
-                {
-                    BaseMessage = MsgShowConfig.InputParmTypeError;
-                    return false;
-                }
-                if (String.IsNullOrWhiteSpace((String)Convert.ChangeType(req, typeof(String))))
-                {
-                    BaseMessage = MsgShowConfig.ParmNotEmpty;
-                    return false;
-                }
-                result = true;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            return result;
         }
 
         /// <summary>

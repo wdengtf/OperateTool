@@ -45,14 +45,6 @@
   <ItemGroup>
     <Compile Include="IPay.cs" />
     <Compile Include="PayBase.cs" />
-    <Compile Include="PayModel\CompanyPaymentModel.cs" />
-    <Compile Include="PayModel\CompanyPaymentNotifyModel.cs" />
-    <Compile Include="PayModel\CompanyPaymentQueryModel.cs" />
-    <Compile Include="PayModel\CompanyPaymentQueryNotifyModel.cs" />
-    <Compile Include="PayModel\RedPacketModel.cs" />
-    <Compile Include="PayModel\RedPacketNotifyModel.cs" />
-    <Compile Include="PayModel\RedPacketQueryModel.cs" />
-    <Compile Include="PayModel\RedPacketQueryNotifyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WxCompanyPayment\QueryCompanyPayment.cs" />
     <Compile Include="WxCompanyPayment\SendCompanyPayment.cs" />

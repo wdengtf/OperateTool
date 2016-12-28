@@ -1,11 +1,11 @@
-﻿using Auth.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Events;
 using Auth;
+using YYT.Model.Auth;
 
 namespace Auth
 {
@@ -29,15 +29,5 @@ namespace Auth
             }
             return iAuth;
         }
-
-        //public static IAuth<DBNull, ServerTokenAndTicketModel> WxServerAuth()
-        //{
-        //    return new Wx.WxServerAuth();
-        //}
-
-        //public static IAuth<String, WxMemberModel> WxWebAuth()
-        //{
-        //    return new Wx.WxWebAuth();
-        //}
     }
 }

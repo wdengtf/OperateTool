@@ -41,6 +41,7 @@ namespace Events
                     if (this.OnBegin != null)
                     {
                         Args.OperationName = OperationName + "之前";
+                        Args.RawData = RawData;
                         this.OnBegin(this, Args);
                     }
                     break;

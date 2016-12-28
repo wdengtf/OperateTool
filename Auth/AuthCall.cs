@@ -24,9 +24,9 @@ namespace Auth
         /// </summary>
         /// <param name="req"></param>
         /// <param name="channelUser"></param>
-        public void Set(T req, string channelUser)
+        public void Set(T req)
         {
-            iAuth.Set(req, channelUser);
+            iAuth.Set(req);
         }
 
         /// <summary>

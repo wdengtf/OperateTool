@@ -1,4 +1,4 @@
-﻿namespace YYT.Api.Auth
+﻿namespace YYT.Model.Auth
 {
     using System;
     using System.Collections.Generic;
@@ -8,17 +8,10 @@
 
 
     /// <summary>
-    /// 微信授权
+    /// 微信服务号授权
     /// </summary>
-    public class WxAuthCall
+    public class WxServerAuthModel : BaseModel
     {
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        public WxAuthCall()
-        {
-        }
-
 
     }
 }

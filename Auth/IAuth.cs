@@ -13,7 +13,7 @@ namespace Auth
         /// 设置请求数据
         /// </summary>
         /// <param name="req"></param>
-        void Set(T req, string channelUser);
+        void Set(T req);
 
         /// <summary>
         /// 返回结果

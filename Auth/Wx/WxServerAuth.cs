@@ -1,5 +1,4 @@
-﻿using Auth.Model;
-using Events;
+﻿using Events;
 using Framework;
 using Framework.Log;
 using Framework.Utils;
@@ -10,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using YYT.Model;
+using YYT.Model.Auth;
 
 namespace Auth.Wx
 {
@@ -33,6 +33,10 @@ namespace Auth.Wx
             OperationName = "获取" + ClassName + "数据";
             try
             {
+                WxServerAuthModel wxServerAuthModel = (WxServerAuthModel)Convert.ChangeType(req, typeof(WxServerAuthModel));
+                OperationUserName = wxServerAuthModel.channelUser;
+
+                RawData = Utility.ToJson(wxServerAuthModel);
                 BaseEvent(EventEnum.OnBegin);
 
                 string accessToken = webUtils.DoGet(GetAccess_token(), null);
