@@ -8,7 +8,9 @@ using Framework.Log;
 
 namespace Auth
 {
-    public class AuthCall<T,M> where T : class where M :class
+    public class AuthCall<T, M>
+        where T : class 
+        where M :class
     {
         private readonly IAuth<T,M> iAuth = null;
         //private readonly IEvent events = new MsmqEvents();
@@ -33,11 +35,11 @@ namespace Auth
         /// 执行 返回结果
         /// </summary>
         /// <returns></returns>
-        public M Auth()
+        public M Excute()
         {
             DeleteEvent();
             AddEvent();
-            return iAuth.Auth();
+            return iAuth.Excute();
         }
 
         /// <summary>

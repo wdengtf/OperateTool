@@ -14,6 +14,7 @@ using System.Linq.Expressions;
 using Framework.EF;
 using Events;
 using YYT.Model;
+using Framework.Handle;
 
 namespace YYT.Api
 {
@@ -21,14 +22,15 @@ namespace YYT.Api
     /// 外部接口调用
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class OperationBase<T> : IOperation<T> where T : BaseModel
+    public abstract class OperationBase<T, M> : IOperation<T, M> 
+        where T : BaseModel
+        where M : class
     {
         protected string message = String.Empty;
-        protected object date = null;
+        protected M date = null;
         protected bool result = false;
         protected T req;
         private QD_ChannelUserBO channelUserBo = new QD_ChannelUserBO();
-        protected readonly IEvent events = new Log4NetEvents();
 
 
         /// <summary>
@@ -50,18 +52,18 @@ namespace YYT.Api
         }
 
         /// <summary>
-        /// 操作成功返回结果
-        /// </summary>
-        /// <returns></returns>
-        public virtual object GetData()
-        {
-            return date;
-        }
-
-        /// <summary>
         /// 执行操作
         /// </summary>
-        public abstract bool Excute();
+        public abstract M Excute();
+
+        /// <summary>
+        /// 返回结果状态
+        /// </summary>
+        /// <returns></returns>
+        public bool GetResultState()
+        {
+            return result;
+        }
 
         /// <summary>
         /// 参数验证
@@ -108,7 +110,7 @@ namespace YYT.Api
                 IDictionary<string, string> dic;
                 try
                 {
-                    dic = BaseApiModel.CreateSignDictionary(req);
+                    dic = ConvertObj.ModelToIDictionary(req);
                 }
                 catch (Exception ex)
                 {

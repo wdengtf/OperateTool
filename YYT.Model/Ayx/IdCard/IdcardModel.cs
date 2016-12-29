@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace YYT.Model.Ayx.IdCard
 {
-    public class IdcardModel
+    public class IdcardModel:BaseModel 
     {
         public IdcardModel()
         {
@@ -15,12 +15,6 @@ namespace YYT.Model.Ayx.IdCard
             this.appkey = AyxConfig.appkey;
             this.output = AyxConfig.output;
         }
-
-        /// <summary>
-        /// 渠道用户名
-        /// </summary>
-        [Required(ErrorMessage = "渠道用户名不能为空")]
-        public string channelUser { get; set; }
 
         /// <summary>
         /// 请求Url

@@ -26,7 +26,7 @@ namespace Auth.Wx
         public WxServerAuth()
         { }
 
-        public override M Auth()
+        public override M Excute()
         {
             M serverTicketModel = null;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
@@ -38,6 +38,13 @@ namespace Auth.Wx
 
                 RawData = Utility.ToJson(wxServerAuthModel);
                 BaseEvent(EventEnum.OnBegin);
+                if (!Validate())
+                {
+                    Description = BaseMessage;
+                    RawData = Utility.ToJson(wxServerAuthModel);
+                    BaseEvent(EventEnum.OnTipMsg);
+                    return null;
+                }
 
                 string accessToken = webUtils.DoGet(GetAccess_token(), null);
                 if (!accessToken.Contains("access_token"))

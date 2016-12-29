@@ -94,6 +94,7 @@
     <Compile Include="HT_UserGroup.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IBase.cs" />
     <Compile Include="JqGridPagingModel.cs" />
     <Compile Include="JsonResult.cs" />
     <Compile Include="LuckDraw\LotteryModel.cs" />

@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using YYT.Model;
 using YYT.BLL;
-using YYT.Entities;
 
 namespace YYT.Api
 {
@@ -20,7 +19,9 @@ namespace YYT.Api
         /// <param name="req"></param>
         /// <param name="operation"></param>
         /// <returns></returns>
-        public static JsonResult MainExcute<T>(T req, IOperation<T> operation) where T : BaseModel
+        public static JsonResult MainExcute<T, M>(T req, IOperation<T, M> operation) 
+            where T : BaseModel
+            where M : class
         {
             JsonResult re = null;
             try
@@ -49,11 +50,12 @@ namespace YYT.Api
                     return JsonResult.FailResult(strErrMsg);
                 }
                 //执行操作
-                result = operation.Excute();
+                M m = operation.Excute();
+                result = operation.GetResultState();
                 if (result)
                 {
                     //执行正常
-                    re = JsonResult.SuccessResult(operation.GetData());
+                    re = JsonResult.SuccessResult(m);
                 }
                 else
                 {

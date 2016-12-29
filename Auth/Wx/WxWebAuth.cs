@@ -31,7 +31,7 @@ namespace Auth.Wx
         /// 授权操作
         /// </summary>
         /// <returns></returns>
-        public override M Auth()
+        public override M Excute()
         {
             M wxMemberModel = null;
             OperationFilePath = methodBase.DeclaringType.FullName + "." + methodBase.Name;
@@ -41,8 +41,8 @@ namespace Auth.Wx
                 WxWebAuthModel wxWebAuthModel = (WxWebAuthModel)Convert.ChangeType(req, typeof(WxWebAuthModel));
                 OperationUserName = wxWebAuthModel.channelUser;
 
-                BaseEvent(EventEnum.OnBegin);
                 RawData = Utility.ToJson(wxWebAuthModel);
+                BaseEvent(EventEnum.OnBegin);
                 if (!Validate())
                 {
                     Description = BaseMessage;

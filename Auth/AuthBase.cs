@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using Framework.Validate;
 using System.Reflection;
 using YYT.Model;
+using System.Linq.Expressions;
+using Framework.EF;
 
 namespace Auth
 {
-    public abstract class AuthBase<T, K> : EventBase, IAuth<T, K>
+    public abstract class AuthBase<T, M> : EventBase, IAuth<T, M>
         where T : class
-        where K : class
+        where M : class
     {
         protected MethodBase methodBase = System.Reflection.MethodBase.GetCurrentMethod();
         protected bool result = false;
@@ -34,7 +36,7 @@ namespace Auth
         /// 执行操作
         /// </summary>
         /// <returns></returns>
-        public abstract K Auth();
+        public abstract M Excute();
 
         /// <summary>
         /// 返回消息
@@ -76,6 +78,7 @@ namespace Auth
                     return false;
                 }
                 #endregion
+
                 result = true;
             }
             catch (Exception ex)

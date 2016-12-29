@@ -117,7 +117,7 @@ namespace Framework.Handle
             Type type = typeof(T);
             foreach (PropertyInfo property in type.GetProperties())
             {
-                if (property.Name != "sign" || property.Name != "key" || property.Name != "postUrl")
+                if (property.Name != "sign" || property.Name != "key" || property.Name != "postUrl" || property.Name != "channelSign")
                 {
                     if (property.PropertyType.Name == "List`1") continue; //list集不加
                     string name = property.Name;
