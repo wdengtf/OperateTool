@@ -22,7 +22,7 @@ namespace YYT.Api
     /// 外部接口调用
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class OperationBase<T, M> : IOperation<T, M> 
+    public abstract class OperationBase<T, M> : IBase<T, M>,IEventHandler
         where T : BaseModel
         where M : class
     {

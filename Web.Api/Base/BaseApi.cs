@@ -12,12 +12,11 @@ using Framework.EF;
 using Framework.Handle;
 using Framework.Validate;
 
-namespace YYT.Api
+namespace Web.Api.Base
 {
-    public class APICall
+    public class BaseApi
     {
-        private static QD_ChannelUserBO channelUserBo = new QD_ChannelUserBO();
-        public APICall()
+        public BaseApi()
         { }
 
         /// <summary>
@@ -106,7 +105,7 @@ namespace YYT.Api
                 #region 签名认证
                 Expression<Func<QD_ChannelUser, bool>> where = PredicateExtensionses.True<QD_ChannelUser>();
                 where = where.AndAlso(p => p.user_name.Equals(req.channelUser));
-                QD_ChannelUser channelUserModel = channelUserBo.GetSingle<int>(where);
+                QD_ChannelUser channelUserModel = new QD_ChannelUserBO().GetSingle<int>(where);
                 if (channelUserModel == null)
                 {
                     return "授权用户不存在";

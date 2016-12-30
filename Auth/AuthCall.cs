@@ -5,20 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Events;
 using Framework.Log;
+using YYT.Model;
 
 namespace Auth
 {
-    public class AuthCall<T, M>
-        where T : class 
-        where M :class
+    public class AuthCall<T, M> : IBase<T, M>
+        where T : class
+        where M : class
     {
-        private readonly IAuth<T,M> iAuth = null;
+        private readonly IAuth<T, M> iAuth = null;
         //private readonly IEvent events = new MsmqEvents();
         private readonly IEvent events = new Log4NetEvents();
 
         public AuthCall()
         {
-            iAuth = Factory.Auth<T,M>();
+            iAuth = Factory.Auth<T, M>();
         }
 
         /// <summary>

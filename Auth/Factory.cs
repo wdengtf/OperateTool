@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Events;
 using Auth;
 using YYT.Model.Auth;
+using YYT.Model;
 
 namespace Auth
 {
@@ -16,12 +17,12 @@ namespace Auth
 
         }
 
-        #region 用户授权 外部调用 未验证签名
+        #region 用户授权 外部可直接调用 未验证签名
         /// <summary>
         /// 微信公众号授权
         /// </summary>
         /// <returns></returns>
-        public static AuthCall<WxServerAuthModel, ServerTokenAndTicketModel> WxServerAuth(WxServerAuthModel wxServerAuthModel)
+        public static IBase<WxServerAuthModel, ServerTokenAndTicketModel> WxServerAuth(WxServerAuthModel wxServerAuthModel)
         {
             return new AuthCall<WxServerAuthModel, ServerTokenAndTicketModel>();
         }
@@ -31,12 +32,11 @@ namespace Auth
         /// </summary>
         /// <param name="wxWebAuthModel"></param>
         /// <returns></returns>
-        public static AuthCall<WxWebAuthModel, WxMemberModel> WxWebAuth(WxWebAuthModel wxWebAuthModel)
+        public static IBase<WxWebAuthModel, WxMemberModel> WxWebAuth(WxWebAuthModel wxWebAuthModel)
         {
             return new AuthCall<WxWebAuthModel, WxMemberModel>();
         }
         #endregion
-
 
         public static IAuth<T, M> Auth<T, M>()
             where T : class

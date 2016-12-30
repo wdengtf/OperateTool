@@ -15,10 +15,6 @@ namespace YYT.Api
         where T : BaseModel
         where M : class
     {
-        /// <summary>
-        /// 参数验证
-        /// </summary>
-        /// <returns></returns>
-        bool Validate();
+       
     }
 }
